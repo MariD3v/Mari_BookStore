@@ -1,0 +1,57 @@
+body{
+    background-color: rgb(55, 64, 91);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.main-content{
+    width: 100%;
+    height: 100%;
+}
+
+.book{
+    background-color: rgb(237, 239, 255);
+    height: 520px;
+    width: 320px;
+    margin:3%;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px inset;
+    transition: 0.6s;
+    gap: .1rem;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.book:hover {
+    transform: scale(1.02, 1.02);
+    background-color: rgb(199, 216, 255);
+}
+
+.titulo{
+    margin: auto;
+    text-align: center;
+    color: rgb(81, 83, 155);
+    border-style: solid;
+    border-width: 3px; 
+    border-color:rgb(199, 235, 255); 
+    border-radius: 4px;
+    font-size:large;
+}
+
+.precio{
+    text-align: center;
+}
+
+.portada{
+    margin: 5%;
+    background-image: url('https://placedog.net/330/450');
+    background-position: center;
+    background-size: cover;
+    width: 280px ;
+    height: 370px ;
+    border-style: solid;
+    border-width: 3px; 
+    border-color:rgb(199, 235, 255); 
+    border-radius: 4px;
+
+}
+    
