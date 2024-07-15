@@ -1,57 +1,108 @@
-body{
-    background-color: rgb(55, 64, 91);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+:root {
+    --bg-color: #333;
+    --bgl-color:rgb(77, 77, 77)3;
+    --l-color: #F3D3DE;
+    --lm-color: #EBB5C8;
+    --m-color: #E395B1;
+    --md-color: #CF7092;
+    --d-color: #B54B70;
 }
-.main-content{
+
+body {
+    background-color: var(--bg-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+}
+
+.main-content {
     width: 100%;
     height: 100%;
 }
 
-.book{
-    background-color: rgb(237, 239, 255);
-    height: 520px;
-    width: 320px;
-    margin:3%;
+.barra-navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    overflow: hidden;
+    top: 5px;
+    width: 100%;
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 0;
+}
+
+.barra-navegacion li a {
+    display: block;
+    background-color: var(--l-color);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.barra-navegacion li a:hover {
+    background-color: var(--lm-color);
+}
+
+.barra-navegacion #carrito{
+    border-radius: 40px;
+}
+
+.carrito img {
+    width: auto;
+    height: auto;
+}
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 300px;
+    padding-right: 300px;
+    margin-top: 20px;
+}
+
+.book {
+    background-color: var(--l-color);
+    height: 320px;
+    width: 220px;
+    margin: 1%;
     border-radius: 4px;
     box-shadow: 2px 2px 5px inset;
-    transition: 0.6s;
-    gap: .1rem;
+    transition: transform 0.6s, background-color 0.6s;
     overflow: hidden;
     position: relative;
-
 }
 
 .book:hover {
-    transform: scale(1.02, 1.02);
-    background-color: rgb(199, 216, 255);
+    transform: scale(1.02);
+    background-color: var(--m-color);
 }
 
-.titulo{
-    margin: auto;
+.titulo {
+    margin: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
     text-align: center;
-    color: rgb(81, 83, 155);
-    border-style: solid;
-    border-width: 3px; 
-    border-color:rgb(199, 235, 255); 
-    border-radius: 4px;
-    font-size:large;
+    color: var(--md-color);
 }
 
-.precio{
+.precio {
     text-align: center;
+    margin: 0;
 }
 
-.portada{
+.portada {
     margin: 5%;
-    background-image: url('https://placedog.net/330/450');
+    margin-bottom: 0%;
+    background-image: url('https://placedog.net/240/195');
     background-position: center;
     background-size: cover;
-    width: 280px ;
-    height: 370px ;
-    border-style: solid;
-    border-width: 3px; 
-    border-color:rgb(199, 235, 255); 
+    width: 195px;
+    height: 240px;
+    border: 2px solid var(--lm-color);
     border-radius: 4px;
-
 }
     
