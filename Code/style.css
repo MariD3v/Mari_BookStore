@@ -21,46 +21,74 @@ body {
 }
 
 .barra-navegacion {
-    
     display: flex;
     align-items: center;
     list-style: none;
-    overflow: hidden;
-    top: 5px;
-    width: 100%;
-    padding: 10px;
-    padding-left: 370px;
-    padding-right: 0px;
+    padding-top: 10px;
+    padding-left: 20%;
+    padding-right: 20%;
     margin: 0;
+    width: 60%;
+}
+
+.barra-navegacion li{
+    align-items: center;
+    padding: 8px;
 }
 
 .barra-navegacion li a {
-    display: block;
+    display: flex;
     background-color: var(--ll-color);
-    text-align: center;
-    text-decoration: none;
     border-radius: 40px;
-    padding: 10px;
+    padding: 8px;
 }
 
 .barra-navegacion li a:hover {
     background-color: var(--lm-color);
 }
 
+#barra-buscar{
+    width: 100%;
+}
+
+.buscar-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
 input[type=buscar] {
-    width: 800px;
-    margin-left: 15px;
-    margin-right: 15px;
-    background-color: var(--ll-color);
-    border-color: var(--lm-color);
-    border-radius: 40px;
-    padding: 10px;
-    cursor: pointer;
-    outline: none;
+  width: 100%;
+  background-color: var(--ll-color);
+  border: 2px solid var(--lm-color);
+  border-radius: 40px;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
 }
 
 input[type=buscar]:focus {
     border-color: var(--d-color);
+}
+
+.buscarbutton{
+    background-color: var(--ll-color);
+    border: none;
+    border-radius:40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-left: -45px;
+}
+
+.buscarbutton:active{
+    background-color: var(--lm-color);
+}
+
+.buscarbutton img{
+    width: 25px;
+    height: 25px;
 }
 
 .barra-navegacion #carrito{
@@ -76,8 +104,8 @@ input[type=buscar]:focus {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-left: 300px;
-    padding-right: 300px;
+    padding-left: 20%;
+    padding-right: 20%;
     margin-top: 20px;
 }
 
@@ -166,4 +194,16 @@ input[type=buscar]:focus {
     font-weight: bold;
 }
 
+@media only screen and (max-width: 600px){
+    body{
+        background-color: var(--m-color);
+    }
     
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1180px){
+    body{
+        background-color: var(--d-color);
+    }
+    
+}
