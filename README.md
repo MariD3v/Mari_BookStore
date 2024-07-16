@@ -1,2 +1,1 @@
-
-![Mari_BookStore]https://github.com/LittleMari/Mari_BookStore/blob/64b2a7c0ab605cadad7befcf745e25047b4d40ce/Documentaci%C3%B3n/banners/logo.png
+![logo](https://github.com/user-attachments/assets/adcc7969-380a-4138-abd4-38c57c6a0932)
