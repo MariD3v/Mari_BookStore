@@ -100,6 +100,79 @@ input[type=buscar]:focus {
     height: auto;
 }
 
+.ordercontainer{
+    display: flex;
+    list-style: none;
+    padding-top: 10px;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin: 0;
+    width: 60%;
+}
+
+.ordertext{
+    color: var(--lm-color);
+    margin: 0;
+    margin-top:14px;
+    margin-left: 70%;
+
+}
+
+.orderbutton{
+    border-radius: 2px;
+    background-color: var(--md-color);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdownmenu {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+.dropdowncontent {
+    display: none;
+    position:absolute; 
+    background-color: rgb(255, 255, 255);
+    min-width: 130px;
+    box-shadow: 0px 2px 2px rgb(183, 183, 183);
+    border-radius:2px;
+    z-index: 1000; 
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.dropdowncontent a {
+    color: var(--d-color);
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-checkbox {
+    display: none;
+}
+
+.dropdowncontent a:hover {
+    background-color: var(--lm-color);
+}
+
+.dropdownmenu:hover .orderbutton {
+    background-color: var(--m-color);
+}
+
+.dropdown-checkbox:checked + .orderbutton {
+    background-color: var(--m-color); 
+}
+
+.dropdown-checkbox:checked + .orderbutton + .dropdowncontent {
+    display: block;
+}
+
 .catalogo {
     display: flex;
     flex-wrap: wrap;
@@ -201,7 +274,7 @@ input[type=buscar]:focus {
     
 }
 
-@media only screen and (min-width: 600px) and (max-width: 1180px){
+@media only screen and (min-width: 600px) and (max-width: 1200px){
     body{
         background-color: var(--d-color);
     }
