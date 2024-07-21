@@ -1,0 +1,308 @@
+:root {
+    --bg-color: #333;
+    --bgl-color:rgb(77, 77, 77)3;
+    --ll-color:rgb(255, 227, 237);
+    --l-color: #f6d9e3;
+    --lm-color: #EBB5C8;
+    --m-color: #E395B1;
+    --md-color: #CF7092;
+    --d-color: #B54B70;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+}
+
+.main-content {
+    width: 100%;
+    height: 100%;
+}
+
+.barra-navegacion {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-top: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin: 0;
+    width: 80%;
+}
+
+.barra-navegacion li{
+    align-items: center;
+    padding: 8px;
+}
+
+.barra-navegacion li a {
+    display: flex;
+    background-color: var(--ll-color);
+    border-radius: 40px;
+    padding: 8px;
+}
+
+.barra-navegacion li a:hover {
+    background-color: var(--lm-color);
+}
+
+#inicio{
+    height: 35px;
+    width: auto;
+}
+
+
+#barra-buscar{
+    width: 100%;
+}
+
+.buscar-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+input[type=buscar] {
+  width: 100%;
+  background-color: var(--ll-color);
+  border: 2px solid var(--lm-color);
+  border-radius: 40px;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+}
+
+input[type=buscar]:focus {
+    border-color: var(--d-color);
+}
+
+.buscarbutton{
+    background-color: var(--ll-color);
+    border: none;
+    border-radius:40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-left: -45px;
+}
+
+.buscarbutton:active{
+    background-color: var(--lm-color);
+}
+
+.buscarbutton img{
+    width: 25px;
+    height: 25px;
+}
+
+.barra-navegacion #carrito{
+    border-radius: 40px;
+}
+
+.carrito img {
+    width: auto;
+    height: auto;
+}
+
+.ordercontainer{
+    display: flex;
+    list-style: none;
+    padding-top: 10px;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin: 0;
+    width: 60%;
+}
+
+.ordertext{
+    color: var(--lm-color);
+    margin: 0;
+    margin-top:14px;
+    margin-left: 70%;
+    white-space: nowrap;
+}
+
+.orderbutton{
+    border-radius: 2px;
+    background-color: var(--md-color);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdownmenu {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+.dropdowncontent {
+    display: none;
+    position:absolute; 
+    background-color: rgb(255, 255, 255);
+    min-width: 130px;
+    box-shadow: 0px 2px 2px rgb(183, 183, 183);
+    border-radius:2px;
+    z-index: 1000; 
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.dropdowncontent a {
+    color: var(--d-color);
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-checkbox {
+    display: none;
+}
+
+.dropdowncontent a:hover {
+    background-color: var(--lm-color);
+}
+
+.dropdownmenu:hover .orderbutton {
+    background-color: var(--m-color);
+}
+
+.dropdown-checkbox:checked + .orderbutton {
+    background-color: var(--m-color); 
+}
+
+.dropdown-checkbox:checked + .orderbutton + .dropdowncontent {
+    display: block;
+}
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 20px;
+}
+
+.book {
+    background-color: #fff2f6;
+    height: 335px;
+    width: 220px;
+    margin: 1%;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px;
+    transition: transform 0.6s, background-color 0.6s;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.book:hover {
+    transform: scale(1.02);
+    .buttoncarro{
+        display: block;
+    }
+}
+
+.portada {
+    margin: 5%;
+    margin-bottom: 3%;
+    background-image: url('https://placedog.net/240/195');
+    background-position: center;
+    background-size: cover;
+    width: 195px;
+    height: 240px;
+    box-shadow: 2px 2px 3px;
+    border-radius: 4px;
+}
+
+.titulo {
+    margin: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    color: var(--md-color);
+    font-size: small;
+    font-weight: bold;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+    max-height: calc(1.2em * 2); 
+    height:calc(1.2em * 2) ;
+}
+
+.buttoncarro{
+    padding-top: 5px;
+    display:none;
+    background-color: var(--l-color);
+    width: 195px;
+    margin-left: 10px;
+    height: 40px;
+    border-radius: 4px;
+    border: var(--lm-color) 1px solid ;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px --bg-color;
+    transition: background-color 0.3s, box-shadow 0.3s; 
+}
+
+.buttoncarro:hover {
+    background-color: var(--lm-color); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.buttoncarro:active {
+    background-color: var(--m-color); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.precio {
+    padding: 0;
+    text-align: center;
+    margin: 0;
+    margin-right: 12px;
+    font-size: 23px;
+    color: rgb(37, 37, 37);
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 600px){
+    body{
+        background-color: var(--m-color);
+    }
+
+    #inicio{
+        height: 25px;
+        width: auto;
+    }   
+    .barra-navegacion {
+        padding-left: 1%;
+        padding-right: 1%;
+        width: 98%;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px){
+    body{
+        background-color: var(--d-color);
+    }
+
+    #inicio{
+        height: 30px;
+        width: auto;
+    }
+
+    .barra-navegacion {
+        padding-left: 5%;
+        padding-right: 5%;
+        width: 90%;
+    }
+    
+}
