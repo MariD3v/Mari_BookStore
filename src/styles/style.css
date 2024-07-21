@@ -106,14 +106,17 @@ input[type=buscar]:focus {
     height: auto;
 }
 
+#barra-buscar-hidden{
+    display: none;
+}
+
 .ordercontainer{
     display: flex;
     list-style: none;
-    padding-top: 10px;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-top: 25px;
     margin: 0;
-    width: 60%;
+    width: 100%;
+    
 }
 
 .ordertext{
@@ -132,6 +135,7 @@ input[type=buscar]:focus {
     font-size: 14px;
     border: none;
     cursor: pointer;
+    margin-right: 10%;
 }
 
 .dropdownmenu {
@@ -183,8 +187,8 @@ input[type=buscar]:focus {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 11%;
+    padding-right: 11%;
     margin-top: 20px;
 }
 
@@ -192,14 +196,13 @@ input[type=buscar]:focus {
     background-color: #fff2f6;
     height: 335px;
     width: 220px;
-    margin: 1%;
+    margin: 2%;
     border-radius: 4px;
     box-shadow: 2px 2px 5px;
     transition: transform 0.6s, background-color 0.6s;
     overflow: hidden;
     position: relative;
 }
-
 
 .book:hover {
     transform: scale(1.02);
@@ -273,25 +276,65 @@ input[type=buscar]:focus {
     font-weight: bold;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 700px){
+
     body{
-        background-color: var(--m-color);
+        background-color: var(--l-color);
     }
 
-    #inicio{
-        height: 25px;
-        width: auto;
-    }   
+    #barra-buscar{
+        display: none;
+    }
+
+    .barra-navegacion li{
+        align-items: center;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
     .barra-navegacion {
+        width: 100%;
+        justify-content:space-between;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    #barra-buscar-hidden{
+        display: block;
+        margin: 10px;
+    }
+
+    .ordertext{
+        color: var(--lm-color);
+        margin: 0;
+        margin-top:14px;
+        margin-left: 30%;
+        white-space: nowrap;
+        font-size: small;
+    }
+
+    .orderbutton{
+        font-size: small;
+    }
+
+    .dropdowncontent {
+        font-size: small;
+    }
+
+    .catalogo{
         padding-left: 1%;
         padding-right: 1%;
-        width: 98%;
+    }
+
+    .book{
+        margin: 2%;
     }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 900px){
+@media only screen and (min-width: 700px) and (max-width: 1150px){
+    
     body{
-        background-color: var(--d-color);
+        background-color: var(--m-color);
     }
 
     #inicio{
@@ -304,5 +347,14 @@ input[type=buscar]:focus {
         padding-right: 5%;
         width: 90%;
     }
-    
+
+    .catalogo {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    .book{
+        margin: 2%;
+    }
+
 }
