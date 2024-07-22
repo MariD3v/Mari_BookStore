@@ -99,6 +99,7 @@ input[type=buscar]:focus {
 
 .barra-navegacion #carrito{
     border-radius: 40px;
+    justify-content: space-between;
 }
 
 .carrito img {
@@ -110,20 +111,161 @@ input[type=buscar]:focus {
     display: none;
 }
 
+.barra-opciones{
+    justify-content: space-around;
+    display: flex;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.filtercontainer{
+    display: flex;
+    list-style: none;
+    margin: 10px;
+    margin-top: 25px;
+}
+
+.filterbutton{
+    border-radius: 2px;
+    background-color: var(--md-color);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdownmenu0 {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+    margin-top: 10px;
+}
+
+.dropdowncontent0 {
+    display: none;
+    position:absolute; 
+    background-color: rgb(255, 255, 255);
+    min-width: 35px;
+    box-shadow: 0px 2px 2px rgb(183, 183, 183);
+    border-radius:2px;
+    z-index: 1000; 
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.dropdowncontent0 a {
+    color: var(--d-color);
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-checkbox0 {
+    display: none;
+}
+
+.dropdowncontent0 a:hover {
+    background-color: var(--lm-color);
+}
+
+.dropdownmenu0:hover .filterbutton {
+    background-color: var(--m-color);
+}
+
+.dropdown-checkbox0:checked + .filterbutton {
+    background-color: var(--m-color); 
+}
+
+.dropdown-checkbox0:checked + .filterbutton + .dropdowncontent0 {
+    display: block;
+}
+
+.mostrarpagcontainer{
+    display: flex;
+    list-style: none;
+    margin: 10px;
+    margin-top: 25px;
+    padding-right: 10px;
+}
+
+.pagtext{
+    color: var(--lm-color);
+    margin: 0;
+    margin-top:14px;
+    white-space: nowrap;
+}
+
+.pagbutton{
+    border-radius: 2px;
+    background-color: var(--md-color);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10%;
+}
+
+.dropdownmenu1 {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+    margin-top: 10px;
+}
+
+.dropdowncontent1 {
+    display: none;
+    position:absolute; 
+    background-color: rgb(255, 255, 255);
+    min-width: 35px;
+    box-shadow: 0px 2px 2px rgb(183, 183, 183);
+    border-radius:2px;
+    z-index: 1000; 
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.dropdowncontent1 a {
+    color: var(--d-color);
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-checkbox1 {
+    display: none;
+}
+
+.dropdowncontent1 a:hover {
+    background-color: var(--lm-color);
+}
+
+.dropdownmenu1:hover .pagbutton {
+    background-color: var(--m-color);
+}
+
+.dropdown-checkbox1:checked + .pagbutton {
+    background-color: var(--m-color); 
+}
+
+.dropdown-checkbox1:checked + .pagbutton + .dropdowncontent1 {
+    display: block;
+}
+
 .ordercontainer{
     display: flex;
     list-style: none;
-    padding-top: 25px;
-    margin: 0;
-    width: 100%;
-    
+    margin: 10px;
+    margin-top: 25px;
 }
 
 .ordertext{
     color: var(--lm-color);
     margin: 0;
     margin-top:14px;
-    margin-left: 70%;
     white-space: nowrap;
 }
 
@@ -138,13 +280,14 @@ input[type=buscar]:focus {
     margin-right: 10%;
 }
 
-.dropdownmenu {
+.dropdownmenu2 {
     position: relative;
     display: inline-block;
-    margin: 10px;
+    margin: 5px;
+    margin-top: 10px;
 }
 
-.dropdowncontent {
+.dropdowncontent2 {
     display: none;
     position:absolute; 
     background-color: rgb(255, 255, 255);
@@ -156,30 +299,30 @@ input[type=buscar]:focus {
     margin-top: 10px;
 }
 
-.dropdowncontent a {
+.dropdowncontent2 a {
     color: var(--d-color);
     padding: 5px 5px;
     text-decoration: none;
     display: block;
 }
 
-.dropdown-checkbox {
+.dropdown-checkbox2 {
     display: none;
 }
 
-.dropdowncontent a:hover {
+.dropdowncontent2 a:hover {
     background-color: var(--lm-color);
 }
 
-.dropdownmenu:hover .orderbutton {
+.dropdownmenu2:hover .orderbutton {
     background-color: var(--m-color);
 }
 
-.dropdown-checkbox:checked + .orderbutton {
+.dropdown-checkbox2:checked + .orderbutton {
     background-color: var(--m-color); 
 }
 
-.dropdown-checkbox:checked + .orderbutton + .dropdowncontent {
+.dropdown-checkbox2:checked + .orderbutton + .dropdowncontent2 {
     display: block;
 }
 
@@ -304,11 +447,35 @@ input[type=buscar]:focus {
         margin: 10px;
     }
 
+    .barra-opciones{
+        width: 100%;
+        padding: 0;
+        margin-top: 0;
+    }
+
+    .filterbutton{
+        font-size: small;
+    }
+
+    .dropdowncontent0 {
+        font-size: small;
+    }
+
+    .pagtext{
+        display: none;
+    }
+
+    .pagbutton{
+        font-size: small;
+    }
+
+    .dropdowncontent1 {
+        font-size: small;
+    }
     .ordertext{
         color: var(--lm-color);
         margin: 0;
         margin-top:14px;
-        margin-left: 30%;
         white-space: nowrap;
         font-size: small;
     }
@@ -317,7 +484,7 @@ input[type=buscar]:focus {
         font-size: small;
     }
 
-    .dropdowncontent {
+    .dropdowncontent2 {
         font-size: small;
     }
 
