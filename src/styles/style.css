@@ -1,6 +1,6 @@
 :root {
     --bg-color: #333;
-    --bgl-color:rgb(77, 77, 77)3;
+    --bgl-color:rgb(77, 77, 77);
     --ll-color:rgb(255, 227, 237);
     --l-color: #f6d9e3;
     --lm-color: #EBB5C8;
@@ -330,9 +330,11 @@ input[type=buscar]:focus {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-left: 11%;
-    padding-right: 11%;
+    margin-left: 11%;
+    margin-right: 11%;
     margin-top: 20px;
+    background-color: var(--bgl-color);
+    border-radius: 20px;
 }
 
 .book {
@@ -489,8 +491,9 @@ input[type=buscar]:focus {
     }
 
     .catalogo{
-        padding-left: 1%;
-        padding-right: 1%;
+        background-color: var(--ll-color);
+        margin-left: 1%;
+        margin-right: 1%;
     }
 
     .book{
@@ -516,8 +519,9 @@ input[type=buscar]:focus {
     }
 
     .catalogo {
-        padding-left: 2%;
-        padding-right: 2%;
+        background-color: var(--lm-color);
+        margin-left: 2%;
+        margin-right: 2%;
     }
 
     .book{
