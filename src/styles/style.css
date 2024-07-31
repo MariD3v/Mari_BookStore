@@ -123,64 +123,14 @@ input[type=buscar]:focus {
     display: flex;
     list-style: none;
     margin: 10px;
-    margin-top: 25px;
-}
-
-.filterbutton{
-    border-radius: 2px;
-    background-color: var(--md-color);
-    color: white;
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 100%;
-    border: none;
-    cursor: pointer;
-}
-
-.dropdownmenu0 {
-    position: relative;
-    display: inline-block;
-    margin: 5px;
     margin-top: 10px;
+    background-color: var(--l-color);
+    border-radius: 4px;
+    width: 30%;
 }
 
-.dropdowncontent0 {
-    display: none;
-    position:absolute; 
-    background-color: rgb(255, 255, 255);
-    min-width: 35px;
-    box-shadow: 0px 2px 2px rgb(183, 183, 183);
-    border-radius:2px;
-    z-index: 1000; 
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-.dropdowncontent0 a {
-    color: var(--d-color);
-    padding: 5px 5px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-checkbox0 {
-    display: none;
-}
-
-.dropdowncontent0 a:hover {
-    background-color: var(--lm-color);
-}
-
-.dropdownmenu0:hover .filterbutton {
-    background-color: var(--m-color);
-}
-
-.dropdown-checkbox0:checked + .filterbutton {
-    background-color: var(--m-color); 
-}
-
-.dropdown-checkbox0:checked + .filterbutton + .dropdowncontent0 {
-    display: block;
+.filtertable{
+    display: flex;
 }
 
 .mostrarpagcontainer{
@@ -323,6 +273,166 @@ input[type=buscar]:focus {
 }
 
 .dropdown-checkbox2:checked + .orderbutton + .dropdowncontent2 {
+    display: block;
+}
+
+.preciofiltercontainer{
+    display: flex;
+    list-style: none;
+    margin: 10px;
+    margin-top: 25px;
+}
+
+
+.dropdownmenu3 {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+    margin-top: 10px;
+}
+
+.dropdowncontent3 {
+    display: none;
+    position:absolute; 
+    background-color: rgb(255, 255, 255);
+    min-width: 35px;
+    box-shadow: 0px 2px 2px rgb(183, 183, 183);
+    border-radius:2px;
+    z-index: 1000; 
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.dropdowncontent3 a {
+    color: var(--d-color);
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-checkbox3 {
+    display: none;
+}
+
+.dropdowncontent3 a:hover {
+    background-color: var(--lm-color);
+}
+
+.dropdownmenu3:hover .pagbutton {
+    background-color: var(--m-color);
+}
+
+.dropdown-checkbox3:checked + .pagbutton {
+    background-color: var(--m-color); 
+}
+
+.dropdown-checkbox3:checked + .pagbutton + .dropdowncontent3 {
+    display: block;
+}
+
+.idiomafiltercontainer{
+    display: flex;
+    list-style: none;
+    margin: 10px;
+    margin-top: 25px;
+}
+
+.dropdownmenu4 {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+    margin-top: 10px;
+}
+
+.dropdowncontent4 {
+    display: none;
+    position:absolute; 
+    background-color: rgb(255, 255, 255);
+    min-width: 35px;
+    box-shadow: 0px 2px 2px rgb(183, 183, 183);
+    border-radius:2px;
+    z-index: 1000; 
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.dropdowncontent4 div{
+    color: var(--d-color);
+    padding-right: 5px;
+    text-decoration: none;
+    display: flex;
+}
+
+.dropdown-checkbox4 {
+    display: none;
+}
+
+.dropdowncontent4 div:hover {
+    background-color: var(--lm-color);
+}
+
+.dropdownmenu4:hover .pagbutton {
+    background-color: var(--m-color);
+}
+
+.dropdown-checkbox4:checked + .pagbutton {
+    background-color: var(--m-color); 
+}
+
+.dropdown-checkbox4:checked + .pagbutton + .dropdowncontent4 {
+    display: block;
+}
+
+.generofiltercontainer{
+    display: flex;
+    list-style: none;
+    margin: 10px;
+    margin-top: 25px;
+}
+
+.dropdownmenu5 {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+    margin-top: 10px;
+}
+
+.dropdowncontent5 {
+    display: none;
+    position:absolute; 
+    background-color: rgb(255, 255, 255);
+    min-width: 35px;
+    box-shadow: 0px 2px 2px rgb(183, 183, 183);
+    border-radius:2px;
+    z-index: 1000; 
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.dropdowncontent5 div {
+    color: var(--d-color);
+    padding-right: 10px;
+    text-decoration: none;
+    display: flex;
+}
+
+.dropdown-checkbox5 {
+    display: none;
+}
+
+.dropdowncontent5 div:hover {
+    background-color: var(--lm-color);
+}
+
+.dropdownmenu5:hover .pagbutton {
+    background-color: var(--m-color);
+}
+
+.dropdown-checkbox5:checked + .pagbutton {
+    background-color: var(--m-color); 
+}
+
+.dropdown-checkbox5:checked + .pagbutton + .dropdowncontent5 {
     display: block;
 }
 
