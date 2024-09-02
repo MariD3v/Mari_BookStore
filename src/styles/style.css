@@ -309,6 +309,16 @@ input[type=buscar]:focus {
     text-decoration: none;
     display: block;
 }
+.dropdowncontent3 a input {
+    margin: 2px;
+    max-width: 40px;
+    border-color: var(--lm-color);
+    outline: none;
+}
+
+input[type="number"]:focus {
+    border-color: var(--md-color);
+}
 
 .dropdown-checkbox3 {
     display: none;
