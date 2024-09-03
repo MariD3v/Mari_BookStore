@@ -549,12 +549,23 @@ input[type="number"]:focus {
     justify-content: flex-end;
 }
 
-.buttonnextpage{
+.buttonnextpage1{
     border-color:none;
-    background-color: var(--bgl-color);
-    color: var(--ll-color);
+    background-color: var(--lm-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
-    padding: 7px;
+    padding: 5px;
+}
+
+.buttonnextpage2{
+    border-color:none;
+    background-color: var(--lm-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    padding: 5px;
+}
+
+.textnextpage{
+    margin: 5px;
+    color: var(--ll-color);
 }
 
 @media only screen and (max-width: 700px){
