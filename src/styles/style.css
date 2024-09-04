@@ -637,7 +637,7 @@ input[type="number"]:focus {
     
 }
 
-.containerbuttonrealizarcompra button{
+.containerbuttonrealizarcompra a{
     background-color: var(--m-color);
     font-size: 25px;
     padding: 15px;
@@ -647,13 +647,14 @@ input[type="number"]:focus {
     cursor: pointer;
     box-shadow: 0 4px 6px --bg-color;
     transition: background-color 0.3s, box-shadow 0.3s; 
+    text-decoration: none;
 }
 
 
-.containerbuttonrealizarcompra button:hover {
+.containerbuttonrealizarcompra a:hover {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
-.containerbuttonrealizarcompra button:active {
+.containerbuttonrealizarcompra a:active {
     background-color: var(--md-color); 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
