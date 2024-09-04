@@ -34,6 +34,7 @@ body {
 .barra-navegacion li{
     align-items: center;
     padding: 8px;
+    
 }
 
 .barra-navegacion li a {
@@ -41,6 +42,7 @@ body {
     background-color: var(--ll-color);
     border-radius: 40px;
     padding: 8px;
+    transition: background-color 0.3s, box-shadow 0.3s; 
 }
 
 .barra-navegacion li a:hover {
@@ -568,6 +570,94 @@ input[type="number"]:focus {
     color: var(--ll-color);
 }
 
+/* carrito.html */
+
+.carritocontainer {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 25px;
+    background-color: var(--ll-color);
+    border-radius: 10px;
+}
+
+.tablacarrito{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.textocarrito th{
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 2px solid #c9bac4;
+}
+
+.articulocarrito td{
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #c3b1b7;
+}
+
+.articulocarrito p{
+    margin: 2px;
+}
+
+.buttonunidades{
+    background-color: var(--lm-color);
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px --bg-color;
+    transition: background-color 0.3s, box-shadow 0.3s; 
+}
+
+.buttonunidades:hover {
+    background-color: var(--lm-color); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.buttonunidades:active {
+    background-color: var(--m-color); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.totalcontainer{
+    text-align: right;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 20px;
+    margin-right: 10%;
+}
+
+.containerbuttonrealizarcompra{
+    padding: 10px 10px 40px 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.containerbuttonrealizarcompra button{
+    background-color: var(--m-color);
+    font-size: 25px;
+    padding: 15px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px --bg-color;
+    transition: background-color 0.3s, box-shadow 0.3s; 
+}
+
+
+.containerbuttonrealizarcompra button:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+.containerbuttonrealizarcompra button:active {
+    background-color: var(--md-color); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
 @media only screen and (max-width: 700px){
 
     body{
@@ -651,7 +741,15 @@ input[type="number"]:focus {
     .book{
         margin: 2%;
     }
+
+    /*carrito.html*/
+    .carritocontainer {
+        margin-left: 4%;
+        margin-right: 4%;
+    }
 }
+
+
 
 @media only screen and (min-width: 700px) and (max-width: 1150px){
     
