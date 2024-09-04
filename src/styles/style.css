@@ -650,13 +650,44 @@ input[type="number"]:focus {
     text-decoration: none;
 }
 
-
 .containerbuttonrealizarcompra a:hover {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 .containerbuttonrealizarcompra a:active {
     background-color: var(--md-color); 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+/*compra-realizada.html*/
+.comprarealizadacontainer {
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 25px;
+    margin-bottom: 35px;
+    background-color: var(--ll-color);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
+    padding: 40px;
+}
+
+.volveriniciobutton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.volveriniciobutton a{
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px --bg-color;
+    transition: background-color 0.3s, box-shadow 0.3s; 
+    background-color: var(--m-color);
+    font-size: 20px;
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+    border: none;
 }
 
 @media only screen and (max-width: 700px){
@@ -748,6 +779,12 @@ input[type="number"]:focus {
         margin-left: 4%;
         margin-right: 4%;
     }
+
+    /*compra-realizada.html*/
+    .comprarealizadacontainer {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
 
 
@@ -779,4 +816,9 @@ input[type="number"]:focus {
         margin: 2%;
     }
 
+    /*compra-realizada.html*/
+    .comprarealizadacontainer {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }
