@@ -692,6 +692,154 @@ input[type="number"]:focus {
     border: none;
 }
 
+/*libro.html*/
+
+.bookcontainer{
+    display: flex;
+    flex-direction: column;
+    margin-left: 11%;
+    margin-right: 11%;
+    margin-top: 30px;
+    background-color: var(--bgl-color);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.firstlinebook{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.portadabook{
+    background-image: url('https://placedog.net/580/450');
+    background-position: center;
+    background-size: cover;
+    width: 450px;
+    height: 580px;
+    box-shadow: 2px 2px 3px;
+    border-radius: 4px;
+}
+
+.atributoslibro{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 50%;
+    max-height: 100%;
+    margin-left: 6px;
+    
+}
+
+#titulo{
+    display: flex;
+    color: var(--d-color);
+    font-size: 30px;
+    font-weight: bold;
+    justify-content: center;
+    background-color: var(--ll-color);
+    border-radius: 5px;
+    margin:1%;
+    padding: 15px;
+    text-align: center;
+}
+
+#precioygenero{
+    display: flex;
+    flex-direction: row;
+    color: var(--md-color);
+    text-align: center;
+    max-width: 100%;    
+}
+
+#precioygenero p{
+    padding: 10px 0px;
+    min-width: 48%;
+    overflow: visible;
+    background-color: var(--ll-color);
+    max-width: 48%;
+    border-radius: 4px;
+    font-size: large;
+    margin: 1%;
+}
+
+#autor{
+    display: flex;
+    color:var(--m-color);
+    font-size: 20px;
+    justify-content: center;
+    background-color: var(--ll-color);
+    border-radius: 5px;
+    margin:1%;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px --bg-color;
+    transition: background-color 0.3s, box-shadow 0.3s; 
+    text-decoration: none;
+}
+
+#autor:hover {
+box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+#autor:active {
+background-color: var(--lm-color); 
+color: var(--d-color);
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+#descripcion{
+    display: flex;
+    color:var(--d-color);
+    justify-content: center;
+    background-color: var(--ll-color);
+    border-radius: 5px;
+    margin:1%;
+    padding: 15px;
+    text-align: center;
+}
+
+.añadircestabutton{
+    width: 100%;
+    background-color: var(--m-color);
+    font-size: 25px;
+    padding: 15px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px --bg-color;
+    transition: background-color 0.3s, box-shadow 0.3s; 
+    text-decoration: none;
+}
+
+.añadircestabutton:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+.añadircestabutton:active {
+    background-color: var(--md-color); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.fichatecnica {
+    background-color: var(--ll-color);
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.fichatecnica p {
+    display: inline-block;
+    margin: 5px 0px;  
+    width: 22%;
+    
+}
+
+.fichatecnica p:nth-child(odd) {
+    font-weight: bold;
+
+}
+
 @media only screen and (max-width: 700px){
 
     body{
