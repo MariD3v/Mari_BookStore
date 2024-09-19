@@ -824,16 +824,23 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .fichatecnica {
-    background-color: var(--ll-color);
+    background-color: var(--bg-color);
     padding: 30px;
     border-radius: 8px;
     margin-top: 20px;
 }
 
+.fichatecnica legend{
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}
+
 .fichatecnica p {
     display: inline-block;
     margin: 5px 0px;  
-    width: 22%;  
+    width: 22%; 
+    color: var(--ll-color); 
 }
 
 .fichatecnica p:nth-child(odd) {
