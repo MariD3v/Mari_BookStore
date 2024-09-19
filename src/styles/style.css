@@ -694,7 +694,7 @@ input[type="number"]:focus {
 
 /*libro.html*/
 
-.bookcontainer{
+.book-author-container{
     display: flex;
     flex-direction: column;
     margin-left: 11%;
@@ -706,28 +706,28 @@ input[type="number"]:focus {
     padding: 30px;
 }
 
-.firstlinebook{
+.firstline{
     display: flex;
     width: 100%;
     justify-content: space-around;
     margin-bottom: 20px;
 }
 
-.portadabook{
-    background-image: url('https://placedog.net/580/450');
+.imagen-book-author{
+    background-image: url('https://placedog.net/500/400');
     background-position: center;
     background-size: cover;
-    width: 450px;
-    height: 580px;
+    width: 400px;
+    height: 500px;
     box-shadow: 2px 2px 3px;
     border-radius: 4px;
 }
 
-.atributoslibro{
+.atributos-book-author{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    max-width: 50%;
+    width: 50%;
     max-height: 100%;
     margin-left: 6px;
 }
@@ -789,7 +789,7 @@ color: var(--d-color);
 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
-#descripcion{
+.descripcion{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     color:var(--bg-color);
@@ -845,6 +845,37 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
 .fichatecnica p:nth-child(odd) {
     font-weight: bold;
+}
+
+/* autor.html */
+
+#nombreautor{
+    display: flex;
+    color: var(--d-color);
+    font-size: 40px;
+    font-weight: bold;
+    justify-content: center;
+    background-color: var(--ll-color);
+    border-radius: 5px;
+    margin:1%;
+    padding: 15px;
+    text-align: center;
+}
+
+.epc{
+margin:10px;
+}
+
+.epc p{
+    display: flex;
+    color:var(--m-color);
+    font-size: 20px;
+    justify-content: center;
+    background-color: var(--ll-color);
+    border-radius: 5px;
+    margin:0;
+    padding: 7px;
+    text-align: center;
 }
 
 @media only screen and (max-width: 700px){
@@ -944,29 +975,29 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     /*book.html*/
-    .bookcontainer{
+    .book-author-container{
         margin-left: 1%;
         margin-right: 1%;
         padding: 6px;
     }
     
-    .firstlinebook{
+    .firstline{
         flex-direction: column;
         align-items: center;
         margin-bottom: 6px;
 
     }
         
-    .portadabook{
+    .imagen-book-author{
         width: 225px;
         height: 290px;
         margin-bottom: 15px;
         margin-top: 10px;
     }
         
-    .atributoslibro{
+    .atributos-book-author{
         margin-left: 0;
-        max-width: 100%;
+        width: 100%;
     }
     #titulo{
         font-size: 22px;
@@ -1037,22 +1068,22 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     /*book.html*/
-    .bookcontainer{
+    .book-author-container{
         margin-left: 3%;
         margin-right: 3%;
     }
 
-    .firstlinebook{
+    .firstline{
         flex-direction: column;
         align-items: center;
     }
     
-    .portadabook{
+    .imagen-book-author{
         margin-bottom: 10px;
     }
     
-    .atributoslibro{
+    .atributos-book-author{
         margin-left: 0;
-        max-width: 100%;
+        width: 100%;
     }
 }
