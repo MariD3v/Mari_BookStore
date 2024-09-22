@@ -456,7 +456,7 @@ input[type="number"]:focus {
     margin-right: 11%;
     margin-top: 20px;
     background-color: var(--bgl-color);
-    border-radius: 20px;
+    border-radius: 20px 20px 0px 0px;
 }
 
 .book {
@@ -548,23 +548,23 @@ input[type="number"]:focus {
 .barra-nextpage{
     margin-left: 11%;
     margin-right: 11%;
-    padding:0;
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding:10px;
     display: flex;
-    justify-content: flex-end;
+    justify-content:center;
+    background-color: var(--bgl-color);
+    border-radius: 0px 0px 20px 20px;
 }
 
-.buttonnextpage1{
+.buttonnextpage{
     border-color:none;
-    background-color: var(--lm-color);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    background-color: var(--l-color);
+    box-shadow: 0 1px 1px rgba(35, 35, 35, 0.2); 
     padding: 5px;
-}
-
-.buttonnextpage2{
-    border-color:none;
-    background-color: var(--lm-color);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
-    padding: 5px;
+    color: var(--d-color);
+    font-weight: bold;
+    border-radius: 4px;
 }
 
 .textnextpage{
@@ -713,7 +713,7 @@ input[type="number"]:focus {
     margin-bottom: 20px;
 }
 
-.imagen-book-author{
+.imagen-book{
     background-image: url('https://placedog.net/500/400');
     background-position: center;
     background-size: cover;
@@ -730,19 +730,21 @@ input[type="number"]:focus {
     width: 50%;
     max-height: 100%;
     margin-left: 6px;
+    
 }
 
 #titulo{
     display: flex;
-    color: var(--d-color);
+    color: var(--md-color);
     font-size: 30px;
     font-weight: bold;
     justify-content: center;
-    background-color: var(--ll-color);
+    background-color: var(--l-color);
     border-radius: 5px;
     margin:1%;
     padding: 15px;
     text-align: center;
+    border: 2px solid var(--m-color); 
 }
 
 #precioygenero{
@@ -750,26 +752,28 @@ input[type="number"]:focus {
     flex-direction: row;
     color: var(--md-color);
     text-align: center;
-    max-width: 100%;    
+    max-width: 100%;   
+     
 }
 
 #precioygenero p{
-    padding: 7px 0px;
-    min-width: 48%;
+    padding: 8px 1px;
+    min-width: 47%;
     overflow: visible;
-    background-color: var(--ll-color);
-    max-width: 48%;
+    background-color: var(--l-color);
+    max-width: 47%;
     border-radius: 4px;
     font-size: large;
     margin: 1%;
+    border: 2px solid var(--m-color); 
 }
 
 #autor{
     display: flex;
-    color:var(--m-color);
+    color:var(--md-color);
     font-size: 20px;
     justify-content: center;
-    background-color: var(--ll-color);
+    background-color: var(--l-color);
     border-radius: 5px;
     margin:1%;
     padding: 7px;
@@ -778,10 +782,14 @@ input[type="number"]:focus {
     box-shadow: 0 4px 6px --bg-color;
     transition: background-color 0.3s, box-shadow 0.3s; 
     text-decoration: none;
+    border: 2px solid var(--m-color); 
 }
 
 #autor:hover {
 box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+transform: scale(1.02); 
+transition: all 0.3s ease;
+
 }
 #autor:active {
 background-color: var(--lm-color); 
@@ -794,32 +802,36 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     -webkit-box-orient: vertical;
     color:var(--bg-color);
     justify-content: center;
-    background-color: var(--ll-color);
+    background-color: var(--l-color);
     border-radius: 5px;
     margin:1%;
     padding: 15px;
     text-align: center;
+    border: 2px solid var(--m-color); 
 }
 
-.añadircestabutton{
-    width: 100%;
-    background-color: var(--m-color);
+.añadircestabutton {
+    margin: 0.5%;
+    width: 99%;
+    background-color: var(--md-color); 
     font-size: 25px;
     padding: 15px;
-    color: white;
+    color: white; 
     border-radius: 10px;
-    border: none;
     cursor: pointer;
-    box-shadow: 0 4px 6px --bg-color;
-    transition: background-color 0.3s, box-shadow 0.3s; 
-    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.1s, box-shadow 0.3s, transform 0.3s;
+    border: 2px solid var(--m-color); 
 }
 
 .añadircestabutton:hover {
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    background-color: var(--d-color); 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
+    transform: scale(1.02); 
 }
+
 .añadircestabutton:active {
-    background-color: var(--md-color); 
+    background-color: #880e4b; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
@@ -849,32 +861,55 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
 /* autor.html */
 
+.imagen-author{
+    background-image: url('https://placedog.net/400/400');
+    background-position: center;
+    background-size: cover;
+    width: 400px;
+    height: 400px;
+    box-shadow: 2px 2px 3px;
+    border-radius: 5px;
+}
+
 #nombreautor{
     display: flex;
-    color: var(--d-color);
-    font-size: 40px;
+    color: var(--md-color);
+    font-size: 35px;
     font-weight: bold;
     justify-content: center;
-    background-color: var(--ll-color);
+    background-color: var(--l-color);
     border-radius: 5px;
     margin:1%;
     padding: 15px;
     text-align: center;
+    border: 2px solid var(--m-color); 
 }
 
-.epc{
-margin:10px;
+.epc {
+    margin: 3px;
+    border: 2px solid var(--m-color); 
+    border-radius: 10px; 
+    background-color: var(--bg-color); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-.epc p{
+.epc legend {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--m-color); 
+    padding: 0 10px; 
+}
+
+.epc p {
     display: flex;
-    color:var(--m-color);
-    font-size: 20px;
+    color: var(--md-color);
+    font-size: 25px; 
     justify-content: center;
-    background-color: var(--ll-color);
+    align-items: center;
+    background-color: var(--l-color);
     border-radius: 5px;
-    margin:0;
-    padding: 7px;
+    margin: 5px 0;
+    padding: 5px;
     text-align: center;
 }
 
@@ -957,7 +992,11 @@ margin:10px;
         margin-left: 1%;
         margin-right: 1%;
     }
-
+    .barra-nextpage{
+        background-color: var(--ll-color);
+        margin-left: 1%;
+        margin-right: 1%;
+    }
     .book{
         margin: 2%;
     }
@@ -988,7 +1027,7 @@ margin:10px;
 
     }
         
-    .imagen-book-author{
+    .imagen-book{
         width: 225px;
         height: 290px;
         margin-bottom: 15px;
@@ -1030,6 +1069,15 @@ margin:10px;
         padding: 0px 30px;
         width: 30%;
     }
+
+    /*autor.html*/
+
+    .imagen-author{
+        width: 225px;
+        height: 225px;
+        margin-bottom: 15px;
+        margin-top: 10px;
+    }
 }
 
 
@@ -1056,7 +1104,11 @@ margin:10px;
         margin-left: 2%;
         margin-right: 2%;
     }
-
+    .barra-nextpage{
+        background-color: var(--lm-color);
+        margin-left: 2%;
+        margin-right: 2%;
+    }
     .book{
         margin: 2%;
     }
@@ -1078,7 +1130,10 @@ margin:10px;
         align-items: center;
     }
     
-    .imagen-book-author{
+    .imagen-author{
+        margin-bottom: 10px;
+    }
+    .imagen-book{
         margin-bottom: 10px;
     }
     
