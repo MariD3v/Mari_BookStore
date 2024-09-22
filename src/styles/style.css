@@ -1078,6 +1078,20 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         margin-bottom: 15px;
         margin-top: 10px;
     }
+
+    #nombreautor{
+        font-size: 23px;
+        padding: 6px;
+    }
+    
+    .epc {
+        margin: 2px 7px;
+    }
+    
+    .epc p {
+        font-size: 18px; 
+        margin: 1px 0px;
+    }
 }
 
 
@@ -1130,9 +1144,6 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         align-items: center;
     }
     
-    .imagen-author{
-        margin-bottom: 10px;
-    }
     .imagen-book{
         margin-bottom: 10px;
     }
@@ -1141,4 +1152,25 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         margin-left: 0;
         width: 100%;
     }
+
+    /*autor.html*/
+
+    .imagen-author{
+        margin-bottom: 10px;
+    }
+
+    #nombreautor{
+        font-size: 30px;
+        padding: 10px;
+    }
+    
+    .epc {
+        margin: 2px 7px;
+    }
+    
+    .epc p {
+        font-size: 25px; 
+        margin: 1px 0px;
+    }
+
 }
