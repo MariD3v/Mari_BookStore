@@ -570,6 +570,38 @@ input[type="number"]:focus {
 .textnextpage{
     margin: 5px;
     color: var(--ll-color);
+    font-family: Verdana;
+    font-weight: bold;
+}
+
+.div-footer{
+    width: 100%;
+    background-color: var(--md-color);
+    margin-top: 50px;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    margin: auto 25%;
+    color: white;
+    font-weight: bold;
+    font-family: Verdana;
+}
+
+.footer p{
+    padding-right: 4%;
+    margin-left: 23%;
+}
+
+.links a{
+    margin: 12px 7px auto 7px;
+}
+
+.links{
+    display: flex;
+    justify-content: space-around;
+
 }
 
 /* carrito.html */
@@ -610,7 +642,7 @@ input[type="number"]:focus {
     border: none;
     cursor: pointer;
     box-shadow: 0 4px 6px --bg-color;
-    transition: background-color 0.3s, box-shadow 0.3s; 
+    transition: background-color 0.2s, box-shadow 0.2s; 
 }
 
 .buttonunidades:hover {
@@ -648,7 +680,7 @@ input[type="number"]:focus {
     border: none;
     cursor: pointer;
     box-shadow: 0 4px 6px --bg-color;
-    transition: background-color 0.3s, box-shadow 0.3s; 
+    transition: background-color 0.2s, box-shadow 0.2s; 
     text-decoration: none;
 }
 
@@ -683,7 +715,7 @@ input[type="number"]:focus {
     text-decoration: none;
     cursor: pointer;
     box-shadow: 0 4px 6px --bg-color;
-    transition: background-color 0.3s, box-shadow 0.3s; 
+    transition: background-color 0.2s, box-shadow 0.2s; 
     background-color: var(--m-color);
     font-size: 20px;
     padding: 15px;
@@ -691,6 +723,12 @@ input[type="number"]:focus {
     border-radius: 5px;
     border: none;
 }
+
+.volveriniciobutton a:active{
+    background-color: var(--md-color); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
 
 /*libro.html*/
 
