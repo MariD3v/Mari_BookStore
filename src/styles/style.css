@@ -1048,6 +1048,21 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         margin: 2%;
     }
 
+    footer{
+        flex-direction: column;
+    }
+
+    footer p{
+        padding-left: 0;
+        text-align: center;
+        margin: 10px 0 0 0;
+    }
+
+    .links{
+        justify-content: space-evenly;
+        margin:0 60px;
+    }
+
     /*carrito.html*/
     .carritocontainer {
         margin-left: 4%;
