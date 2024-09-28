@@ -116,26 +116,31 @@ input[type=buscar]:focus {
     display: none;
 }
 
+hr{
+    margin: 0;
+    border: 1px solid var(--bgl-color);
+    box-shadow: 0 0 2px 1px rgba(61, 61, 61, 0.3);
+}
+
 .barra-opciones{
     justify-content: space-around;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
-    width: 80%;
     padding-left: 10%;
     padding-right: 10%;
+    margin: 0;
 }
 
-.filtercontainer{
+.filters{
     display: flex;
-    list-style: none;
-    margin: 10px;
-    margin-top: 10px;
-    background-color: var(--l-color);
-    border-radius: 4px;
-    width: 30%;
+    flex-direction: row;
+    margin: 3px;
+    padding: 0 0 10px 0;
 }
 
-.filtertable{
+.opciones{
     display: flex;
+    flex-direction: row;
 }
 
 .mostrarpagcontainer{
@@ -149,19 +154,24 @@ input[type=buscar]:focus {
 .pagtext{
     color: var(--lm-color);
     margin: 0;
-    margin-top:14px;
+    margin-top:10px;
     white-space: nowrap;
 }
 
-.pagbutton{
-    border-radius: 2px;
+.filterbutton{
+    border-radius: 4px;
     background-color: var(--md-color);
     color: white;
-    padding: 10px;
-    font-size: 14px;
+    padding: 9px;
+    font-size: 15px;
     border: none;
     cursor: pointer;
     margin-right: 10%;
+    box-shadow: 1px 1px 3px;
+}
+
+.filters .filterbutton{
+    background-color: var(--d-color);
 }
 
 .dropdownmenu1 {
@@ -198,15 +208,15 @@ input[type=buscar]:focus {
     background-color: var(--lm-color);
 }
 
-.dropdownmenu1:hover .pagbutton {
+.dropdownmenu1:hover .filterbutton {
     background-color: var(--m-color);
 }
 
-.dropdown-checkbox1:checked + .pagbutton {
+.dropdown-checkbox1:checked + .filterbutton {
     background-color: var(--m-color); 
 }
 
-.dropdown-checkbox1:checked + .pagbutton + .dropdowncontent1 {
+.dropdown-checkbox1:checked + .filterbutton + .dropdowncontent1 {
     display: block;
 }
 
@@ -220,19 +230,8 @@ input[type=buscar]:focus {
 .ordertext{
     color: var(--lm-color);
     margin: 0;
-    margin-top:14px;
+    margin-top:10px;
     white-space: nowrap;
-}
-
-.orderbutton{
-    border-radius: 2px;
-    background-color: var(--md-color);
-    color: white;
-    padding: 10px;
-    font-size: 14px;
-    border: none;
-    cursor: pointer;
-    margin-right: 10%;
 }
 
 .dropdownmenu2 {
@@ -269,15 +268,15 @@ input[type=buscar]:focus {
     background-color: var(--lm-color);
 }
 
-.dropdownmenu2:hover .orderbutton {
+.dropdownmenu2:hover .filterbutton {
     background-color: var(--m-color);
 }
 
-.dropdown-checkbox2:checked + .orderbutton {
+.dropdown-checkbox2:checked + .filterbutton {
     background-color: var(--m-color); 
 }
 
-.dropdown-checkbox2:checked + .orderbutton + .dropdowncontent2 {
+.dropdown-checkbox2:checked + .filterbutton + .dropdowncontent2 {
     display: block;
 }
 
@@ -333,15 +332,15 @@ input[type="number"]:focus {
     background-color: var(--lm-color);
 }
 
-.dropdownmenu3:hover .pagbutton {
+.dropdownmenu3:hover .filterbutton {
     background-color: var(--m-color);
 }
 
-.dropdown-checkbox3:checked + .pagbutton {
+.dropdown-checkbox3:checked + .filterbutton {
     background-color: var(--m-color); 
 }
 
-.dropdown-checkbox3:checked + .pagbutton + .dropdowncontent3 {
+.dropdown-checkbox3:checked + .filterbutton + .dropdowncontent3 {
     display: block;
 }
 
@@ -386,15 +385,15 @@ input[type="number"]:focus {
     background-color: var(--lm-color);
 }
 
-.dropdownmenu4:hover .pagbutton {
+.dropdownmenu4:hover .filterbutton {
     background-color: var(--m-color);
 }
 
-.dropdown-checkbox4:checked + .pagbutton {
+.dropdown-checkbox4:checked + .filterbutton {
     background-color: var(--m-color); 
 }
 
-.dropdown-checkbox4:checked + .pagbutton + .dropdowncontent4 {
+.dropdown-checkbox4:checked + .filterbutton + .dropdowncontent4 {
     display: block;
 }
 
@@ -403,6 +402,7 @@ input[type="number"]:focus {
     list-style: none;
     margin: 10px;
     margin-top: 25px;
+
 }
 
 .dropdownmenu5 {
@@ -439,15 +439,15 @@ input[type="number"]:focus {
     background-color: var(--lm-color);
 }
 
-.dropdownmenu5:hover .pagbutton {
+.dropdownmenu5:hover .filterbutton {
     background-color: var(--m-color);
 }
 
-.dropdown-checkbox5:checked + .pagbutton {
+.dropdown-checkbox5:checked + .filterbutton {
     background-color: var(--m-color); 
 }
 
-.dropdown-checkbox5:checked + .pagbutton + .dropdowncontent5 {
+.dropdown-checkbox5:checked + .filterbutton + .dropdowncontent5 {
     display: block;
 }
 
@@ -990,35 +990,34 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .barra-opciones{
-        width: 100%;
+        width: 80%;
+        margin: 0 10%;
         padding: 0;
-        margin-top: 0;
+        flex-direction: column;
+    }
+
+    .filters{
+        justify-content: space-evenly;
+        margin: 0 !important;
+    }
+
+    .opciones{
+        justify-content: space-evenly;
+        margin: 0 !important;
     }
 
     .barra-opciones div{
-        margin:3px;
-        margin-top: 10px;
+        margin:10px 3px 3px 3px;
     }
 
     .filterbutton{
-        font-size: small;
-    }
-
-    .dropdowncontent0 {
-        font-size: small;
+        font-size: 15px;
     }
 
     .pagtext{
         display: none;
     }
 
-    .pagbutton{
-        font-size: small;
-    }
-
-    .dropdowncontent1 {
-        font-size: small;
-    }
     .ordertext{
         color: var(--lm-color);
         margin: 0;
@@ -1026,12 +1025,25 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         white-space: nowrap;
         font-size: small;
     }
-
-    .orderbutton{
+    
+    .dropdowncontent1 {
         font-size: small;
     }
 
     .dropdowncontent2 {
+        font-size: small;
+        min-width: 0;
+    }
+
+    .dropdowncontent3 {
+        font-size: small;
+    }
+
+    .dropdowncontent4 {
+        font-size: small;
+    }
+
+    .dropdowncontent5 {
         font-size: small;
     }
 
@@ -1051,12 +1063,14 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
     footer{
         flex-direction: column;
+        margin-top: 20px;
     }
 
     footer p{
         padding-left: 0;
         text-align: center;
         margin: 10px 0 0 0;
+        font-weight: 200;
     }
 
     .links{
@@ -1180,6 +1194,10 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         background-color: var(--lm-color);
         margin-left: 2%;
         margin-right: 2%;
+    }
+
+    .barra-opciones{
+        padding: 0;
     }
     .barra-nextpage{
         background-color: var(--lm-color);
