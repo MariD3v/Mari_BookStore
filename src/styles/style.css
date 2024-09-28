@@ -116,12 +116,6 @@ input[type=buscar]:focus {
     display: none;
 }
 
-hr{
-    margin: 0;
-    border: 1px solid var(--bgl-color);
-    box-shadow: 0 0 2px 1px rgba(61, 61, 61, 0.3);
-}
-
 .barra-opciones{
     justify-content: space-around;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -568,6 +562,7 @@ input[type="number"]:focus {
     color: var(--d-color);
     font-weight: bold;
     border-radius: 4px;
+    box-shadow: 1px 1px 5px var(--bg-color);
 }
 
 .buttonnextpage:hover{
@@ -743,6 +738,7 @@ footer p{
 /*libro.html*/
 
 .book-author-container{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     flex-direction: column;
     margin-left: 11%;
@@ -752,6 +748,7 @@ footer p{
     background-color: var(--bgl-color);
     border-radius: 20px;
     padding: 30px;
+    box-shadow: 1px 1px 3px;
 }
 
 .firstline{
@@ -767,7 +764,7 @@ footer p{
     background-size: cover;
     width: 400px;
     height: 500px;
-    box-shadow: 2px 2px 3px;
+    box-shadow: 1px 1px 5px;
     border-radius: 4px;
 }
 
@@ -783,24 +780,27 @@ footer p{
 
 #titulo{
     display: flex;
-    color: var(--md-color);
+    color: var(--l-color);
     font-size: 30px;
     font-weight: bold;
+    font-style: italic;
     justify-content: center;
-    background-color: var(--l-color);
-    border-radius: 5px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
     margin:1%;
     padding: 15px;
     text-align: center;
     border: 2px solid var(--m-color); 
+    box-shadow: 2px 2px 4px var(--bg-color);
 }
 
 #precioygenero{
     display: flex;
     flex-direction: row;
-    color: var(--md-color);
+    color: var(--l-color);
     text-align: center;
-    max-width: 100%;   
+    max-width: 100%;  
+
      
 }
 
@@ -808,26 +808,27 @@ footer p{
     padding: 8px 1px;
     min-width: 47%;
     overflow: visible;
-    background-color: var(--l-color);
+    background-color: var(--bg-color);
     max-width: 47%;
     border-radius: 4px;
     font-size: large;
     margin: 1%;
     border: 2px solid var(--m-color); 
+    box-shadow: 2px 2px 4px var(--bg-color); 
 }
 
 #autor{
     display: flex;
-    color:var(--md-color);
+    color:var(--l-color);
     font-size: 20px;
     justify-content: center;
-    background-color: var(--l-color);
+    background-color: var(--bg-color);
     border-radius: 5px;
     margin:1%;
     padding: 7px;
     text-align: center;
     cursor: pointer;
-    box-shadow: 0 4px 6px --bg-color;
+    box-shadow: 2px 2px 4px var(--bg-color);
     transition: background-color 0.3s, box-shadow 0.3s; 
     text-decoration: none;
     border: 2px solid var(--m-color); 
@@ -848,14 +849,15 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 .descripcion{
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    color:var(--bg-color);
+    color:var(--l-color);
     justify-content: center;
-    background-color: var(--l-color);
-    border-radius: 5px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
     margin:1%;
-    padding: 15px;
+    padding: 20px 15px;
     text-align: center;
     border: 2px solid var(--m-color); 
+    box-shadow: 2px 2px 4px var(--bg-color); 
 }
 
 .añadircestabutton {
@@ -888,6 +890,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     padding: 30px;
     border-radius: 8px;
     margin-top: 20px;
+    box-shadow: 1px 1px 4px;
 }
 
 .fichatecnica legend{
@@ -915,22 +918,8 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     background-size: cover;
     width: 400px;
     height: 400px;
-    box-shadow: 2px 2px 3px;
+    box-shadow: 1px 1px 5px;
     border-radius: 5px;
-}
-
-#nombreautor{
-    display: flex;
-    color: var(--md-color);
-    font-size: 35px;
-    font-weight: bold;
-    justify-content: center;
-    background-color: var(--l-color);
-    border-radius: 5px;
-    margin:1%;
-    padding: 15px;
-    text-align: center;
-    border: 2px solid var(--m-color); 
 }
 
 .epc {
@@ -938,27 +927,29 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border: 2px solid var(--m-color); 
     border-radius: 10px; 
     background-color: var(--bg-color); 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 1px 1px 4px;
 }
 
 .epc legend {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight:500;
+    font-style: italic;
     color: var(--m-color); 
     padding: 0 10px; 
 }
 
 .epc p {
     display: flex;
-    color: var(--md-color);
-    font-size: 25px; 
+    color: var(--l-color);
+    font-size: 34px; 
+    font-style: italic;
     justify-content: center;
     align-items: center;
-    background-color: var(--l-color);
     border-radius: 5px;
-    margin: 5px 0;
-    padding: 5px;
+    margin: 0;
+    padding: 4px;
     text-align: center;
+    
 }
 
 @media only screen and (max-width: 700px){
@@ -1135,15 +1126,15 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .fichatecnica {
-        padding: 10px;
+        padding: 10px 10%;
         font-size: small;
         margin-top: 10px;
-        border-radius: 20px;
+        border-radius: 15px;
     }
 
     .fichatecnica p {
         text-align: center;
-        padding: 0px 30px;
+        padding: 0px 25px;
         width: 30%;
     }
 
@@ -1154,11 +1145,6 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         height: 225px;
         margin-bottom: 15px;
         margin-top: 10px;
-    }
-
-    #nombreautor{
-        font-size: 23px;
-        padding: 6px;
     }
     
     .epc {
@@ -1238,11 +1224,6 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
     .imagen-author{
         margin-bottom: 10px;
-    }
-
-    #nombreautor{
-        font-size: 30px;
-        padding: 10px;
     }
     
     .epc {
