@@ -558,13 +558,21 @@ input[type="number"]:focus {
 }
 
 .buttonnextpage{
-    border-color:none;
-    background-color: var(--l-color);
-    box-shadow: 0 1px 1px rgba(35, 35, 35, 0.2); 
-    padding: 5px;
+    border:none;
+    background-color: var(--l-color); 
+    padding: 3px;
+    font-size: 17px;
     color: var(--d-color);
     font-weight: bold;
     border-radius: 4px;
+}
+
+.buttonnextpage:hover{
+    background-color: var(--lm-color);
+}
+
+.buttonnextpage:active{
+    background-color: var(--m-color);
 }
 
 .textnextpage{
@@ -574,36 +582,35 @@ input[type="number"]:focus {
     font-weight: bold;
 }
 
-.div-footer{
-    width: 100%;
+footer{
     background-color: var(--md-color);
     margin-top: 50px;
-}
-
-.footer{
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    margin: auto 25%;
+    justify-content: center;
     color: white;
     font-weight: bold;
     font-size: 13px;
     font-family: Verdana;
 }
 
-.footer p{
-    float: center;
+footer p{
+    padding-left: 148px;
 }
 
 .links{
-    float: right;
     display: flex;
     justify-content: space-around;
-    margin-left: 5%;
+    margin-left: 30px;
 }
 
 .links a{
     margin: 11px 7px auto 7px;
+}
+
+.links a:hover{
+    transform: scale(1.06);
 }
 
 /* carrito.html */
