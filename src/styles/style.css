@@ -837,12 +837,12 @@ footer p{
 #autor:hover {
 box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 transform: scale(1.02); 
-transition: all 0.3s ease;
+transition: all 0.2s ease;
+background-color: rgb(40, 40, 40);
 
 }
 #autor:active {
-background-color: var(--lm-color); 
-color: var(--d-color);
+background-color: rgb(27, 27, 27); 
 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
@@ -908,6 +908,62 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
 .fichatecnica p:nth-child(odd) {
     font-weight: bold;
+}
+
+.recomendaciones-container{
+    background-color: var(--bgl-color);
+    margin: 0px 11% 30px 11%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px;
+}
+
+.recomendaciones-container .recomendaciones-text{
+    padding: 20px 0 0 50px;
+    margin:0;
+    color: var(--l-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 19px;
+}
+
+.recomendaciones-text span{
+    color: white;
+    font-size: larger;
+    font-style: italic;
+}
+
+.recomendaciones-container hr{
+    border: 1px solid var(--bg-color);
+    margin: 10px 30px 0 30px;
+}
+
+.recomendaciones-container .carrusel{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.recomendaciones-container .catalogo{
+    margin: 0;
+    border-radius: 20px;
+    display: flex; /* Usamos flexbox para mantener los elementos en una fila */
+    flex-wrap: nowrap; /* No permite que los elementos hagan wrap (bajen) */
+    overflow: hidden; /* Oculta los elementos que no caben */
+    width: 100%; 
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+.recomendaciones-container .book{
+    flex-shrink: 0; 
+}
+
+.carruselbton-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 24px; /* Tamaño de la flecha */
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 5px; /* Espaciado entre los botones y el contenedor */
+    color: var(--m-color);
 }
 
 /* autor.html */
@@ -1081,7 +1137,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         margin-right: 10px;
     }
 
-    /*book.html*/
+    /*libro.html*/
     .book-author-container{
         margin-left: 1%;
         margin-right: 1%;
@@ -1200,7 +1256,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         margin-right: 10%;
     }
 
-    /*book.html*/
+    /*libro.html*/
     .book-author-container{
         margin-left: 3%;
         margin-right: 3%;
