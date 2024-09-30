@@ -54,7 +54,7 @@ body {
 
 #inicio{
     height: 35px;
-    width: auto;
+    width: 228px;
 }
 
 
@@ -589,7 +589,7 @@ footer{
     justify-content: center;
     color: white;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 15px;
     font-family: Verdana;
 }
 
@@ -954,6 +954,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
 .recomendaciones-container .book{
     flex-shrink: 0; 
+    margin: 30px;
 }
 
 .carruselbton-btn {
@@ -1111,17 +1112,17 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     footer{
         flex-direction: column;
         margin-top: 20px;
+        font-size: 13px;
     }
 
     footer p{
         padding-left: 0;
         text-align: center;
         margin: 10px 0 0 0;
-        font-weight: 200;
     }
 
     .links{
-        justify-content: space-evenly;
+        justify-content: center;
         margin:0 60px;
     }
 
@@ -1182,14 +1183,13 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .fichatecnica {
-        padding: 10px 10%;
+        padding: 10px 5%;
         font-size: small;
         margin-top: 10px;
         border-radius: 15px;
     }
 
     .fichatecnica p {
-        text-align: center;
         padding: 0px 25px;
         width: 30%;
     }
@@ -1215,7 +1215,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
 
 
-@media only screen and (min-width: 700px) and (max-width: 1200px){
+@media only screen and (min-width: 701px) and (max-width: 1200px){
     
     body{
         background-color: var(--m-color);
@@ -1223,7 +1223,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
     #inicio{
         height: 30px;
-        width: auto;
+        width: 195px;
     }
 
     .barra-navegacion {
@@ -1274,6 +1274,10 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     .atributos-book-author{
         margin-left: 0;
         width: 100%;
+    }
+
+    .fichatecnica {
+        font-size: small;
     }
 
     /*autor.html*/

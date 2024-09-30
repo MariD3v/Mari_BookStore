@@ -2,7 +2,7 @@ const contenedorLibros = document.getElementById('carruselcatalogo');
 const prevBtn = document.getElementById('carruselnext');
 const nextBtn = document.getElementById('carruselprev');
 
-const scrollAmount = 255.9; //Pxs
+const scrollAmount = 280; //Pxs
 
 nextBtn.addEventListener('click', () => {
     if (contenedorLibros.scrollLeft + contenedorLibros.clientWidth >= contenedorLibros.scrollWidth) {
