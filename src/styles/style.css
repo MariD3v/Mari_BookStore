@@ -2,11 +2,11 @@
     --bg-color: #333;
     --bgl-color:rgb(77, 77, 77);
     --ll-color:rgb(255, 227, 237);
-    --l-color: #f6d9e3;
-    --lm-color: #EBB5C8;
-    --m-color: #E395B1;
-    --md-color: #CF7092;
-    --d-color: #B54B70;
+    --l-color: #FFDDEE;
+    --lm-color: #EEBBCC;
+    --m-color: #EE99BB;
+    --md-color: #CC7799;
+    --d-color: #BB4477;
 }
 
 body {
@@ -881,7 +881,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .añadircestabutton:active {
-    background-color: #880e4b; 
+    background-color: #AA1155; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
