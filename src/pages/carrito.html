@@ -8,31 +8,34 @@
 
 </head>
 <body>
-    <div class="main-content">    
-        <ul class="barra-navegacion">
+    <nav>
+        <ul class="nav">
             <li>
                 <a id="inicio" href="index.html"><img src="../assets/images/logo3.png" alt="logo"></a>
             </li>
             <li id="barra-buscar">
-                <div class="buscar-container">
-                    <input type="buscar" class="buscar" name="Buscar por autor, título..." placeholder="Buscar por autor, título..."/>
-                    <button type="submit" class="buscarbutton">
+                <form action="" method="get" class="buscar-container"> <!--ruta de php en action= ../php/barrabuscar.php-->
+                    <input  type="search" value="" class="buscar" name="barra-buscar" placeholder="Buscar por autor, título..."/>
+                    <button type="submit" name="buscarbutton" class="buscarbutton">
                       <img src="../assets/images/buttonbuscar.png" alt="lupa">
                     </button>
-                  </div>
+                </form>
             </li>
             <li>
                 <a id="carrito" href="carrito.html"><img src="../assets/images/carro.png" alt="carrito" height="35px"></a>
             </li>
         </ul>
-        <li id="barra-buscar-hidden">
-            <div class="buscar-container">
-                <input type="buscar" class="buscar" name="Buscar por autor, título..." placeholder="Buscar por autor, título..."/>
-                <button type="submit" class="buscarbutton">
-                  <img src="../assets/images/buttonbuscar.png" alt="buscarbutton">
+        <li id="barra-buscar-hide">
+            <form action="" method="get" class="buscar-container">
+                <input type="search" value="" class="buscar" name="barra-buscar" placeholder="Buscar por autor, título..."/>
+                <button type="submit" name="buscarbutton" class="buscarbutton">
+                  <img src="../assets/images/buttonbuscar.png" alt="lupa">
                 </button>
-              </div>
+            </form>
         </li>
+    </nav>
+
+    <main>    
         <div class="carritocontainer">
             <table class="tablacarrito">
                 <thead>
@@ -62,7 +65,8 @@
                 <a href="compra-realizada.html">Realizar compra</a>
             </div>
         </div>
-    </div>
+    </main>
+    
     <footer>
         <p>Página web realizada por Maria Salar Garcia</p> 
         <div class="links">

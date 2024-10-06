@@ -18,12 +18,12 @@ body {
     min-height: 100vh;
 }
 
-.main-content {
+main{
     width: 100%;
     flex: 1;
 }
 
-.barra-navegacion {
+.nav {
     display: flex;
     align-items: center;
     list-style: none;
@@ -34,13 +34,13 @@ body {
     width: 80%;
 }
 
-.barra-navegacion li{
+.nav li{
     align-items: center;
     padding: 8px;
     
 }
 
-.barra-navegacion li a {
+.nav li a {
     display: flex;
     background-color: var(--ll-color);
     border-radius: 40px;
@@ -48,7 +48,7 @@ body {
     transition: background-color 0.3s, box-shadow 0.3s; 
 }
 
-.barra-navegacion li a:hover {
+.nav li a:hover {
     background-color: var(--lm-color);
 }
 
@@ -68,7 +68,7 @@ body {
     width: 100%;
 }
 
-input[type=buscar] {
+input[type=search] {
   width: 100%;
   background-color: var(--ll-color);
   border: 2px solid var(--lm-color);
@@ -79,7 +79,7 @@ input[type=buscar] {
   box-sizing: border-box;
 }
 
-input[type=buscar]:focus {
+input[type=search]:focus {
     border-color: var(--d-color);
 }
 
@@ -102,7 +102,7 @@ input[type=buscar]:focus {
     height: 25px;
 }
 
-.barra-navegacion #carrito{
+.nav #carrito{
     border-radius: 40px;
     justify-content: space-between;
 }
@@ -112,7 +112,7 @@ input[type=buscar]:focus {
     height: auto;
 }
 
-#barra-buscar-hidden{
+#barra-buscar-hide{
     display: none;
 }
 
@@ -552,6 +552,10 @@ input[type="number"]:focus {
     justify-content:center;
     background-color: var(--bgl-color);
     border-radius: 0px 0px 20px 20px;
+}
+
+.barra-nextpage form{
+    display: flex;
 }
 
 .buttonnextpage{
@@ -1019,20 +1023,20 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         display: none;
     }
 
-    .barra-navegacion li{
+    .nav li{
         align-items: center;
         padding-left: 2%;
         padding-right: 2%;
     }
 
-    .barra-navegacion {
+    .nav {
         width: 100%;
         justify-content:space-between;
         padding-left: 0;
         padding-right: 0;
     }
     
-    #barra-buscar-hidden{
+    #barra-buscar-hide{
         display: block;
         margin: 10px;
     }
@@ -1226,7 +1230,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         width: 195px;
     }
 
-    .barra-navegacion {
+    .nav {
         padding-left: 5%;
         padding-right: 5%;
         width: 90%;
