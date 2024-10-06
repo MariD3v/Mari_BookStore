@@ -2,9 +2,11 @@ const contenedorLibros = document.getElementById('carruselcatalogo');
 const prevBtn = document.getElementById('carruselnext');
 const nextBtn = document.getElementById('carruselprev');
 
-const scrollAmount = 280; //Pxs
+const scrollPercentage = 100;
 
 nextBtn.addEventListener('click', () => {
+    const scrollAmount = (contenedorLibros.clientWidth * scrollPercentage) / 100;
+    
     if (contenedorLibros.scrollLeft + contenedorLibros.clientWidth >= contenedorLibros.scrollWidth) {
         // Si estamos al final, volvemos al principio
         contenedorLibros.scrollTo({
@@ -23,6 +25,8 @@ nextBtn.addEventListener('click', () => {
 });
 
 prevBtn.addEventListener('click', () => {
+    const scrollAmount = (contenedorLibros.clientWidth * scrollPercentage) / 100;
+
     if (contenedorLibros.scrollLeft <= 0) {
         // Si estamos al principio, volvemos al final
         contenedorLibros.scrollTo({

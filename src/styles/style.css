@@ -949,25 +949,57 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 .recomendaciones-container .catalogo{
     margin: 0;
     border-radius: 20px;
-    display: flex; /* Usamos flexbox para mantener los elementos en una fila */
-    flex-wrap: nowrap; /* No permite que los elementos hagan wrap (bajen) */
-    overflow: hidden; /* Oculta los elementos que no caben */
+    display: flex; 
+    flex-wrap: nowrap;
+    overflow: hidden; 
     width: 100%; 
-    scroll-behavior: smooth; /* Desplazamiento suave */
+    justify-content:normal;
+    scroll-behavior: smooth; 
 }
 
 .recomendaciones-container .book{
     flex-shrink: 0; 
-    margin: 30px;
+    margin: 2%;
+    width: 21%;
+    height: auto;
+    aspect-ratio: 1 / 1.5;
+}
+
+.recomendaciones-container .portada{
+    width: 94%;
+    margin: 3%;
+    height: auto;
+    aspect-ratio: 1 / 1.18;
+}
+
+.recomendaciones-container .titulo{
+    font-size: 1vw;
+}
+
+.recomendaciones-container .precio{
+    font-size: 1.5vw;
+}
+
+.recomendaciones-container .buttoncarro{
+    width: 94%;
+    margin: 0 3%;
+    height: auto;
+    aspect-ratio: 2 / 0.30;
+}
+
+.recomendaciones-container img{
+    margin: 0;
+    width: auto;
+    height: 99%;
 }
 
 .carruselbton-btn {
     background-color: transparent;
     border: none;
-    font-size: 24px; /* Tamaño de la flecha */
+    font-size: 24px; 
     cursor: pointer;
     padding: 10px;
-    margin: 0 5px; /* Espaciado entre los botones y el contenedor */
+    margin: 0 5px; 
     color: var(--m-color);
 }
 
