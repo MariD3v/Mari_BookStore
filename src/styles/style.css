@@ -536,7 +536,6 @@ input[type="number"]:focus {
     padding: 0;
     text-align: center;
     margin: 0;
-    margin-right: 12px;
     font-size: 23px;
     color: rgb(37, 37, 37);
     font-weight: bold;
@@ -1152,7 +1151,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     footer{
         flex-direction: column;
         margin-top: 20px;
-        font-size: 13px;
+        font-size: 3.6vw;
     }
 
     footer p{
@@ -1193,8 +1192,9 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
         
     .imagen-book{
-        width: 225px;
-        height: 290px;
+        width: 55%;
+        height: auto;
+        aspect-ratio: 1 / 1.18;
         margin-bottom: 15px;
         margin-top: 10px;
     }
@@ -1204,27 +1204,27 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         width: 100%;
     }
     #titulo{
-        font-size: 22px;
+        font-size:6vw;
         padding: 5px;
     }
     
     #precioygenero p{
         padding: 5px 0px;
-        font-size: medium;
+        font-size: 4.5vw;
     }
     
     #autor{
-        font-size: 15px;
+        font-size: 4.5vw;
         padding: 7px;
     }
 
-    #descripcion{
-        font-size: small;
+    .descripcion{
+        font-size: 4vw;
     }
 
     .fichatecnica {
-        padding: 10px 5%;
-        font-size: small;
+        padding: 10px 1%;
+        font-size: 3.6vw;
         margin-top: 10px;
         border-radius: 15px;
     }
@@ -1233,6 +1233,23 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         padding: 0px 25px;
         width: 30%;
     }
+    
+    .recomendaciones-container .book{
+        margin: 2% 5%;
+        width: 90%;
+    }
+    
+    .recomendaciones-container .buttoncarro{
+        width: 94%;
+        margin: 0 3%;
+        padding-top: 5px;
+    }
+    
+    .carruselbton-btn {
+        border-radius: 70px;
+        padding: 5px 7px;
+        margin: 0 7px; 
+    }
 
     .recomendaciones-container{
         margin: 0px 1% 30px 1%;
@@ -1240,17 +1257,11 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     
     .recomendaciones-container .recomendaciones-text{
         padding: 15px 0 0 25px;
-        font-size: 16px;
+        font-size: 4.7vw;
     }
     
     .recomendaciones-container hr{
         margin: 5px 20px 2px 20px;
-    }
-    
-    .recomendaciones-container .book{
-        margin: 0.5%;
-        width: 24%;
-        box-shadow: 1px 1px 1px var(--bgl-color);
     }
 
     .recomendaciones-container .portada{
@@ -1258,17 +1269,11 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
     
     .recomendaciones-container .titulo{
-        font-size: 1.34vw;
+        font-size: 4.6vw;
     }
     
     .recomendaciones-container .precio{
-        font-size: 1.95vw;
-    }
-    
-    .recomendaciones-container .buttoncarro{
-        width: 97%;
-        margin: 0 1.5%;
-        padding-top: 5px;
+        font-size: 6vw;
     }
     
     .recomendaciones-container img{
@@ -1277,28 +1282,29 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         padding-top: 1%;
         height: 99%;
     }
-    
-    .carruselbton-btn {
-        display: none;
-    }
 
     /*autor.html*/
 
     .imagen-author{
-        width: 225px;
-        height: 225px;
+        width: 60%;
+        height: auto;
+        aspect-ratio: 1;
         margin-bottom: 15px;
         margin-top: 10px;
     }
     
+    .epc p {
+        font-size: 4vw; 
+        margin: 1px 0px;
+    }
+
+    .epc legend{
+        font-size: 3vw; 
+    }
     .epc {
         margin: 2px 7px;
     }
-    
-    .epc p {
-        font-size: 18px; 
-        margin: 1px 0px;
-    }
+
 }
 
 
@@ -1364,20 +1370,49 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         width: 100%;
     }
 
-    .fichatecnica {
-        font-size: small;
+    #titulo{
+        font-size: 4.3vw;
     }
+
+    #autor{
+        font-size: 3vw;
+    }
+
+    #precioygenero p{
+        font-size: 3vw;
+    }
+
+    .descripcion{
+        font-size: 2.5vw;
+    }
+
+    .fichatecnica {
+        font-size: 2.2vw;
+    }
+    .fichatecnica p{
+        margin: 5px;
+    }
+
 
     .recomendaciones-container{
         margin: 0px 3% 30px 3%;
     }
+
+    .recomendaciones-container .book{
+        margin: 2%;
+        width: 29.33333%;
+    }
+
+    .recomendaciones-container .recomendaciones-text{
+        font-size: 3vw;
+    }
     
     .recomendaciones-container .titulo{
-        font-size: 1.25vw;
+        font-size: 1.7vw;
     }
     
     .recomendaciones-container .precio{
-        font-size: 1.9vw;
+        font-size: 3vw;
     }
     
     .recomendaciones-container .buttoncarro{
@@ -1394,6 +1429,9 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
     .imagen-author{
         margin-bottom: 10px;
+        width: 40%;
+        height: auto;
+        aspect-ratio: 1;
     }
     
     .epc {
@@ -1401,8 +1439,11 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
     
     .epc p {
-        font-size: 25px; 
+        font-size: 4vw; 
         margin: 1px 0px;
     }
 
+    .epc legend{
+        font-size: 3vw; 
+    }
 }
