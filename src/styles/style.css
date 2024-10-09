@@ -1,4 +1,5 @@
 :root {
+    --sbg-color:#141414;
     --bg-color: #333;
     --bgl-color:rgb(77, 77, 77);
     --ll-color:rgb(255, 227, 237);
@@ -45,7 +46,8 @@ main{
     background-color: var(--ll-color);
     border-radius: 40px;
     padding: 8px;
-    transition: background-color 0.3s, box-shadow 0.3s; 
+    transition: background-color 0.3s; 
+    box-shadow: 2px 2px 3px var(--sbg-color);
 }
 
 .nav li a:hover {
@@ -60,6 +62,7 @@ main{
 
 #barra-buscar{
     width: 100%;
+    
 }
 
 .buscar-container {
@@ -77,6 +80,7 @@ input[type=search] {
   cursor: pointer;
   outline: none;
   box-sizing: border-box;
+  box-shadow: 2px 2px 3px var(--sbg-color);
 }
 
 input[type=search]:focus {
@@ -161,7 +165,7 @@ input[type=search]:focus {
     border: none;
     cursor: pointer;
     margin-right: 10%;
-    box-shadow: 1px 1px 3px;
+    box-shadow: 2px 2px 3px var(--sbg-color);
 }
 
 .filters .filterbutton{
@@ -445,15 +449,19 @@ input[type="number"]:focus {
     display: block;
 }
 
-.catalogo {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.catalogo-content{
+    background-color: var(--bgl-color);
+    border-radius: 20px;
+    box-shadow: 2px 2px 3px var(--sbg-color);
     margin-left: 11%;
     margin-right: 11%;
     margin-top: 20px;
-    background-color: var(--bgl-color);
-    border-radius: 20px 20px 0px 0px;
+}
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  
 }
 
 .book {
@@ -462,7 +470,7 @@ input[type="number"]:focus {
     width: 220px;
     margin: 2%;
     border-radius: 4px;
-    box-shadow: 2px 2px 5px;
+    box-shadow: 2px 2px 5px var(--sbg-color);
     transition: transform 0.6s, background-color 0.6s;
     overflow: hidden;
     position: relative;
@@ -485,7 +493,7 @@ input[type="number"]:focus {
     background-size: cover;
     width: 195px;
     height: 240px;
-    box-shadow: 2px 2px 3px;
+    box-shadow: 2px 2px 3px var(--sbg-color);
     border-radius: 4px;
 }
 
@@ -546,15 +554,11 @@ input[type="number"]:focus {
 }
 
 .barra-nextpage{
-    margin-left: 11%;
-    margin-right: 11%;
     margin-top: 0;
     margin-bottom: 30px;
     padding:10px;
     display: flex;
     justify-content:center;
-    background-color: var(--bgl-color);
-    border-radius: 0px 0px 20px 20px;
 }
 
 .barra-nextpage form{
@@ -569,7 +573,7 @@ input[type="number"]:focus {
     color: var(--d-color);
     font-weight: bold;
     border-radius: 4px;
-    box-shadow: 1px 1px 5px var(--bg-color);
+    box-shadow: 2px 2px 3px var(--sbg-color);
 }
 
 .buttonnextpage:hover{
@@ -624,6 +628,7 @@ footer p{
     margin: 25px 15% auto 15%;
     background-color: var(--ll-color);
     border-radius: 10px;
+    box-shadow: 2px 2px 3px var(--sbg-color);
 }
 
 .tablacarrito{
@@ -679,8 +684,7 @@ footer p{
     padding: 10px 10px 40px 10px;
     border-radius: 5px;
     display: flex;
-    justify-content: center;
-    
+    justify-content: center;    
 }
 
 .containerbuttonrealizarcompra a{
@@ -691,17 +695,12 @@ footer p{
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 6px --bg-color;
-    transition: background-color 0.2s, box-shadow 0.2s; 
+    box-shadow: 1px 1px 3px var(--sbg-color);
+    transition: background-color 0.2s; 
     text-decoration: none;
-}
-
-.containerbuttonrealizarcompra a:hover {
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 .containerbuttonrealizarcompra a:active {
     background-color: var(--md-color); 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
 /*compra-realizada.html*/
@@ -715,30 +714,31 @@ footer p{
     text-align: center;
     font-size: 30px;
     padding: 40px;
+    box-shadow: 2px 2px 3px var(--sbg-color);
 }
 
 .volveriniciobutton{
     width: 100%;
     display: flex;
     justify-content: center;
+
 }
 
 .volveriniciobutton a{
     text-decoration: none;
     cursor: pointer;
-    box-shadow: 0 4px 6px --bg-color;
-    transition: background-color 0.2s, box-shadow 0.2s; 
+    transition: background-color 0.2s; 
     background-color: var(--m-color);
     font-size: 20px;
     padding: 15px;
     color: white;
     border-radius: 5px;
     border: none;
+    box-shadow: 2px 2px 3px var(--sbg-color);
 }
 
 .volveriniciobutton a:active{
     background-color: var(--md-color); 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
 
@@ -755,7 +755,7 @@ footer p{
     background-color: var(--bgl-color);
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 1px 1px 3px;
+    box-shadow: 2px 2px 3px var(--sbg-color);
 }
 
 .firstline{
@@ -771,7 +771,7 @@ footer p{
     background-size: cover;
     width: 400px;
     height: 500px;
-    box-shadow: 1px 1px 5px;
+    box-shadow: 2px 2px 3px var(--sbg-color);
     border-radius: 4px;
 }
 
@@ -798,7 +798,7 @@ footer p{
     padding: 15px;
     text-align: center;
     border: 2px solid var(--m-color); 
-    box-shadow: 2px 2px 4px var(--bg-color);
+    box-shadow: 2px 2px 3px var(--sbg-color);
 }
 
 #precioygenero{
@@ -821,7 +821,7 @@ footer p{
     font-size: large;
     margin: 1%;
     border: 2px solid var(--m-color); 
-    box-shadow: 2px 2px 4px var(--bg-color); 
+    box-shadow: 2px 2px 3px var(--sbg-color);
 }
 
 #autor{
@@ -835,7 +835,7 @@ footer p{
     padding: 7px;
     text-align: center;
     cursor: pointer;
-    box-shadow: 2px 2px 4px var(--bg-color);
+    box-shadow: 2px 2px 3px var(--sbg-color);
     transition: background-color 0.3s, box-shadow 0.3s; 
     text-decoration: none;
     border: 2px solid var(--m-color); 
@@ -864,7 +864,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     padding: 20px 15px;
     text-align: center;
     border: 2px solid var(--m-color); 
-    box-shadow: 2px 2px 4px var(--bg-color); 
+    box-shadow: 2px 2px 3px var(--sbg-color);
 }
 
 .añadircestabutton {
@@ -876,7 +876,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     color: white; 
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    box-shadow: 2px 2px 3px var(--sbg-color);
     transition: background-color 0.1s, box-shadow 0.3s, transform 0.3s;
     border: 2px solid var(--m-color); 
 }
@@ -897,7 +897,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     padding: 30px;
     border-radius: 8px;
     margin-top: 20px;
-    box-shadow: 1px 1px 4px;
+    box-shadow: 2px 2px 3px var(--sbg-color);
 }
 
 .fichatecnica legend{
@@ -921,7 +921,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     background-color: var(--bgl-color);
     margin: 0px 11% 30px 11%;
     border-radius: 20px;
-    box-shadow: 1px 1px 3px;
+    box-shadow: 2px 2px 3px var(--sbg-color);
 }
 
 .recomendaciones-container .recomendaciones-text{
@@ -958,6 +958,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     width: 100%; 
     justify-content:normal;
     scroll-behavior: smooth; 
+    box-shadow: none;
 }
 
 .recomendaciones-container .book{
@@ -1007,7 +1008,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     margin: 0 10px; 
     color: var(--bgl-color);
     text-shadow: 1px 2px 2px var(--bg-color);
-    box-shadow: 2px 2px 3px var(--bg-color);
+    box-shadow: 2px 2px 3px var(--sbg-color);
 }
 
 /* autor.html */
@@ -1018,7 +1019,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     background-size: cover;
     width: 400px;
     height: 400px;
-    box-shadow: 1px 1px 5px;
+    box-shadow: 2px 2px 3px var(--sbg-color);
     border-radius: 5px;
 }
 
@@ -1027,7 +1028,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border: 2px solid var(--m-color); 
     border-radius: 10px; 
     background-color: var(--bg-color); 
-    box-shadow: 1px 1px 4px;
+    box-shadow: 2px 2px 3px var(--sbg-color);
 }
 
 .epc legend {
@@ -1052,11 +1053,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     
 }
 
-@media only screen and (max-width: 700px){
-
-    body{
-        background-color: var(--l-color);
-    }
+@media all and (max-width: 700px){
 
     #barra-buscar{
         display: none;
@@ -1139,7 +1136,6 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .catalogo{
-        background-color: var(--bgl-color);
         margin-left: 1%;
         margin-right: 1%;
     }
@@ -1225,12 +1221,20 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     .descripcion{
         font-size: 3vw;
     }
+    .añadircestabutton {
+        padding: 10px;
+        font-size: 4vw;
+    }
 
     .fichatecnica {
         padding: 10px 1%;
         font-size: 2.7vw;
         margin-top: 10px;
         border-radius: 15px;
+    }
+
+    .fichatecnica legend{   
+        font-size: 3vw;
     }
 
     .fichatecnica p {
@@ -1276,7 +1280,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .recomendaciones-container .portada{
-        box-shadow: 1px 1px 1px var(--bgl-color);
+        box-shadow: 2px 2px 3px var(--sbg-color);
     }
     
     .recomendaciones-container .titulo{
@@ -1320,11 +1324,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
 
 
-@media only screen and (min-width: 701px) and (max-width: 1200px){
-    
-    body{
-        background-color: var(--m-color);
-    }
+@media all and (min-width: 701px) and (max-width: 1200px){
 
     #inicio{
         height: 30px;
@@ -1338,7 +1338,6 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .catalogo {
-        background-color: var(--bgl-color);
         margin-left: 2%;
         margin-right: 2%;
     }

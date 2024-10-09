@@ -1,14 +1,14 @@
 const contenedoresLibros = document.querySelectorAll('.catalogo');
-const prevBtns = document.querySelectorAll('.carruselprev');
-const nextBtns = document.querySelectorAll('.carruselnext');
+const nextBtons = document.querySelectorAll('.carruselnext');
+const prevBtons = document.querySelectorAll('.carruselprev');
 
 const scrollPercentage = 100;
 
 contenedoresLibros.forEach((contenedorLibros, index) => {
-    const prevBtn = prevBtns[index];
-    const nextBtn = nextBtns[index];
+    const nextBton = nextBtons[index];
+    const prevBton = prevBtons[index];
 
-    nextBtn.addEventListener('click', () => {
+    prevBton.addEventListener('click', () => {
         const scrollAmount = (contenedorLibros.clientWidth * scrollPercentage) / 100;
 
         if (contenedorLibros.scrollLeft + contenedorLibros.clientWidth >= contenedorLibros.scrollWidth) {
@@ -26,7 +26,7 @@ contenedoresLibros.forEach((contenedorLibros, index) => {
         }
     });
 
-    prevBtn.addEventListener('click', () => {
+    nextBton.addEventListener('click', () => {
         const scrollAmount = (contenedorLibros.clientWidth * scrollPercentage) / 100;
 
         if (contenedorLibros.scrollLeft <= 0) {
