@@ -49,11 +49,19 @@
                             </div>
                             <div>
                                 <input type="checkbox" href="#"/>
-                                <p>Fantasia</p>
+                                <p>Fantasía</p>
                             </div>
                             <div>
                                 <input type="checkbox" href="#"/>
                                 <p>Terror</p>
+                            </div>
+                            <div>
+                                <input type="checkbox" href="#"/>
+                                <p>Thriller</p>
+                            </div>
+                            <div>
+                                <input type="checkbox" href="#"/>
+                                <p>Distopía</p>
                             </div>
                         </div>
                     </div>
