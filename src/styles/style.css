@@ -548,6 +548,9 @@ input[type="number"]:focus {
     color: rgb(37, 37, 37);
     font-weight: bold;
 }
+.precio::after{
+    content: "€";
+}
 
 .book:hover .precio {
     display: none;
@@ -649,6 +652,10 @@ footer p{
     border-bottom: 1px solid #c3b1b7;
 }
 
+.precio€::after{
+    content: "€";
+}
+
 .articulocarrito p{
     margin: 2px;
 }
@@ -678,6 +685,15 @@ footer p{
     margin-top: 10px;
     font-size: 20px;
     margin-right: 10%;
+}
+
+.totalcontainer p::before{
+    content: "Total = ";
+}
+
+
+.totalcontainer p::after{
+    content: "€";
 }
 
 .containerbuttonrealizarcompra{
@@ -806,9 +822,7 @@ footer p{
     flex-direction: row;
     color: var(--l-color);
     text-align: center;
-    max-width: 100%;  
-
-     
+    max-width: 100%;      
 }
 
 #precioygenero p{
