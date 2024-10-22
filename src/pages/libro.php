@@ -1,3 +1,23 @@
+<?php
+include("../server/getConnection.php");
+
+if(isset($_GET["codigo_libro"])){
+
+    $codigo_libro = $_GET["codigo_libro"];
+
+    $stmt = $conn ->prepare("SELECT * FROM libro WHERE codigo_libro = ?");
+    $stmt->bind_param("i",$codigo_libro);
+    $stmt->execute();
+    
+    $libro = $stmt->get_result();
+    
+
+} else {
+    header("location: index.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -41,22 +61,17 @@
     </nav>
     <main>
         <div class="book-author-container">
+            <?php while ($l = $libro -> fetch_assoc()){ ?>
             <div class="firstline">
-                <div class="imagen-book"></div>
+                <img class="imagen-book" src="../assets/images/covers/<?php echo $codigo_libro?>.png"/>
                 <div class="atributos-book-author">
-                    <h1 id="titulo">TRONO DE CRISTAL</h1>
-                    <a id="autor" href="autor.html">SARAH J. MAAS</a>
+                    <h1 id="titulo"><?php echo mb_strtoupper($l["titulo"])?></h1>
+                    <a id="autor" href="autor.html"><?php echo mb_strtoupper($l["codigo_autor"])?></a>
                     <div id="precioygenero">
-                        <p>Fantasia</p>
-                        <p class="precio€">18.90</p>
+                        <p><?php echo ($l["genero"])?></p>
+                        <p class="precio€"><?php echo ($l["precio"])?></p>
                     </div>
-                    <p class="descripcion">En las tenebrosas minas de sal de Endovier, una muchacha de dieciocho años
-                        cumple cadena perpetua. Es una asesina profesional, la mejor en lo suyo, pero ha cometido un
-                        error fatal. La han capturado. El joven capitán Westfall le ofrece un trato: la libertad a
-                        cambio de un enorme sacrificio. Celaena debe representar al príncipe en un torneo a muerte, en
-                        el que deberá luchar con los asesinos y ladrones más peligrosos del reino. Viva o muerta,
-                        Celaena será libre. Tanto si gana como si pierde, está a punto de descubrir su verdadero
-                        destino. Pero ¿qué pasará entretanto con su corazón de asesina?
+                    <p class="descripcion"><?php echo ($l["descripcion_libro"])?>
                     </p>
                 </div>
             </div>
@@ -64,20 +79,21 @@
             <fieldset class="fichatecnica">
                 <legend>Ficha técnica</legend>
                 <p>Nº de paginas</p>
-                <p> 360 </p>
+                <p> <?php echo ($l["n_pag"])?> </p>
                 <p>Editorial</p>
-                <p> Editorial B </p>
+                <p> <?php echo ($l["editorial"])?>  </p>
                 <p>Idioma</p>
-                <p> Castellano</p>
+                <p> <?php echo ($l["idioma"])?> </p>
                 <p>Encuadernación</p>
-                <p> Tapa blanda </p>
+                <p> <?php echo ($l["encuadernacion"])?> </p>
                 <p>Fecha de lanzamiento</p>
-                <p> 25/06/24 </p>
+                <p> <?php echo ($l["fecha_publ"])?>  </p>
                 <p>Serie/Saga</p>
-                <p> Throne of Glass </p>
+                <p> <?php if ($l["serie"]===null){echo "No";} else {echo ($l["serie"])?> </p>
                 <p>Número</p>
-                <p>1 </p>
+                <p><?php  echo ($l["numero"])?> </p>
             </fieldset>
+            <?php }} ?>
         </div>
         <div class="recomendaciones-container">
             <p class="recomendaciones-text">Otros libros de <span>SARAH J. MASS</span></p>

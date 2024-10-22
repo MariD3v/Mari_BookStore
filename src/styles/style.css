@@ -488,7 +488,6 @@ input[type="number"]:focus {
 .portada {
     margin: 5%;
     margin-bottom: 3%;
-    background-image: url('https://placedog.net/240/195');
     background-position: center;
     background-size: cover;
     width: 195px;
@@ -782,7 +781,6 @@ footer p{
 }
 
 .imagen-book{
-    background-image: url('https://placedog.net/500/400');
     background-position: center;
     background-size: cover;
     width: 400px;
@@ -1028,7 +1026,6 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 /* autor.html */
 
 .imagen-author{
-    background-image: url('https://placedog.net/400/400');
     background-position: center;
     background-size: cover;
     width: 400px;
