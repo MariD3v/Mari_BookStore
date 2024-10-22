@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookstore</title>
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
-
 </head>
 <body>
     <nav>
@@ -127,79 +126,20 @@
         </ul>
         <section class="catalogo-content">      
             <div class="catalogo">
-                <a class="book" href="pages/libro.html">        
-                    <div class="portada"></div>
-                    <p class="titulo">EL EMPERADOR (DARK VERSE 3) - RUNYX</p>
+                <?php include("server/getProducts.php"); ?>
+                <?php while ($libro = $librosArray -> fetch_assoc()){ ?>
+                <a class="book" href=<?php echo "pages/libro.php?codigo_libro=".$libro["codigo_libro"];?>>        
+                    <img class="portada" src="assets/images/covers/<?php echo $libro["codigo_libro"]?>.png">
+                    <p class="titulo"><?php echo mb_strtoupper($libro["titulo"])?></p>
                     <button class="buttoncarro" ><img src="assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
-                    <p class="precio">18.99</p>
+                    <p class="precio"><?php echo $libro["precio"]?></p>
                 </a>
-                <a class="book">        
-                    <div class="portada"></div>
-                    <p class="titulo">SCARRED - EMILY MCENTIRE</p>
-                    <button class="buttoncarro"><img src="assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
-                    <p class="precio">19.99</p>
-                </a>
-                <a class="book">        
-                    <div class="portada"></div>
-                    <p class="titulo">LA MUERTE (DARK VERSE 2) - RUNYX</p>
-                    <button class="buttoncarro"><img src="assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
-                    <p class="precio">22.99</p>
-                </a>
-                <a class="book">        
-                    <div class="portada"></div>
-                    <p class="titulo">EL CAZADOR (DARK VERSE 1) - RUNYX</p>
-                    <button class="buttoncarro"><img src="assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
-                    <p class="precio">19.99</p>
-                </a>
-                <a class="book">        
-                    <div class="portada"></div>
-                    <p class="titulo">UNA MELODÍA HIPNOTICA (EL NEGOCIADOR 1) - LAURA THALASSA</p>
-                    <button class="buttoncarro"><img src="assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
-                    <p class="precio">20.99</p>
-                </a>
-                <a class="book">        
-                    <div class="portada"></div>
-                    <p class="titulo">DAMIÁN - ALEX MIREZ</p>
-                    <button class="buttoncarro"><img src="assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
-                    <p class="precio">20.99</p>
-                </a>
-                <a class="book">        
-                    <div class="portada"></div>
-                    <p class="titulo">UN HIMNO EXTRAÑO (EL NEGOCIADOR 2) - LAURA THALASSA</p>
-                    <button class="buttoncarro"><img src="assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
-                    <p class="precio">20.99</p>
-                </a>
-                <a class="book">        
-                    <div class="portada"></div>
-                    <p class="titulo">MATAR UN REINO - ALEXANDRA CHRISTO</p>
-                    <button class="buttoncarro"><img src="assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
-                    <p class="precio">22.80</p>
-                </a>
-                <a class="book">        
-                    <div class="portada"></div>
-                    <p class="titulo">MR MERCEDES - STEPHEN KING</p>
-                    <button class="buttoncarro"><img src="assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
-                    <p class="precio">22.80</p>
-                </a>
-                <a class="book">        
-                    <div class="portada"></div>
-                    <p class="titulo">HOOKED - EMILY MCINTIRE</p>
-                    <button class="buttoncarro"><img src="assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
-                    <p class="precio">22.80</p>
-                </a>
-                <a class="book">        
-                    <div class="portada"></div>
-                    <p class="titulo">CORONA DE MEDIANOCHE (TRONO DE CRISTAL 2) - SARAH J MASS</p>
-                    <button class="buttoncarro"><img src="assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
-                    <p class="precio">22.99</p>
-                </a>
+                <?php } ?>
             </div>
             <ul class="barra-nextpage">
-                <form action="" method="get">
-                    <input class="buttonnextpage" type="button" name="anterior" value="🡠"/>
-                    <p class="textnextpage" name="textnextpage">   Página 1 de 22   </p>
-                    <input class="buttonnextpage" type="button" name="siguiente" value="🡢"/>
-                </form>
+                <input class="buttonnextpage" type="button" value="🡠"/>
+                <p class="textnextpage">   Página 1 de 22   </p>
+                <input class="buttonnextpage" type="button" value="🡢"/>
             </ul>
         </section>
     </main>

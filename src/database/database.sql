@@ -20,8 +20,8 @@ create table libro(
   n_pag int not null,
   idioma enum('Inglés','Español') not null,
   fecha_publ date not null,
-  encuadernacion enum('Tabla blanda','Tapa dura') not null,
-  precio decimal(3,2) not null,
+  encuadernacion enum('Tapa blanda','Tapa dura') not null,
+  precio decimal(5,2) not null,
   descripcion_libro text not null,
   serie varchar(100),
   numero int,
@@ -35,14 +35,14 @@ create table compra(
   primary key (codigo_compra)
 );
 
-create table detalle_compra{
+create table detalle_compra(
   codigo_compra int auto_increment,
   codigo_libro int not null,
   unidades int not null,
   primary key (codigo_compra,codigo_libro),
   foreign key (codigo_libro) references libro(codigo_libro) ON UPDATE CASCADE ON DELETE CASCADE,
   foreign key (codigo_compra) references compra(codigo_compra) ON UPDATE CASCADE ON DELETE CASCADE
-}
+)
 
 INSERT INTO autor VALUES (1,'Sarah J Mass','Estados Unidos','1986-03-05','Autora número 1 del New York Times, y su obra, en la que destaca la saga Trono de cristal, es un fenómeno superventas internacional. Se han vendido más de nueve millones de ejemplares de sus libros y estos se publican en treinta y siete idiomas. Sarah nació en Nueva York, pero actualmente vive en Pensilvania con su marido, su hijo y su perro.');
 INSERT INTO autor VALUES (2,'Stephen King','Estados Unidos','1947-09-21','Stephen King (nacido el 21 de septiembre de 1947 en Portland, Maine) es un destacado escritor estadounidense de terror, ficción sobrenatural y más. Con más de 500 millones de libros vendidos, ha publicado 65 novelas y numerosas adaptaciones cinematográficas y televisivas.');
@@ -77,7 +77,7 @@ INSERT INTO libro VALUES (4, 'Reina de sombras', 'Fantasía', 'Hidra', 648, 'Esp
 INSERT INTO libro VALUES (5, 'Imperio de tormentas', 'Fantasía', 'Hidra', 720, 'Español', '2016-09-06', 'Tapa blanda', 18.15, 'Aelin debe luchar contra la oscuridad y las traiciones mientras se prepara para la guerra que determinará el futuro de su reino y de todos los reinos.', 'Trono de cristal', 5, 1);
 INSERT INTO libro VALUES (6, 'Torre del alba', 'Fantasía', 'Hidra', 480, 'Español', '2017-09-07', 'Tapa blanda', 18.15, 'Mientras Aelin se recupera de sus heridas, su grupo de amigos debe enfrentarse a sus propios desafíos y peligros, preparando el terreno para la batalla final.', 'Trono de cristal', 6, 1);
 INSERT INTO libro VALUES (7, 'Reino de cenizas', 'Fantasía', 'Hidra', 720, 'Español', '2018-10-23', 'Tapa blanda', 18.15, 'Aelin y sus amigos deben unir fuerzas para enfrentar a la oscuridad en una guerra que cambiará el destino de todos. La lucha por la libertad y la justicia está en juego.', 'Trono de cristal', 7, 1);
-INSERT INTO libro VALUES (8,'Misery', 'Terror', 'Debolsillo', 376, 'Español', '2003-03-20', 'Tapa blanda', 14.59, 'Paul Shledon es un escritor que sufre un grave accidente y recobra el conocimiento en una apartada casa en la que vive una misteriosa mujer, corpulenta y de extraño carácter. Se trata de una antigua enfermera, involucrada en varias muertes misteriosas ocurridas en diversos hospitales. Fanática de un personaje de una serie de libros que él ha decido dejar de escribir, está dispuesta a hacer todo lo necesario para "convencerlo" de que retome la escritura. Esta mujer es capaz de los mayores horrores, y Paul, con las piernas rotas y entre terribles dolores, tendrá que luchar por su vida.', null ,1,2);
+INSERT INTO libro VALUES (8,'Misery', 'Terror', 'Debolsillo', 376, 'Español', '2003-03-20', 'Tapa blanda', 14.59, 'Paul Shledon es un escritor que sufre un grave accidente y recobra el conocimiento en una apartada casa en la que vive una misteriosa mujer, corpulenta y de extraño carácter. Se trata de una antigua enfermera, involucrada en varias muertes misteriosas ocurridas en diversos hospitales. Fanática de un personaje de una serie de libros que él ha decido dejar de escribir, está dispuesta a hacer todo lo necesario para "convencerlo" de que retome la escritura. Esta mujer es capaz de los mayores horrores, y Paul, con las piernas rotas y entre terribles dolores, tendrá que luchar por su vida.', null ,null,2);
 INSERT INTO libro VALUES (9, 'Legend', 'Distopía', 'Putnam', 368, 'Español', '2011-11-29', 'Tapa dura', 11.99, 'En una sociedad dividida por la guerra, dos jóvenes con orígenes opuestos se cruzan en un mundo lleno de secretos y conspiraciones.', 'Legend', 1, 3);
 INSERT INTO libro VALUES (10, 'Prodigy', 'Distopía', 'Putnam', 384, 'Español', '2013-01-29', 'Tapa dura', 11.99, 'June y Day deben decidir en quién confiar mientras luchan por la libertad en un mundo donde la traición está a la vuelta de la esquina.', 'Legend', 2, 3);
 INSERT INTO libro VALUES (11, 'Champion', 'Distopía', 'Putnam', 368, 'Español', '2013-11-05', 'Tapa dura', 11.99, 'El destino de la República y su futuro están en manos de June y Day mientras enfrentan decisiones difíciles que cambiarán el curso de sus vidas.', 'Legend', 3, 3);
