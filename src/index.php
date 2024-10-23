@@ -40,7 +40,7 @@
         <ul class="barra-opciones">
             <div class="filters">
                 <div class="generofiltercontainer">
-                    <div class="dropdownmenu5">
+                    <div class="dropdownmenu" id="dropdownmenu5">
                         <input type="checkbox" id="dropdownToggle5" class="dropdown-checkbox5">
                         <label for="dropdownToggle5" class="filterbutton">Género</label>
                         <div class="dropdowncontent5">
@@ -69,7 +69,7 @@
                 </div>
     
                 <div class="idiomafiltercontainer">
-                    <div class="dropdownmenu4">
+                    <div class="dropdownmenu" id="dropdownmenu4">
                         <input type="checkbox" id="dropdownToggle4" class="dropdown-checkbox4">
                         <label for="dropdownToggle4" class="filterbutton">Idioma</label>
                         <div class="dropdowncontent4">
@@ -86,7 +86,7 @@
                 </div>
     
                 <div class="preciofiltercontainer">
-                    <div class="dropdownmenu3">
+                    <div class="dropdownmenu" id="dropdownmenu3">
                         <input type="checkbox" id="dropdownToggle3" class="dropdown-checkbox3">
                         <label for="dropdownToggle3" class="filterbutton">Precio</label>
                         <div class="dropdowncontent3">
@@ -163,5 +163,6 @@
     </footer>
     <script src="scripts/mostrarLxP.js"> </script>
     <script src="scripts/ordenarL.js"> </script>
+    <script src="scripts/filtrosL.js"> </script>
 </body>
 </html>

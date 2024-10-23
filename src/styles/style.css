@@ -287,7 +287,7 @@ input[type=search]:focus {
 }
 
 
-.dropdownmenu3 {
+#dropdownmenu3 {
     position: relative;
     display: inline-block;
     margin: 5px;
@@ -331,7 +331,7 @@ input[type="number"]:focus {
     background-color: var(--lm-color);
 }
 
-.dropdownmenu3:hover .filterbutton {
+#dropdownmenu3:hover .filterbutton {
     background-color: var(--m-color);
 }
 
@@ -350,7 +350,7 @@ input[type="number"]:focus {
     margin-top: 25px;
 }
 
-.dropdownmenu4 {
+#dropdownmenu4 {
     position: relative;
     display: inline-block;
     margin: 5px;
@@ -384,7 +384,7 @@ input[type="number"]:focus {
     background-color: var(--lm-color);
 }
 
-.dropdownmenu4:hover .filterbutton {
+#dropdownmenu4:hover .filterbutton {
     background-color: var(--m-color);
 }
 
@@ -404,7 +404,7 @@ input[type="number"]:focus {
 
 }
 
-.dropdownmenu5 {
+#dropdownmenu5 {
     position: relative;
     display: inline-block;
     margin: 5px;
@@ -438,7 +438,7 @@ input[type="number"]:focus {
     background-color: var(--lm-color);
 }
 
-.dropdownmenu5:hover .filterbutton {
+#dropdownmenu5:hover .filterbutton {
     background-color: var(--m-color);
 }
 
