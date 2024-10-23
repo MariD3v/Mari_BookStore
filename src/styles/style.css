@@ -487,7 +487,7 @@ input[type="number"]:focus {
 
 .portada {
     margin: 5%;
-    margin-bottom: 3%;
+    margin-bottom: 0;
     background-position: center;
     background-size: cover;
     width: 195px;
@@ -502,7 +502,7 @@ input[type="number"]:focus {
     margin-right: 10px;
     text-align: center;
     color: var(--md-color);
-    font-size: small;
+    font-size: medium;
     font-weight: bold;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -984,6 +984,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 .recomendaciones-container .portada{
     width: 94%;
     margin: 3%;
+    margin-bottom: 0;
     height: auto;
     aspect-ratio: 1 / 1.18;
 }
@@ -1295,7 +1296,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
     
     .recomendaciones-container .titulo{
-        font-size: 2.5vw;
+        font-size: 2.7vw;
     }
     
     .recomendaciones-container .precio{

@@ -1,3 +1,6 @@
+<?php
+include("../server/getProductsAutor.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -38,125 +41,43 @@
     <main>    
         <div class="book-author-container">
             <div class="firstline">
-                <div class="imagen-author"></div> 
+                <img class="imagen-author" src="../assets/images/author_photos/<?php echo ($autor["codigo_autor"])?>.png"/>
                 <div class="atributos-book-author">
                     <fieldset class="epc">
                         <legend>Autor</legend>
-                        <p>Sarah J. Maas</p>
+                        <p><?php echo ($autor["nombre"])?></p>
                     </fieldset>   
                     <fieldset class="epc">
                         <legend>Edad</legend>
-                        <p>34 años</p>
+                        <p><?php echo $autorEdad["edad"]?> años</p>
                     </fieldset> 
                     <fieldset class="epc">
                         <legend>País</legend>
-                        <p>Inglaterra</p>
+                        <p><?php echo ($autor["pais"])?></p>
                     </fieldset> 
                     <fieldset class="epc">
                         <legend>Número de libros escritos</legend>
-                        <p>23 libros</p>
+                        <p><?php echo ($autornlibros["nLibros"])?> libros</p>
                     </fieldset>
                 </div>
             </div>
-            <div class="descripcion">
-                Sarah Janet Maas estudió en el Hamilton College de Clinton, Nueva York, donde se graduó en escritura creativa y estudios religiosos en 2008. Está casada y vive en Pensilvania. Maas es una escritora de literatura juvenil y se ha especializado en el género de la fantasía.
-                Maas empezó a escribir Trono de Cristal cuando tenía dieciséis años. 
-                En 2008 Maas empezó a enviar la historia a agentes editoriales hasta que fue comprada por Bloomsbury en 2012, y más tarde adquirió dos libros adicionales de la serie.
-                La trama inicial de la serie está basada en la premisa de que Cenicienta no fue una criada sino una asesina, aunque pronto la competición de asesinos y el triángulo amoroso deriva en una fantasía más compleja con una guerra mágica contra fuerzas oscuras.
-                Una Corte de Rosas y Espinas, segunda saga escrita por Maas se basa en el cuento de La Bella y la Bestia. El primer libro de la trilogía fue escrito en 2009 pero no fue publicado hasta 2015. Tras completar la trilogía, Sarah anunció la publicación de una serie de novelas independientes. La primera: Una corte de hielo y estrellas, publicada en inglés en 2018, continúa la línea de personajes de la trilogía, con una especie de ¿y qué pasó después?. La segunda fue publicada en 2021, y se centra en dos de los personajes secundarios. Las siguientes novelas se centrarán cada una en otros personajes secundarios distintos, provenientes de la trilogía principal.
-                En 2020 publicó Ciudad Medialuna, su tercera saga. Casa de tierra y sangre es el primero de esta saga, que de momento tiene un número indeterminado de libros, pero que se intuye por comentarios de la autora que será larga.
-            </div>
+            <div class="descripcion"><?php echo ($autor["descripcion_autor"])?></div>
         </div>
         <div class="recomendaciones-container">
-            <p class="recomendaciones-text">Libros de <span>SARAH J. MASS</span></p>
+            <p class="recomendaciones-text">Libros de <span><?php echo (mb_strtoupper($autor["nombre"]))?></span></p>
             <hr>
             <div class="carrusel">
                 <button class="carruselnext carruselbton-btn">◀</button>
                 <div class="carruselcatalogo catalogo">
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
+                    <?php while ($libro = $librosAutor_consulta -> fetch_assoc()){ ?>
+                    <a class="book" href="libro.php">
+                        <img class="portada" src="../assets/images/covers/<?php echo ($libro["codigo_libro"])?>.png"/>
+                        <p class="titulo"><?php echo mb_strtoupper(($libro["titulo"]))?></p>
                         <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
                                 height="35px"></button>
-                        <p class="precio">18.99</p>
+                        <p class="precio"><?php echo ($libro["precio"])?></p>
                     </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">e</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">d</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">c</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">b</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">a</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
+                    <?php } ?>
                 </div>
                 <button class="carruselprev carruselbton-btn">▶</button>
             </div>
