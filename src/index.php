@@ -101,13 +101,13 @@
                     <p class="ordertext">Ordenar por: </p>
                     <div class="dropdownmenu2">
                         <input type="checkbox" id="dropdownToggle2" class="dropdown-checkbox2">
-                        <label for="dropdownToggle2" class="filterbutton">Relevancia</label>
+                        <label for="dropdownToggle2" class="filterbutton" id="selectedOptionOrdenarL">Relevancia</label>
                         <div class="dropdowncontent2">
-                            <a href="#">Relevancia</a>
-                            <a href="#">Más baratos primero</a>
-                            <a href="#">Más caros primero</a>
-                            <a href="#">A-Z</a>
-                            <a href="#">Z-A</a>
+                            <a href="#" class="optionOrdenarL" data-value="Relevancia">Relevancia</a>
+                            <a href="#" class="optionOrdenarL" data-value="Precio ⭡">Precio ⭡</a>
+                            <a href="#" class="optionOrdenarL" data-value="Precio ⭣">Precio ⭣</a>
+                            <a href="#" class="optionOrdenarL" data-value="A-Z">A-Z</a>
+                            <a href="#" class="optionOrdenarL" data-value="Z-A">Z-A</a>
                         </div>
                     </div>
                 </div>
@@ -115,11 +115,11 @@
                 <div class="mostrarpagcontainer">
                     <div class="dropdownmenu1">
                         <input type="checkbox" id="dropdownToggle1" class="dropdown-checkbox1">
-                        <label for="dropdownToggle1" class="filterbutton">10</label>
+                        <label for="dropdownToggle1" class="filterbutton" id="selectedOptionMostrarLxP">10</label>
                         <div class="dropdowncontent1">
-                            <a href="#">10</a>
-                            <a href="#">20</a>
-                            <a href="#">40</a>
+                            <a href="#" class="optionMostrarLxP" data-value="10">10</a>
+                            <a href="#" class="optionMostrarLxP" data-value="20">20</a>
+                            <a href="#" class="optionMostrarLxP" data-value="40">40</a>
                         </div>
                     </div>
                     <p class="pagtext">Libros/pág</p>
@@ -161,5 +161,7 @@
             </a>
         </div>                
     </footer>
+    <script src="scripts/mostrarLxP.js"> </script>
+    <script src="scripts/ordenarL.js"> </script>
 </body>
 </html>

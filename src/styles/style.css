@@ -166,6 +166,7 @@ input[type=search]:focus {
     cursor: pointer;
     margin-right: 10%;
     box-shadow: 2px 2px 3px var(--sbg-color);
+    white-space: nowrap; 
 }
 
 .filters .filterbutton{
@@ -243,7 +244,7 @@ input[type=search]:focus {
     display: none;
     position:absolute; 
     background-color: rgb(255, 255, 255);
-    min-width: 130px;
+    min-width: 100px;
     box-shadow: 0px 2px 2px rgb(183, 183, 183);
     border-radius:2px;
     z-index: 1000; 
@@ -1132,7 +1133,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
     .dropdowncontent2 {
         font-size: small;
-        min-width: 0;
+        min-width: 90px;
     }
 
     .dropdowncontent3 {
