@@ -161,8 +161,7 @@
             </a>
         </div>                
     </footer>
-    <script src="scripts/mostrarLxP.js"> </script>
-    <script src="scripts/ordenarL.js"> </script>
-    <script src="scripts/filtrosL.js"> </script>
+
+    <script src="scripts/dropdownMenus.js"> </script>
 </body>
 </html>
