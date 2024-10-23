@@ -1,21 +1,5 @@
 <?php
-include("../server/getConnection.php");
-
-if(isset($_GET["codigo_libro"])){
-
-    $codigo_libro = $_GET["codigo_libro"];
-
-    $stmt = $conn ->prepare("SELECT * FROM libro WHERE codigo_libro = ?");
-    $stmt->bind_param("i",$codigo_libro);
-    $stmt->execute();
-    
-    $libro = $stmt->get_result();
-    
-
-} else {
-    header("location: index.php");
-}
-
+include("../server/getProductsLibro.php");
 ?>
 
 <!DOCTYPE html>
@@ -61,17 +45,17 @@ if(isset($_GET["codigo_libro"])){
     </nav>
     <main>
         <div class="book-author-container">
-            <?php while ($l = $libro -> fetch_assoc()){ ?>
+            
             <div class="firstline">
-                <img class="imagen-book" src="../assets/images/covers/<?php echo $codigo_libro?>.png"/>
+                <img class="imagen-book" src="../assets/images/covers/<?php echo $libro["codigo_libro"]?>.png"/>
                 <div class="atributos-book-author">
-                    <h1 id="titulo"><?php echo mb_strtoupper($l["titulo"])?></h1>
-                    <a id="autor" href="autor.html"><?php echo mb_strtoupper($l["codigo_autor"])?></a>
+                    <h1 id="titulo"><?php echo mb_strtoupper($libro["titulo"])?></h1>
+                    <a id="autor" href="autor.php?codigo_autor=<?php echo $autor['codigo_autor']; ?>"><?php echo mb_strtoupper($autor["nombre"])?></a>
                     <div id="precioygenero">
-                        <p><?php echo ($l["genero"])?></p>
-                        <p class="precio€"><?php echo ($l["precio"])?></p>
+                        <p><?php echo ($libro["genero"])?></p>
+                        <p class="precio€"><?php echo ($libro["precio"])?></p>
                     </div>
-                    <p class="descripcion"><?php echo ($l["descripcion_libro"])?>
+                    <p class="descripcion"><?php echo ($libro["descripcion_libro"])?>
                     </p>
                 </div>
             </div>
@@ -79,210 +63,62 @@ if(isset($_GET["codigo_libro"])){
             <fieldset class="fichatecnica">
                 <legend>Ficha técnica</legend>
                 <p>Nº de paginas</p>
-                <p> <?php echo ($l["n_pag"])?> </p>
+                <p> <?php echo ($libro["n_pag"])?> </p>
                 <p>Editorial</p>
-                <p> <?php echo ($l["editorial"])?>  </p>
+                <p> <?php echo ($libro["editorial"])?>  </p>
                 <p>Idioma</p>
-                <p> <?php echo ($l["idioma"])?> </p>
+                <p> <?php echo ($libro["idioma"])?> </p>
                 <p>Encuadernación</p>
-                <p> <?php echo ($l["encuadernacion"])?> </p>
+                <p> <?php echo ($libro["encuadernacion"])?> </p>
                 <p>Fecha de lanzamiento</p>
-                <p> <?php echo ($l["fecha_publ"])?>  </p>
+                <p> <?php echo ($libro["fecha_publ"])?>  </p>
                 <p>Serie/Saga</p>
-                <p> <?php if ($l["serie"]===null){echo "No";} else {echo ($l["serie"])?> </p>
+                <p> <?php if ($libro["serie"]===null){echo "No";} else {echo ($libro["serie"])?> </p>
                 <p>Número</p>
-                <p><?php  echo ($l["numero"])?> </p>
+                <p><?php  echo ($libro["numero"])?> </p>
             </fieldset>
-            <?php }} ?>
+            <?php }?>
         </div>
+        <?php if($librosGenero_consulta->num_rows != 0){ ?>
         <div class="recomendaciones-container">
-            <p class="recomendaciones-text">Otros libros de <span>SARAH J. MASS</span></p>
+            <p class="recomendaciones-text">Similares a <span><?php echo mb_strtoupper($libro["titulo"])?></span></p>
             <hr>
             <div class="carrusel">
                 <button class="carruselnext carruselbton-btn">◀</button>
                 <div class="carruselcatalogo catalogo">
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">e</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">d</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">c</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">b</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">a</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
+                <?php while ($libro = $librosGenero_consulta -> fetch_assoc()){ ?>
+                <a class="book" href=<?php echo "libro.php?codigo_libro=".$libro["codigo_libro"];?>>        
+                    <img class="portada" src="../assets/images/covers/<?php echo $libro["codigo_libro"]?>.png">
+                    <p class="titulo"><?php echo mb_strtoupper($libro["titulo"])?></p>
+                    <button class="buttoncarro" ><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
+                    <p class="precio"><?php echo $libro["precio"]?></p>
+                </a>
+                <?php } ?>
                 </div>
                 <button class="carruselprev carruselbton-btn">▶</button>
             </div>
         </div>
+        <?php } ?>
+        <?php if($librosAutor_consulta->num_rows != 0){ ?>
         <div class="recomendaciones-container">
-            <p class="recomendaciones-text">Otros libros de <span>SARAH J. MASS</span></p>
+            <p class="recomendaciones-text">Otros libros de <span><?php echo mb_strtoupper($autor["nombre"])?></span></p>
             <hr>
             <div class="carrusel">
                 <button class="carruselnext carruselbton-btn">◀</button>
                 <div class="catalogo">
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">TRONO DE CRISTAL - SARAH J. MASS</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">e</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">d</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">c</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">b</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
-                    <a class="book" href="libro.html">
-                        <div class="portada"></div>
-                        <p class="titulo">a</p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
-                        <p class="precio">18.99</p>
-                    </a>
+                <?php while ($libro = $librosAutor_consulta -> fetch_assoc()){ ?>
+                <a class="book" href=<?php echo "libro.php?codigo_libro=".$libro["codigo_libro"];?>>        
+                    <img class="portada" src="../assets/images/covers/<?php echo $libro["codigo_libro"]?>.png">
+                    <p class="titulo"><?php echo mb_strtoupper($libro["titulo"])?></p>
+                    <button class="buttoncarro" ><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
+                    <p class="precio"><?php echo $libro["precio"]?></p>
+                </a>
+                <?php } ?>
                 </div>
                 <button class="carruselprev carruselbton-btn">▶</button>
             </div>
         </div>
+        <?php } ?>
     </main>
     <footer>
         <p>Página web realizada por Maria Salar Garcia</p>

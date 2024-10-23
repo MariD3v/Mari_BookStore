@@ -1,3 +1,5 @@
+<?php include("server/getProducts.php"); ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -126,8 +128,8 @@
         </ul>
         <section class="catalogo-content">      
             <div class="catalogo">
-                <?php include("server/getProducts.php"); ?>
-                <?php while ($libro = $librosArray -> fetch_assoc()){ ?>
+                
+                <?php while ($libro = $libros_consulta -> fetch_assoc()){ ?>
                 <a class="book" href=<?php echo "pages/libro.php?codigo_libro=".$libro["codigo_libro"];?>>        
                     <img class="portada" src="assets/images/covers/<?php echo $libro["codigo_libro"]?>.png">
                     <p class="titulo"><?php echo mb_strtoupper($libro["titulo"])?></p>
@@ -135,6 +137,7 @@
                     <p class="precio"><?php echo $libro["precio"]?></p>
                 </a>
                 <?php } ?>
+                
             </div>
             <ul class="barra-nextpage">
                 <input class="buttonnextpage" type="button" value="🡠"/>
