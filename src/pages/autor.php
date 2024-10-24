@@ -49,15 +49,15 @@ include("../server/getProductsAutor.php");
                     </fieldset>   
                     <fieldset class="epc">
                         <legend>Edad</legend>
-                        <p><?php echo $autorEdad["edad"]?> años</p>
+                        <p><?php if ($autor["fallecido"] == 0){echo $autorEdad["edad"]. " años";} else {echo "Fallecido";}?></p>
                     </fieldset> 
                     <fieldset class="epc">
                         <legend>País</legend>
                         <p><?php echo ($autor["pais"])?></p>
                     </fieldset> 
                     <fieldset class="epc">
-                        <legend>Número de libros escritos</legend>
-                        <p><?php echo ($autornlibros["nLibros"])?> libros</p>
+                        <legend>Número de libros disponibles</legend>
+                        <p><?php echo ($autornlibros["nLibros"])?> libro<?php if($autornlibros["nLibros"]>1){echo "s";} ?> </p>
                     </fieldset>
                 </div>
             </div>
