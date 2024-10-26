@@ -70,11 +70,10 @@ include("../server/getProductsAutor.php");
                 <button class="carruselnext carruselbton-btn">◀</button>
                 <div class="carruselcatalogo catalogo">
                     <?php while ($libro = $librosAutor_consulta -> fetch_assoc()){ ?>
-                    <a class="book" href="libro.php">
+                    <a class="book" href=<?php echo "libro.php?codigo_libro=".$libro["codigo_libro"];?>>
                         <img class="portada" src="../assets/images/covers/<?php echo ($libro["codigo_libro"])?>.png"/>
                         <p class="titulo"><?php echo mb_strtoupper(($libro["titulo"]))?></p>
-                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta"
-                                height="35px"></button>
+                        <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
                         <p class="precio"><?php echo ($libro["precio"])?></p>
                     </a>
                     <?php } ?>

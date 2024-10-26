@@ -10,8 +10,7 @@ if(isset($_GET["codigo_autor"])){
     $stmt->execute();
     $autor_consulta = $stmt->get_result(); //Variable que guarda la consulta del autor
 
-    if ($autor = $autor_consulta->fetch_assoc()) { //Obtener los resultados de autor, para poder trabajar con él
-        
+    if ($autor = $autor_consulta->fetch_assoc()) { //Obtener los resultados de autor, para poder trabajar con él 
         $stmt = $conn ->prepare("SELECT FLOOR(DATEDIFF(CURDATE(), fecha_nac) / 365) as edad FROM autor WHERE codigo_autor = ?"); //Obtener edad
         $stmt->bind_param("i",$codigo_autor);
         $stmt->execute();
@@ -31,6 +30,6 @@ if(isset($_GET["codigo_autor"])){
     }
 
 } else {
-    header("location: index.php");
+    header("location: ../index.php");
 }
 
