@@ -5,7 +5,7 @@ $selectedGenres = isset($_GET['genero']) ? $_GET['genero'] : [];
 $selectedLanguage = isset($_GET['idioma']) ? $_GET['idioma'] : [];
 $selectedPriceMin = isset($_GET['valorpreciomin']) ? $_GET['valorpreciomin'] : '';
 $selectedPriceMax = isset($_GET['valorpreciomax']) ? $_GET['valorpreciomax'] : '';
-$selectedOrder = isset($_GET['valororder']) ? $_GET['valororder'] : 'Relevancia';
+$selectedOrder = isset($_GET['valororden']) ? $_GET['valororden'] : 'Relevancia';
 $selectedDisplay = isset($_GET['valorLxP']) ? $_GET['valorLxP'] : '10';
 
 $sql = "SELECT * FROM libro  WHERE 1=1";
@@ -28,23 +28,18 @@ if ($selectedPriceMin !== '') {
 if ($selectedPriceMax !== '') {
     $sql .= " AND precio <= ?";
 }
-switch ($selectedOrder) {
-    case 'Precio ⭡':
-        $sql .= " ORDER BY precio ASC";
-        break;
-    case 'Precio ⭣':
-        $sql .= " ORDER BY precio DESC";
-        break;
-    case 'A-Z':
-        $sql .= " ORDER BY titulo ASC"; 
-        break;
-    case 'Z-A':
-        $sql .= " ORDER BY titulo DESC";
-        break;
-    case 'Relevancia':
-    default:
-        // Por defecto
-        break;
+
+if ($selectedOrder=='PrecioAsc') {
+    $sql .= " ORDER BY precio ASC";
+}
+else if ($selectedOrder=='PrecioDesc'){
+    $sql .= " ORDER BY precio DESC";
+}
+else if ($selectedOrder=='AZ'){
+    $sql .= " ORDER BY titulo ASC"; 
+}
+else if ($selectedOrder=='ZA'){
+    $sql .= " ORDER BY titulo DESC";
 }
 
 $sql .= " LIMIT ?";
@@ -80,7 +75,6 @@ $stmt->bind_param($types, ...$params);
 
 $stmt->execute();
 $libros_consulta = $stmt->get_result();
-
 $stmt->close();
 $conn->close();
 ?>
