@@ -72,9 +72,9 @@ if ($selectedPriceMax !== '') {
 $params[] = $selectedDisplay; // Agregar el limit
 $types .= 'i'; 
 $stmt->bind_param($types, ...$params);
-
 $stmt->execute();
 $libros_consulta = $stmt->get_result();
+
 $stmt->close();
 $conn->close();
 ?>

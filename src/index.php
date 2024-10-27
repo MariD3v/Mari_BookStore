@@ -77,11 +77,11 @@
                             <input type="checkbox" id="dropdownToggle2" class="dropdown-checkbox2">
                             <label for="dropdownToggle2" class="filterbutton" id="selectedOptionOrdenarL" data-value="<?= $selectedOrder ?>"><?= $selectedOrder ?></label>
                             <div class="dropdowncontent2">
-                                <label><input type="radio" class="optionOrdenarL" name="valororden" data-value="Relevancia" value="Relevancia" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'Relevancia') ? 'checked' : '' ?>/>Relevancia</label>
-                                <label><input type="radio" class="optionOrdenarL" name="valororden" data-value="Precio ⭡" value="Precio ⭡" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'Precio ⭡') ? 'checked' : '' ?>/>Precio ⭡</label>
-                                <label><input type="radio" class="optionOrdenarL" name="valororden" data-value="Precio ⭣" value="Precio ⭣" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'Precio ⭣') ? 'checked' : '' ?>/>Precio ⭣</label>
-                                <label><input type="radio" class="optionOrdenarL" name="valororden" data-value="A-Z" value="A-Z" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'A-Z') ? 'checked' : '' ?>/>A-Z</label>
-                                <label><input type="radio" class="optionOrdenarL" name="valororden" data-value="Z-A" value="Z-A" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'Z-A') ? 'checked' : '' ?>/>Z-A</label>
+                                <label><input type="radio" class="optionOrdenarL" name="valororden" data-value="Relevancia" value="Relevancia" <?= ($selectedOrder == 'Relevancia') ? 'checked' : '' ?> />Relevancia</label>
+                                <label><input type="radio" class="optionOrdenarL" name="valororden" data-value="Precio ⭡" value="Precio ⭡" <?= ($selectedOrder == 'Precio ⭡') ? 'checked' : '' ?> />Precio ⭡</label>
+                                <label><input type="radio" class="optionOrdenarL" name="valororden" data-value="Precio ⭣" value="Precio ⭣" <?= ($selectedOrder == 'Precio ⭣') ? 'checked' : '' ?> />Precio ⭣</label>
+                                <label><input type="radio" class="optionOrdenarL" name="valororden" data-value="A-Z" value="A-Z" <?= ($selectedOrder == 'A-Z') ? 'checked' : '' ?> />A-Z</label>
+                                <label><input type="radio" class="optionOrdenarL" name="valororden" data-value="Z-A" value="Z-A" <?= ($selectedOrder == 'Z-A') ? 'checked' : '' ?> />Z-A</label>
                             </div>
                         </div>
                     </div>
