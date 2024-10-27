@@ -43,15 +43,15 @@ switch ($selectedOrder) {
         break;
     case 'Relevancia':
     default:
-        // No se añade nada, se mantendrá el orden por defecto
+        // Por defecto
         break;
 }
 
 $sql .= " LIMIT ?";
 $stmt = $conn ->prepare($sql);
-// Crear un array para los tipos de parámetros
+
 $params = [];
-$types = 'i'; // Para el limite
+$types ="";
 
 foreach ($selectedGenres as $genre) {
     $params[] = $genre;
@@ -74,8 +74,9 @@ if ($selectedPriceMax !== '') {
     $types .= 'd'; 
 }
 
-$params[] = $selectedDisplay; // Agregar el límite
-$stmt->bind_param($types, ...$params); // Usar el operador de expansión para pasar los parámetros
+$params[] = $selectedDisplay; // Agregar el limit
+$types .= 'i'; 
+$stmt->bind_param($types, ...$params);
 
 $stmt->execute();
 $libros_consulta = $stmt->get_result();
