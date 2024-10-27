@@ -152,8 +152,9 @@ input[type=search]:focus {
 .pagtext{
     color: var(--lm-color);
     margin: 0;
-    margin-top:10px;
     white-space: nowrap;
+    font-size: 13px;
+    align-content: center;
 }
 
 .filterbutton{
@@ -235,8 +236,9 @@ input[type="radio"] {
 .ordertext{
     color: var(--lm-color);
     margin: 0;
-    margin-top:10px;
     white-space: nowrap;
+    font-size: 13px;
+    align-content: center;
 }
 
 .dropdownmenu2 {

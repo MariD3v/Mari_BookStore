@@ -29,16 +29,16 @@ if ($selectedPriceMax !== '') {
     $sql .= " AND precio <= ?";
 }
 
-if ($selectedOrder=='PrecioAsc') {
+if ($selectedOrder=='Precio ⭡') {
     $sql .= " ORDER BY precio ASC";
 }
-else if ($selectedOrder=='PrecioDesc'){
+else if ($selectedOrder=='Precio ⭣'){
     $sql .= " ORDER BY precio DESC";
 }
-else if ($selectedOrder=='AZ'){
+else if ($selectedOrder=='A-Z'){
     $sql .= " ORDER BY titulo ASC"; 
 }
-else if ($selectedOrder=='ZA'){
+else if ($selectedOrder=='Z-A'){
     $sql .= " ORDER BY titulo DESC";
 }
 
