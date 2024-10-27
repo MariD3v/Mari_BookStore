@@ -121,7 +121,7 @@ input[type=search]:focus {
 }
 
 .barra-opciones{
-    justify-content: space-around;
+    justify-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     padding-left: 10%;
@@ -463,13 +463,15 @@ input[type="number"]:focus {
 
 #buscarfiltrosbutton{
     border-radius: 30px;
-    width: 40px;
-    height: 40px;
-    background-color: var(--l-color);
+    width: 45px;
+    height: 45px;
+    background-color: var(--ll-color);
     border-color: var(--lm-color);
     box-shadow: 2px 2px 5px var(--sbg-color);
-    margin: 10px;
-    margin-top: 25px;
+    margin: 25px 3% 10px 3%
+}
+#buscarfiltrosbuttonrender{
+    display: none;
 }
 
 .catalogo-content{
@@ -1113,7 +1115,6 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .barra-opciones{
-
         margin: 0;
         padding: 0;
         flex-direction: column;
@@ -1130,8 +1131,23 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         margin: 0 !important;
     }
 
-    .barra-opciones div, #buscarfiltrosbutton{
+    .barra-opciones div{
         margin:10px 4px 3px 4px;
+    }
+
+    #buscarfiltrosbuttonrender{
+        margin:10px 4px 3px 4px;
+        display: block;
+        border-radius: 30px;
+        width: 40px;
+        height: 40px;
+        background-color: var(--ll-color);
+        border-color: var(--lm-color);
+        box-shadow: 2px 2px 5px var(--sbg-color);
+    }
+
+    #buscarfiltrosbutton{
+        display: none;
     }
 
     .filterbutton{

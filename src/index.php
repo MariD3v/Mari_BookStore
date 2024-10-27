@@ -67,8 +67,9 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" name="buscarfiltros" id="buscarfiltrosbutton"><img src="assets/images/buttonbuscar.png" height="25" alt="lupa"></button>
+                    <button type="submit" name="buscarfiltros" id="buscarfiltrosbuttonrender"><img src="assets/images/buttonbuscar.png" height="24" alt="lupa"></button>
                 </div>
+                <button type="submit" name="buscarfiltros" id="buscarfiltrosbutton"><img src="assets/images/buttonbuscar.png" height="27" alt="lupa"></button>
                 <div class="opciones">
                     <div class="ordercontainer">
                         <p class="ordertext">Ordenar por: </p>
