@@ -76,11 +76,11 @@
                             <input type="checkbox" id="dropdownToggle2" class="dropdown-checkbox2">
                             <label for="dropdownToggle2" class="filterbutton" id="selectedOptionOrdenarL">Relevancia</label>
                             <div class="dropdowncontent2">
-                                <button type="submit" class="optionOrdenarL" name="valororden" data-value="Relevancia" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'Relevancia') ? 'checked' : '' ?>>Relevancia</button>
-                                <button type="submit" class="optionOrdenarL" name="valororden" data-value="Precio ⭡" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'Precio ⭡') ? 'checked' : '' ?>>Precio ⭡</button>
-                                <button type="submit" class="optionOrdenarL" name="valororden" data-value="Precio ⭣" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'Precio ⭣') ? 'checked' : '' ?>>Precio ⭣</button>
-                                <button type="submit" class="optionOrdenarL" name="valororden" data-value="A-Z" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'A-Z') ? 'checked' : '' ?>>A-Z</button>
-                                <button type="submit" class="optionOrdenarL" name="valororden" data-value="Z-A" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'Z-A') ? 'checked' : '' ?>>Z-A</button>
+                                <label><input type="radio" class="optionOrdenarL" name="valororden" data-value="Relevancia" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'Relevancia') ? 'checked' : '' ?>/>Relevancia</label>
+                                <label><input type="radio" class="optionOrdenarL" name="valororden" data-value="Precio ⭡" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'Precio ⭡') ? 'checked' : '' ?>/>Precio ⭡</label>
+                                <label><input type="radio" class="optionOrdenarL" name="valororden" data-value="Precio ⭣" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'Precio ⭣') ? 'checked' : '' ?>/>Precio ⭣</label>
+                                <label><input type="radio" class="optionOrdenarL" name="valororden" data-value="A-Z" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'A-Z') ? 'checked' : '' ?>/>A-Z</label>
+                                <label><input type="radio" class="optionOrdenarL" name="valororden" data-value="Z-A" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'Z-A') ? 'checked' : '' ?>/>Z-A</label>
                             </div>
                         </div>
                     </div>
@@ -90,9 +90,9 @@
                             <input type="checkbox" id="dropdownToggle1" class="dropdown-checkbox1">
                             <label for="dropdownToggle1" class="filterbutton" id="selectedOptionMostrarLxP">10</label>
                             <div class="dropdowncontent1">
-                                <button type="submit" class="optionMostrarLxP" name="valorLxP" data-value="10" value="10" <?= (isset($_GET['valorLxP']) && $_GET['valorLxP'] == '10') ? 'checked' : '' ?>>10</button>
-                                <button type="submit" class="optionMostrarLxP" name="valorLxP" data-value="20" value="20" <?= (isset($_GET['valorLxP']) && $_GET['valorLxP'] == '20') ? 'checked' : '' ?>>20</button>
-                                <button type="submit" class="optionMostrarLxP" name="valorLxP" data-value="40" value="40" <?= (isset($_GET['valorLxP']) && $_GET['valorLxP'] == '40') ? 'checked' : '' ?>>40</button>
+                                <label><input type="radio" class="optionMostrarLxP" name="valorLxP" data-value="10" value="10" <?= (isset($_GET['valorLxP']) && $_GET['valorLxP'] == '10') ? 'checked' : '' ?>/>10</label>
+                                <label><input type="radio" class="optionMostrarLxP" name="valorLxP" data-value="20" value="20" <?= (isset($_GET['valorLxP']) && $_GET['valorLxP'] == '20') ? 'checked' : '' ?>/>20</label>
+                                <label><input type="radio" class="optionMostrarLxP" name="valorLxP" data-value="40" value="40" <?= (isset($_GET['valorLxP']) && $_GET['valorLxP'] == '40') ? 'checked' : '' ?>/>40</label>
                             </div>
                         </div>
                         <p class="pagtext">Libros/pág</p>

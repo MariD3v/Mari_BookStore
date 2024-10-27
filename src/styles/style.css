@@ -189,23 +189,27 @@ input[type=search]:focus {
     border-radius:2px;
     z-index: 1000; 
     margin-top: 10px;
+    text-align: center;
 }
 
-.dropdowncontent1 button {
+.dropdowncontent1 label {
     color: var(--d-color);
-    padding: 5px 5px;
+    padding: 3px;
     border: none;
-    width: 100%;
     display: block;
     font-size: 14px;
     background-color: transparent;
+}
+
+input[type="radio"] {
+    display: none;
 }
 
 .dropdown-checkbox1 {
     display: none;
 }
 
-.dropdowncontent1 button:hover {
+.dropdowncontent1 label:hover {
     background-color: var(--lm-color);
 }
 
@@ -252,9 +256,10 @@ input[type=search]:focus {
     z-index: 1000; 
     font-size: 14px;
     margin-top: 10px;
+    text-align: center;
 }
 
-.dropdowncontent2 button {
+.dropdowncontent2 label {
     color: var(--d-color);
     padding: 5px 0px;
     width: 100%;
@@ -269,7 +274,7 @@ input[type=search]:focus {
     display: none;
 }
 
-.dropdowncontent2 button:hover {
+.dropdowncontent2 label:hover {
     background-color: var(--lm-color);
 }
 
