@@ -188,22 +188,24 @@ input[type=search]:focus {
     box-shadow: 0px 2px 2px rgb(183, 183, 183);
     border-radius:2px;
     z-index: 1000; 
-    font-size: 14px;
     margin-top: 10px;
 }
 
-.dropdowncontent1 a {
+.dropdowncontent1 button {
     color: var(--d-color);
     padding: 5px 5px;
-    text-decoration: none;
+    border: none;
+    width: 100%;
     display: block;
+    font-size: 14px;
+    background-color: transparent;
 }
 
 .dropdown-checkbox1 {
     display: none;
 }
 
-.dropdowncontent1 a:hover {
+.dropdowncontent1 button:hover {
     background-color: var(--lm-color);
 }
 
@@ -252,18 +254,22 @@ input[type=search]:focus {
     margin-top: 10px;
 }
 
-.dropdowncontent2 a {
+.dropdowncontent2 button {
     color: var(--d-color);
-    padding: 5px 5px;
+    padding: 5px 0px;
+    width: 100%;
     text-decoration: none;
+    font-size: 14px;
     display: block;
+    border: none;
+    background-color: transparent;
 }
 
 .dropdown-checkbox2 {
     display: none;
 }
 
-.dropdowncontent2 a:hover {
+.dropdowncontent2 button:hover {
     background-color: var(--lm-color);
 }
 
@@ -306,13 +312,13 @@ input[type=search]:focus {
     margin-top: 10px;
 }
 
-.dropdowncontent3 a {
+.dropdowncontent3 p {
     color: var(--d-color);
     padding: 5px 5px;
     text-decoration: none;
     display: block;
 }
-.dropdowncontent3 a input {
+.dropdowncontent3 p input {
     margin: 2px;
     max-width: 40px;
     border-color: var(--lm-color);
@@ -327,7 +333,7 @@ input[type="number"]:focus {
     display: none;
 }
 
-.dropdowncontent3 a:hover {
+.dropdowncontent3 p:hover {
     background-color: var(--lm-color);
 }
 
@@ -448,6 +454,17 @@ input[type="number"]:focus {
 
 .dropdown-checkbox5:checked + .filterbutton + .dropdowncontent5 {
     display: block;
+}
+
+#buscarfiltrosbutton{
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--l-color);
+    border-color: var(--lm-color);
+    box-shadow: 2px 2px 5px var(--sbg-color);
+    margin: 10px;
+    margin-top: 25px;
 }
 
 .catalogo-content{
@@ -1091,24 +1108,25 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .barra-opciones{
-        width: 80%;
-        margin: 0 10%;
+
+        margin: 0;
         padding: 0;
         flex-direction: column;
     }
 
     .filters{
-        justify-content: space-evenly;
+        justify-content: center;
         margin: 0 !important;
+        width: 100%;
     }
 
     .opciones{
-        justify-content: space-evenly;
+        justify-content: center;
         margin: 0 !important;
     }
 
-    .barra-opciones div{
-        margin:10px 3px 3px 3px;
+    .barra-opciones div, #buscarfiltrosbutton{
+        margin:10px 4px 3px 4px;
     }
 
     .filterbutton{
@@ -1358,6 +1376,11 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     .barra-opciones{
         padding: 0;
     }
+
+    .pagtext{
+        display: none;
+    }
+
     .barra-nextpage{
         margin-left: 2%;
         margin-right: 2%;

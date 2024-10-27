@@ -34,3 +34,5 @@ if(isset($_GET["codigo_libro"])){
     header("location: ../index.php");
 }
 
+$stmt->close();
+$conn->close();

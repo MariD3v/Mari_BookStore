@@ -33,3 +33,5 @@ if(isset($_GET["codigo_autor"])){
     header("location: ../index.php");
 }
 
+$stmt->close();
+$conn->close();

@@ -11,121 +11,96 @@
 <body>
     <nav>
         <ul class="nav">
-            <li>
-                <a id="inicio" href="index.php"><img src="assets/images/logo3.png" alt="logo"></a>
-            </li>
+            <li><a id="inicio" href="index.php"><img src="assets/images/logo3.png" alt="logo"></a></li>
             <li id="barra-buscar">
                 <form action="" method="get" class="buscar-container"> <!--ruta de php en action= server/searchBar.php-->
                     <input  type="search" value="" class="buscar" name="barra-buscar" placeholder="Buscar por autor, título..."/>
-                    <button type="submit" name="buscarbutton" class="buscarbutton">
-                      <img src="assets/images/buttonbuscar.png" alt="lupa">
-                    </button>
+                    <button type="submit" name="buscarbutton" class="buscarbutton"><img src="assets/images/buttonbuscar.png" alt="lupa"></button>
                 </form>
             </li>
-            <li>
-                <a id="carrito" href="pages/carrito.html"><img src="assets/images/carro.png" alt="carrito" height="35px"></a>
-            </li>
+            <li><a id="carrito" href="pages/carrito.html"><img src="assets/images/carro.png" alt="carrito" height="35px"></a></li>
         </ul>
         <li id="barra-buscar-hide">
             <form action="" method="get" class="buscar-container">
                 <input type="search" value="" class="buscar" name="barra-buscar" placeholder="Buscar por autor, título..."/>
-                <button type="submit" name="buscarbutton" class="buscarbutton">
-                  <img src="assets/images/buttonbuscar.png" alt="lupa">
-                </button>
+                <button type="submit" name="buscarbutton" class="buscarbutton"><img src="assets/images/buttonbuscar.png" alt="lupa"></button>
             </form>
         </li>
     </nav>
     
     <section>    
-        <ul class="barra-opciones">
-            <div class="filters">
-                <div class="generofiltercontainer">
-                    <div class="dropdownmenu" id="dropdownmenu5">
-                        <input type="checkbox" id="dropdownToggle5" class="dropdown-checkbox5">
-                        <label for="dropdownToggle5" class="filterbutton">Género</label>
-                        <div class="dropdowncontent5">
-                            <div class="romacebox">
-                                <input type="checkbox" href="#"/>
-                                <p>Romance</p>
-                            </div>
-                            <div>
-                                <input type="checkbox" href="#"/>
-                                <p>Fantasía</p>
-                            </div>
-                            <div>
-                                <input type="checkbox" href="#"/>
-                                <p>Terror</p>
-                            </div>
-                            <div>
-                                <input type="checkbox" href="#"/>
-                                <p>Thriller</p>
-                            </div>
-                            <div>
-                                <input type="checkbox" href="#"/>
-                                <p>Distopía</p>
+        <form method="get" action="index.php">
+            <ul class="barra-opciones">
+                <div class="filters">
+                    <div class="generofiltercontainer">
+                        <div class="dropdownmenu" id="dropdownmenu5">
+                            <input type="checkbox" id="dropdownToggle5" class="dropdown-checkbox5">
+                            <label for="dropdownToggle5" class="filterbutton">Género</label>
+                            <div class="dropdowncontent5">
+                                <div><input type="checkbox" name="genero[]" value="Romance" <?= isset($_GET['genero']) && in_array('Romance', $_GET['genero']) ? 'checked' : '' ?>/><p>Romance</p></div>
+                                <div><input type="checkbox" name="genero[]" value="Fantasía" <?= isset($_GET['genero']) && in_array('Fantasía', $_GET['genero']) ? 'checked' : '' ?>/><p>Fantasía</p></div>
+                                <div><input type="checkbox" name="genero[]" value="Terror" <?= isset($_GET['genero']) && in_array('Terror', $_GET['genero']) ? 'checked' : '' ?>/><p>Terror</p></div>
+                                <div><input type="checkbox" name="genero[]" value="Thriller" <?= isset($_GET['genero']) && in_array('Thriller', $_GET['genero']) ? 'checked' : '' ?>/><p>Thriller</p></div>
+                                <div><input type="checkbox" name="genero[]" value="Distopía" <?= isset($_GET['genero']) && in_array('Distopía', $_GET['genero']) ? 'checked' : '' ?>/><p>Distopía</p></div>
                             </div>
                         </div>
                     </div>
-                </div>
-    
-                <div class="idiomafiltercontainer">
-                    <div class="dropdownmenu" id="dropdownmenu4">
-                        <input type="checkbox" id="dropdownToggle4" class="dropdown-checkbox4">
-                        <label for="dropdownToggle4" class="filterbutton">Idioma</label>
-                        <div class="dropdowncontent4">
-                            <div class="inglesbox">
-                                <input type="checkbox" href="#"/>
-                                <p>Inglés</p>
-                            </div>
-                            <div class="españolbox">
-                                <input type="checkbox" href="#"/>
-                                <p>Español</p>
+        
+                    <div class="idiomafiltercontainer">
+                        <div class="dropdownmenu" id="dropdownmenu4">
+                            <input type="checkbox" id="dropdownToggle4" class="dropdown-checkbox4">
+                            <label for="dropdownToggle4" class="filterbutton">Idioma</label>
+                            <div class="dropdowncontent4">
+                                <div><input type="checkbox" name="idioma[]" value="Inglés" <?= isset($_GET['idioma']) && in_array('Inglés', $_GET['idioma']) ? 'checked' : '' ?>/><p>Inglés</p></div>
+                                <div><input type="checkbox" name="idioma[]" value="Español" <?= isset($_GET['idioma']) && in_array('Español', $_GET['idioma']) ? 'checked' : '' ?>/><p>Español</p></div>
                             </div>
                         </div>
                     </div>
-                </div>
-    
-                <div class="preciofiltercontainer">
-                    <div class="dropdownmenu" id="dropdownmenu3">
-                        <input type="checkbox" id="dropdownToggle3" class="dropdown-checkbox3">
-                        <label for="dropdownToggle3" class="filterbutton">Precio</label>
-                        <div class="dropdowncontent3">
-                            <a href="#">Min <input type="number" min="0"> </a>
-                            <a href="#">Max <input type="number" min="0"> </a>                  
+        
+                    <div class="preciofiltercontainer">
+                        <div class="dropdownmenu" id="dropdownmenu3">
+                            <input type="checkbox" id="dropdownToggle3" class="dropdown-checkbox3">
+                            <label for="dropdownToggle3" class="filterbutton">Precio</label>
+                            <div class="dropdowncontent3">
+                                <p>Min <input type="number" name="valorpreciomin" value="<?= isset($_GET['valorpreciomin']) ? $_GET['valorpreciomin'] : '' ?>" min="0"/></p>
+                                <p>Max <input type="number" name="valorpreciomax" value="<?= isset($_GET['valorpreciomax']) ? $_GET['valorpreciomax'] : '' ?>" min="0"/></p>                  
+                            </div>
                         </div>
                     </div>
+                    <button type="submit" name="buscarfiltros" id="buscarfiltrosbutton"><img src="assets/images/buttonbuscar.png" height="25" alt="lupa"></button>
                 </div>
-            </div>
-            <div class="opciones">
-                <div class="ordercontainer">
-                    <p class="ordertext">Ordenar por: </p>
-                    <div class="dropdownmenu2">
-                        <input type="checkbox" id="dropdownToggle2" class="dropdown-checkbox2">
-                        <label for="dropdownToggle2" class="filterbutton" id="selectedOptionOrdenarL">Relevancia</label>
-                        <div class="dropdowncontent2">
-                            <a href="#" class="optionOrdenarL" data-value="Relevancia">Relevancia</a>
-                            <a href="#" class="optionOrdenarL" data-value="Precio ⭡">Precio ⭡</a>
-                            <a href="#" class="optionOrdenarL" data-value="Precio ⭣">Precio ⭣</a>
-                            <a href="#" class="optionOrdenarL" data-value="A-Z">A-Z</a>
-                            <a href="#" class="optionOrdenarL" data-value="Z-A">Z-A</a>
+                <div class="opciones">
+                    <div class="ordercontainer">
+                        <p class="ordertext">Ordenar por: </p>
+                        <div class="dropdownmenu2">
+                            <input type="checkbox" id="dropdownToggle2" class="dropdown-checkbox2">
+                            <label for="dropdownToggle2" class="filterbutton" id="selectedOptionOrdenarL">Relevancia</label>
+                            <div class="dropdowncontent2">
+                                <button type="submit" class="optionOrdenarL" name="valororden" data-value="Relevancia" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'Relevancia') ? 'checked' : '' ?>>Relevancia</button>
+                                <button type="submit" class="optionOrdenarL" name="valororden" data-value="Precio ⭡" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'Precio ⭡') ? 'checked' : '' ?>>Precio ⭡</button>
+                                <button type="submit" class="optionOrdenarL" name="valororden" data-value="Precio ⭣" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'Precio ⭣') ? 'checked' : '' ?>>Precio ⭣</button>
+                                <button type="submit" class="optionOrdenarL" name="valororden" data-value="A-Z" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'A-Z') ? 'checked' : '' ?>>A-Z</button>
+                                <button type="submit" class="optionOrdenarL" name="valororden" data-value="Z-A" <?= (isset($_GET['valororder']) && $_GET['valororder'] == 'Z-A') ? 'checked' : '' ?>>Z-A</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-    
-                <div class="mostrarpagcontainer">
-                    <div class="dropdownmenu1">
-                        <input type="checkbox" id="dropdownToggle1" class="dropdown-checkbox1">
-                        <label for="dropdownToggle1" class="filterbutton" id="selectedOptionMostrarLxP">10</label>
-                        <div class="dropdowncontent1">
-                            <a href="#" class="optionMostrarLxP" data-value="10">10</a>
-                            <a href="#" class="optionMostrarLxP" data-value="20">20</a>
-                            <a href="#" class="optionMostrarLxP" data-value="40">40</a>
+        
+                    <div class="mostrarpagcontainer">
+                        <div class="dropdownmenu1">
+                            <input type="checkbox" id="dropdownToggle1" class="dropdown-checkbox1">
+                            <label for="dropdownToggle1" class="filterbutton" id="selectedOptionMostrarLxP">10</label>
+                            <div class="dropdowncontent1">
+                                <button type="submit" class="optionMostrarLxP" name="valorLxP" data-value="10" value="10" <?= (isset($_GET['valorLxP']) && $_GET['valorLxP'] == '10') ? 'checked' : '' ?>>10</button>
+                                <button type="submit" class="optionMostrarLxP" name="valorLxP" data-value="20" value="20" <?= (isset($_GET['valorLxP']) && $_GET['valorLxP'] == '20') ? 'checked' : '' ?>>20</button>
+                                <button type="submit" class="optionMostrarLxP" name="valorLxP" data-value="40" value="40" <?= (isset($_GET['valorLxP']) && $_GET['valorLxP'] == '40') ? 'checked' : '' ?>>40</button>
+                            </div>
                         </div>
+                        <p class="pagtext">Libros/pág</p>
                     </div>
-                    <p class="pagtext">Libros/pág</p>
                 </div>
-            </div>
-        </ul>
+            </ul>
+        </form>
+    </section>
         <section class="catalogo-content">      
             <div class="catalogo">
                 
