@@ -7,8 +7,9 @@ $selectedPriceMin = isset($_GET['valorpreciomin']) ? $_GET['valorpreciomin'] : '
 $selectedPriceMax = isset($_GET['valorpreciomax']) ? $_GET['valorpreciomax'] : '';
 $selectedOrder = isset($_GET['valororden']) ? $_GET['valororden'] : 'Relevancia';
 $selectedDisplay = isset($_GET['valorLxP']) ? $_GET['valorLxP'] : '10';
+$valueSearchBar = isset($_GET['searchBar'])? $_GET['searchBar']:'';
 
-$sql = "SELECT * FROM libro  WHERE 1=1";
+$sql = "SELECT * FROM libro, autor WHERE libro.codigo_autor=autor.codigo_autor";
 
 
 if (!empty($selectedGenres)) {
@@ -27,6 +28,10 @@ if ($selectedPriceMin !== '') {
 
 if ($selectedPriceMax !== '') {
     $sql .= " AND precio <= ?";
+}
+
+if ($valueSearchBar != ''){
+    $sql .= " AND (titulo LIKE ? OR autor.nombre LIKE ? OR genero LIKE ? OR serie LIKE ? OR encuadernacion LIKE ? OR idioma LIKE ?)";
 }
 
 if ($selectedOrder=='Precio ⭡') {
@@ -67,6 +72,17 @@ if ($selectedPriceMin !== '') {
 if ($selectedPriceMax !== '') {
     $params[] = $selectedPriceMax;
     $types .= 'd'; 
+}
+
+if ($valueSearchBar !== ''){
+    $searchTerm = "%" . $valueSearchBar . "%";
+    $params[] = $searchTerm;
+    $params[] = $searchTerm;
+    $params[] = $searchTerm;
+    $params[] = $searchTerm;
+    $params[] = $searchTerm;
+    $params[] = $searchTerm;
+    $types .= 'ssssss';
 }
 
 $params[] = $selectedDisplay; // Agregar el limit

@@ -14,12 +14,27 @@ include("../server/getProductsLibro.php");
 </head>
 
 <body>
-    <nav>
-        <ul class="nav">
-            <li>
-                <a id="inicio" href="../index.php"><img src="../assets/images/logo3.png" alt="logo"></a>
-            </li>
-            <li id="barra-buscar">
+    <main>
+        <nav>
+            <ul class="nav">
+                <li>
+                    <a id="inicio" href="../index.php"><img src="../assets/images/logo3.png" alt="logo"></a>
+                </li>
+                <li id="barra-buscar">
+                    <form action="" method="get" class="buscar-container">
+                        <input type="search" value="" class="buscar" name="barra-buscar"
+                            placeholder="Buscar por autor, título..." />
+                        <button type="submit" name="buscarbutton" class="buscarbutton">
+                            <img src="../assets/images/buttonbuscar.png" alt="lupa">
+                        </button>
+                    </form>
+                </li>
+                <li>
+                    <a id="carrito" href="carrito.php"><img src="../assets/images/carro.png" alt="carrito"
+                            height="35px"></a>
+                </li>
+            </ul>
+            <li id="barra-buscar-hide">
                 <form action="" method="get" class="buscar-container">
                     <input type="search" value="" class="buscar" name="barra-buscar"
                         placeholder="Buscar por autor, título..." />
@@ -28,34 +43,20 @@ include("../server/getProductsLibro.php");
                     </button>
                 </form>
             </li>
-            <li>
-                <a id="carrito" href="carrito.html"><img src="../assets/images/carro.png" alt="carrito"
-                        height="35px"></a>
-            </li>
-        </ul>
-        <li id="barra-buscar-hide">
-            <form action="" method="get" class="buscar-container">
-                <input type="search" value="" class="buscar" name="barra-buscar"
-                    placeholder="Buscar por autor, título..." />
-                <button type="submit" name="buscarbutton" class="buscarbutton">
-                    <img src="../assets/images/buttonbuscar.png" alt="lupa">
-                </button>
-            </form>
-        </li>
-    </nav>
-    <main>
+        </nav>
+
         <div class="book-author-container">
-            
+
             <div class="firstline">
-                <img class="imagen-book" src="../assets/images/covers/<?php echo $libro["codigo_libro"]?>.png"/>
+                <img class="imagen-book" src="../assets/images/covers/<?php echo $libro["codigo_libro"] ?>.png" />
                 <div class="atributos-book-author">
-                    <h1 id="titulo"><?php echo mb_strtoupper($libro["titulo"])?></h1>
-                    <a id="autor" href="autor.php?codigo_autor=<?php echo $autor['codigo_autor']; ?>"><?php echo mb_strtoupper($autor["nombre"])?></a>
+                    <h1 id="titulo"><?php echo mb_strtoupper($libro["titulo"]) ?></h1>
+                    <a id="autor" href="autor.php?codigo_autor=<?php echo $autor['codigo_autor']; ?>"><?php echo mb_strtoupper($autor["nombre"]) ?></a>
                     <div id="precioygenero">
-                        <p><?php echo ($libro["genero"])?></p>
-                        <p class="precio€"><?php echo ($libro["precio"])?></p>
+                        <p><?php echo ($libro["genero"]) ?></p>
+                        <p class="precio€"><?php echo ($libro["precio"]) ?></p>
                     </div>
-                    <p class="descripcion"><?php echo ($libro["descripcion_libro"])?>
+                    <p class="descripcion"><?php echo ($libro["descripcion_libro"]) ?>
                     </p>
                 </div>
             </div>
@@ -63,61 +64,64 @@ include("../server/getProductsLibro.php");
             <fieldset class="fichatecnica">
                 <legend>Ficha técnica</legend>
                 <p>Nº de paginas</p>
-                <p> <?php echo ($libro["n_pag"])?> </p>
+                <p> <?php echo ($libro["n_pag"]) ?> </p>
                 <p>Editorial</p>
-                <p> <?php echo ($libro["editorial"])?>  </p>
+                <p> <?php echo ($libro["editorial"]) ?> </p>
                 <p>Idioma</p>
-                <p> <?php echo ($libro["idioma"])?> </p>
+                <p> <?php echo ($libro["idioma"]) ?> </p>
                 <p>Encuadernación</p>
-                <p> <?php echo ($libro["encuadernacion"])?> </p>
+                <p> <?php echo ($libro["encuadernacion"]) ?> </p>
                 <p>Fecha de lanzamiento</p>
-                <p> <?php echo ($libro["fecha_publ"])?>  </p>
+                <p> <?php echo ($libro["fecha_publ"]) ?> </p>
                 <p>Serie/Saga</p>
-                <p> <?php if ($libro["serie"]===null){echo "No";} else {echo ($libro["serie"])?> </p>
+                <p> <?php if ($libro["serie"] === null) {
+                        echo "No";
+                    } else {
+                        echo ($libro["serie"]) ?> </p>
                 <p>Número</p>
-                <p><?php  echo ($libro["numero"])?> </p>
+                <p><?php echo ($libro["numero"]) ?> </p>
             </fieldset>
-            <?php }?>
-        </div>
-        <?php if($librosGenero_consulta->num_rows != 0){ ?>
-        <div class="recomendaciones-container">
-            <p class="recomendaciones-text">Similares a <span><?php echo mb_strtoupper($libro["titulo"])?></span></p>
-            <hr>
-            <div class="carrusel">
-                <button class="carruselnext carruselbton-btn">◀</button>
-                <div class="carruselcatalogo catalogo">
-                <?php while ($libro = $librosGenero_consulta -> fetch_assoc()){ ?>
-                <a class="book" href=<?php echo "libro.php?codigo_libro=".$libro["codigo_libro"];?>>        
-                    <img class="portada" src="../assets/images/covers/<?php echo $libro["codigo_libro"]?>.png">
-                    <p class="titulo"><?php echo mb_strtoupper($libro["titulo"])?></p>
-                    <button class="buttoncarro" ><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
-                    <p class="precio"><?php echo $libro["precio"]?></p>
-                </a>
-                <?php } ?>
-                </div>
-                <button class="carruselprev carruselbton-btn">▶</button>
-            </div>
-        </div>
         <?php } ?>
-        <?php if($librosAutor_consulta->num_rows != 0){ ?>
-        <div class="recomendaciones-container">
-            <p class="recomendaciones-text">Otros libros de <span><?php echo mb_strtoupper($autor["nombre"])?></span></p>
-            <hr>
-            <div class="carrusel">
-                <button class="carruselnext carruselbton-btn">◀</button>
-                <div class="catalogo">
-                <?php while ($libro = $librosAutor_consulta -> fetch_assoc()){ ?>
-                <a class="book" href=<?php echo "libro.php?codigo_libro=".$libro["codigo_libro"];?>>        
-                    <img class="portada" src="../assets/images/covers/<?php echo $libro["codigo_libro"]?>.png">
-                    <p class="titulo"><?php echo mb_strtoupper($libro["titulo"])?></p>
-                    <button class="buttoncarro" ><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
-                    <p class="precio"><?php echo $libro["precio"]?></p>
-                </a>
-                <?php } ?>
-                </div>
-                <button class="carruselprev carruselbton-btn">▶</button>
-            </div>
         </div>
+        <?php if ($librosGenero_consulta->num_rows != 0) { ?>
+            <div class="recomendaciones-container">
+                <p class="recomendaciones-text">Similares a <span><?php echo mb_strtoupper($libro["titulo"]) ?></span></p>
+                <hr>
+                <div class="carrusel">
+                    <button class="carruselnext carruselbton-btn">◀</button>
+                    <div class="carruselcatalogo catalogo">
+                        <?php while ($libro = $librosGenero_consulta->fetch_assoc()) { ?>
+                            <a class="book" href=<?php echo "libro.php?codigo_libro=" . $libro["codigo_libro"]; ?>>
+                                <img class="portada" src="../assets/images/covers/<?php echo $libro["codigo_libro"] ?>.png">
+                                <p class="titulo"><?php echo mb_strtoupper($libro["titulo"]) ?></p>
+                                <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
+                                <p class="precio"><?php echo $libro["precio"] ?></p>
+                            </a>
+                        <?php } ?>
+                    </div>
+                    <button class="carruselprev carruselbton-btn">▶</button>
+                </div>
+            </div>
+        <?php } ?>
+        <?php if ($librosAutor_consulta->num_rows != 0) { ?>
+            <div class="recomendaciones-container">
+                <p class="recomendaciones-text">Otros libros de <span><?php echo mb_strtoupper($autor["nombre"]) ?></span></p>
+                <hr>
+                <div class="carrusel">
+                    <button class="carruselnext carruselbton-btn">◀</button>
+                    <div class="catalogo">
+                        <?php while ($libro = $librosAutor_consulta->fetch_assoc()) { ?>
+                            <a class="book" href=<?php echo "libro.php?codigo_libro=" . $libro["codigo_libro"]; ?>>
+                                <img class="portada" src="../assets/images/covers/<?php echo $libro["codigo_libro"] ?>.png">
+                                <p class="titulo"><?php echo mb_strtoupper($libro["titulo"]) ?></p>
+                                <button class="buttoncarro"><img src="../assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
+                                <p class="precio"><?php echo $libro["precio"] ?></p>
+                            </a>
+                        <?php } ?>
+                    </div>
+                    <button class="carruselprev carruselbton-btn">▶</button>
+                </div>
+            </div>
         <?php } ?>
     </main>
     <footer>

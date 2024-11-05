@@ -9,25 +9,25 @@
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
 </head>
 <body>
+    <main>
     <nav>
         <ul class="nav">
             <li><a id="inicio" href="index.php"><img src="assets/images/logo3.png" alt="logo"></a></li>
             <li id="barra-buscar">
-                <form action="" method="get" class="buscar-container"> <!--ruta de php en action= server/searchBar.php-->
-                    <input  type="search" value="" class="buscar" name="barra-buscar" placeholder="Buscar por autor, título..."/>
+                <form method="get" action="index.php" class="buscar-container"> 
+                    <input  type="search" value="<?= isset($_GET['searchBar']) ? $_GET['searchBar'] : '' ?>" class="buscar" name="searchBar" placeholder="Buscar por autor, título..."/>
                     <button type="submit" name="buscarbutton" class="buscarbutton"><img src="assets/images/buttonbuscar.png" alt="lupa"></button>
                 </form>
             </li>
-            <li><a id="carrito" href="pages/carrito.html"><img src="assets/images/carro.png" alt="carrito" height="35px"></a></li>
+            <li><a id="carrito" href="pages/carrito.php"><img src="assets/images/carro.png" alt="carrito" height="35px"></a></li>
         </ul>
-        <li id="barra-buscar-hide">
-            <form action="" method="get" class="buscar-container">
-                <input type="search" value="" class="buscar" name="barra-buscar" placeholder="Buscar por autor, título..."/>
+        <div id="barra-buscar-hide">
+            <form method="get" action="index.php" class="buscar-container">
+                <input type="search" value="<?= isset($_GET['searchBar']) ? $_GET['searchBar'] : '' ?>" class="buscar" name="searchBar" placeholder="Buscar por autor, título..."/>
                 <button type="submit" name="buscarbutton" class="buscarbutton"><img src="assets/images/buttonbuscar.png" alt="lupa"></button>
             </form>
-        </li>
+        </div>
     </nav>
-    
     <section>    
         <form method="get" action="index.php">
             <ul class="barra-opciones">
@@ -102,27 +102,29 @@
             </ul>
         </form>
     </section>
-        <section class="catalogo-content">      
-            <div class="catalogo">
-                
-                <?php while ($libro = $libros_consulta -> fetch_assoc()){ ?>
-                <a class="book" href=<?php echo "pages/libro.php?codigo_libro=".$libro["codigo_libro"];?>>        
-                    <img class="portada" src="assets/images/covers/<?php echo $libro["codigo_libro"]?>.png">
-                    <p class="titulo"><?php echo mb_strtoupper($libro["titulo"])?></p>
-                    <button class="buttoncarro" ><img src="assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
-                    <p class="precio"><?php echo $libro["precio"]?></p>
-                </a>
-                <?php } ?>
-                
-            </div>
-            <ul class="barra-nextpage">
-                <input class="buttonnextpage" type="button" value="🡠"/>
-                <p class="textnextpage">   Página 1 de 22   </p>
-                <input class="buttonnextpage" type="button" value="🡢"/>
-            </ul>
-        </section>
+    <section class="catalogo-content">      
+        <div class="catalogo"> 
+            <?php 
+            if ($libros_consulta->num_rows == 0) {echo "<h1>No hay resultado para su búsqueda</h1>";} 
+            else {while ($libro = $libros_consulta -> fetch_assoc()){ ?>
+            <a class="book" href=<?php echo "pages/libro.php?codigo_libro=".$libro["codigo_libro"];?>>        
+                <img class="portada" src="assets/images/covers/<?php echo $libro["codigo_libro"]?>.png">
+                <p class="titulo"><?php echo mb_strtoupper($libro["titulo"])?></p>
+                <button class="buttoncarro" ><img src="assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
+                <p class="precio"><?php echo $libro["precio"]?></p>
+            </a>
+            <?php }} ?>
+        </div>
+        <?php 
+            if ($libros_consulta->num_rows != 0){echo "
+                <ul class=\"barra-nextpage\">
+                    <input class=\"buttonnextpage\" type=\"button\" value=\"🡠\"/>
+                    <p class=\"textnextpage\">   Página 1 de 22   </p>
+                    <input class=\"buttonnextpage\" type=\"button\" value=\"🡢\"/>
+                </ul>";
+        }?>
+    </section>    
     </main>
-    
     <footer>
         <p>Página web realizada por Maria Salar Garcia</p> 
         <div class="links">
