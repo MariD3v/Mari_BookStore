@@ -116,14 +116,13 @@
                     <?php }} ?>
                 </div>
                     <?php 
-                        if ($numeroLibrosT != 0){echo '
+                        if ($libros_xP->num_rows != 0){echo '
                             <ul class="barra-nextpage">
-                                <input class="buttonnextpage" name="disminuir" type="submit" value="🡠" onclick="prevPage()"/>
+                                <input class="buttonnextpage" name="disminuir" type="submit" value="🡠"/>
                                 <input type="hidden" name="contador" value="'.$contador.'">
                                 <p id="textnextpage">   Página <span name="pagActual">'.$contador.'</span> de <span id="pagTotales">'.ceil($numeroLibrosT/$selectedDisplay).'</span>   </p>
-                                <input class="buttonnextpage" name="aumentar" type="submit" value="🡢" onclick="nextPage()"/>
-                            </ul>
-                            ';
+                                <input class="buttonnextpage" name="aumentar" type="submit" value="🡢"/>
+                            </ul>';
                     }?>
             </section>   
         </form> 

@@ -12,7 +12,6 @@ $contador = isset($_GET['contador']) ? (int)$_GET['contador'] : 1;
 
 $sql = "SELECT * FROM libro, autor WHERE libro.codigo_autor=autor.codigo_autor";
 
-
 if (!empty($selectedGenres)) {
     $genresPlaceholder = implode(',', array_fill(0, count($selectedGenres), '?'));
     $sql .= " AND genero IN ($genresPlaceholder)";
@@ -92,17 +91,7 @@ $stmt->execute();
 $libros_totales = $stmt->get_result(); //Libros totales
 $numeroLibrosT = $libros_totales->num_rows;
 
-$sql .= " LIMIT ? OFFSET ?"; 
-$stmt = $conn ->prepare($sql);
-$params[] = $selectedDisplay; 
-$params[] = $selectedDisplay*($contador-1);
-$types .= 'ii'; 
-$stmt->bind_param($types, ...$params);
-$stmt->execute();
-$libros_xP = $stmt->get_result(); // Libros por pagina
-$numeroLibrosxP = $libros_xP->num_rows;
-
-if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['aumentar']) && $numeroLibrosxP!=0 && $contador<(ceil($numeroLibrosT/$selectedDisplay))) {
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['aumentar']) && $contador<(ceil($numeroLibrosT /$selectedDisplay))) {
     $contador++;
 }
 
@@ -113,6 +102,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['disminuir']) && $contad
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['reset'])) {
     $contador = 1;
 }
+
+$sql .= " LIMIT ? OFFSET ?"; 
+$stmt = $conn ->prepare($sql);
+$params[] = $selectedDisplay; 
+$params[] = $selectedDisplay*($contador-1);
+$types .= 'ii'; 
+$stmt->bind_param($types, ...$params);
+$stmt->execute();
+$libros_xP = $stmt->get_result(); // Libros por pagina
+$numeroLibrosxP = $libros_xP->num_rows;
 
 $stmt->close();
 $conn->close();
