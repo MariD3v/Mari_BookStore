@@ -114,8 +114,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['reset'])) {
     $contador = 1;
 }
 
-
-
 $stmt->close();
 $conn->close();
 ?>
