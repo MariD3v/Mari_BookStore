@@ -8,6 +8,7 @@ $selectedPriceMax = isset($_GET['valorpreciomax']) ? $_GET['valorpreciomax'] : '
 $selectedOrder = isset($_GET['valororden']) ? $_GET['valororden'] : 'Relevancia';
 $selectedDisplay = isset($_GET['valorLxP']) ? $_GET['valorLxP'] : '10';
 $valueSearchBar = isset($_GET['searchBar'])? $_GET['searchBar']:'';
+$contador = isset($_GET['contador']) ? (int)$_GET['contador'] : 1;
 
 $sql = "SELECT * FROM libro, autor WHERE libro.codigo_autor=autor.codigo_autor";
 
@@ -89,14 +90,31 @@ if ($types != ""){
 }
 $stmt->execute();
 $libros_totales = $stmt->get_result(); //Libros totales
+$numeroLibrosT = $libros_totales->num_rows;
 
-$sql .= " LIMIT ?"; 
+$sql .= " LIMIT ? OFFSET ?"; 
 $stmt = $conn ->prepare($sql);
 $params[] = $selectedDisplay; 
-$types .= 'i'; 
+$params[] = $selectedDisplay*($contador-1);
+$types .= 'ii'; 
 $stmt->bind_param($types, ...$params);
 $stmt->execute();
-$libros_consulta = $stmt->get_result(); // Libros por pagina
+$libros_xP = $stmt->get_result(); // Libros por pagina
+$numeroLibrosxP = $libros_xP->num_rows;
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['aumentar']) && $numeroLibrosxP!=0 && $contador<(ceil($numeroLibrosT/$selectedDisplay))) {
+    $contador++;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['disminuir']) && $contador>1) {
+    $contador--;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['reset'])) {
+    $contador = 1;
+}
+
+
 
 $stmt->close();
 $conn->close();

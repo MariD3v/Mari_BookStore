@@ -16,7 +16,7 @@
                 <li id="barra-buscar">
                     <form method="get" action="index.php" class="buscar-container"> 
                         <input  type="search" value="<?= isset($_GET['searchBar']) ? $_GET['searchBar'] : '' ?>" class="buscar" name="searchBar" placeholder="Buscar por autor, título..."/>
-                        <button type="submit" name="buscarbutton" class="buscarbutton"><img src="assets/images/buttonbuscar.png" alt="lupa"></button>
+                        <button type="submit" name="reset" name="buscarbutton" class="buscarbutton"><img src="assets/images/buttonbuscar.png" alt="lupa"></button>
                     </form>
                 </li>
                 <li><a id="carrito" href="pages/carrito.php"><img src="assets/images/carro.png" alt="carrito" height="35px"></a></li>
@@ -24,7 +24,7 @@
             <div id="barra-buscar-hide">
                 <form method="get" action="index.php" class="buscar-container">
                     <input type="search" value="<?= isset($_GET['searchBar']) ? $_GET['searchBar'] : '' ?>" class="buscar" name="searchBar" placeholder="Buscar por autor, título..."/>
-                    <button type="submit" name="buscarbutton" class="buscarbutton"><img src="assets/images/buttonbuscar.png" alt="lupa"></button>
+                    <button type="submit" name="reset" name="buscarbutton" class="buscarbutton"><img src="assets/images/buttonbuscar.png" alt="lupa"></button>
                 </form>
             </div>
         </nav>
@@ -68,9 +68,9 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" name="buscarfiltros" id="buscarfiltrosbuttonrender"><img src="assets/images/buttonbuscar.png" height="24" alt="lupa"></button>
+                        <button type="submit" name="reset" name="buscarfiltros" id="buscarfiltrosbuttonrender"><img src="assets/images/buttonbuscar.png" height="24" alt="lupa"></button>
                     </div>
-                    <button type="submit" name="buscarfiltros" id="buscarfiltrosbutton"><img src="assets/images/buttonbuscar.png" height="27" alt="lupa"></button>
+                    <button type="submit" name="reset" name="buscarfiltros" id="buscarfiltrosbutton"><img src="assets/images/buttonbuscar.png" height="27" alt="lupa"></button>
                     <div class="opciones">
                         <div class="ordercontainer">
                             <p class="ordertext">Ordenar por: </p>
@@ -105,8 +105,8 @@
             <section class="catalogo-content">      
                 <div class="catalogo"> 
                     <?php 
-                    if ($libros_consulta->num_rows == 0) {echo "<h1>No hay resultado para su búsqueda</h1>";} 
-                    else {while ($libro = $libros_consulta -> fetch_assoc()){ ?>
+                    if ($libros_xP->num_rows == 0) {echo "<h1>No hay resultado para su búsqueda</h1>";} 
+                    else {while ($libro = $libros_xP -> fetch_assoc()){ ?>
                     <a class="book" href=<?php echo "pages/libro.php?codigo_libro=".$libro["codigo_libro"];?>>        
                         <img class="portada" src="assets/images/covers/<?php echo $libro["codigo_libro"]?>.png">
                         <p class="titulo"><?php echo mb_strtoupper($libro["titulo"])?></p>
@@ -116,14 +116,14 @@
                     <?php }} ?>
                 </div>
                     <?php 
-                        $numeroLibrosT = $libros_totales->num_rows;
-                        $numeroLibrosxP = $libros_consulta->num_rows;
                         if ($numeroLibrosT != 0){echo '
                             <ul class="barra-nextpage">
-                                <input class="buttonnextpage" type="button" value="🡠" onclick="prevPage()"/>
-                                <p id="textnextpage">   Página <span id="pagActual">1</span> de <span id="pagTotales">'.ceil($numeroLibrosT/$numeroLibrosxP).'</span>   </p>
-                                <input class="buttonnextpage" type="button" value="🡢" onclick="nextPage()"/>
-                            </ul>';
+                                <input class="buttonnextpage" name="disminuir" type="submit" value="🡠" onclick="prevPage()"/>
+                                <input type="hidden" name="contador" value="'.$contador.'">
+                                <p id="textnextpage">   Página <span name="pagActual">'.$contador.'</span> de <span id="pagTotales">'.ceil($numeroLibrosT/$selectedDisplay).'</span>   </p>
+                                <input class="buttonnextpage" name="aumentar" type="submit" value="🡢" onclick="nextPage()"/>
+                            </ul>
+                            ';
                     }?>
             </section>   
         </form> 
@@ -144,6 +144,5 @@
     </footer>
 
     <script src="scripts/dropdownMenus.js"> </script>
-    <script src="scripts/nextPage.js"> </script>
 </body>
 </html>
