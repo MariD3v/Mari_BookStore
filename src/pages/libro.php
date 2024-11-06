@@ -17,32 +17,21 @@ include("../server/getProductsLibro.php");
     <main>
         <nav>
             <ul class="nav">
-                <li>
-                    <a id="inicio" href="../index.php"><img src="../assets/images/logo3.png" alt="logo"></a>
-                </li>
+                <li><a id="inicio" href="../index.php"><img src="../assets/images/logo3.png" alt="logo"></a></li>
                 <li id="barra-buscar">
-                    <form action="" method="get" class="buscar-container">
-                        <input type="search" value="" class="buscar" name="barra-buscar"
-                            placeholder="Buscar por autor, título..." />
-                        <button type="submit" name="buscarbutton" class="buscarbutton">
-                            <img src="../assets/images/buttonbuscar.png" alt="lupa">
-                        </button>
+                    <form method="get" action="../index.php" class="buscar-container">
+                        <input type="search" value="<?= isset($_GET['searchBar']) ? $_GET['searchBar'] : '' ?>" class="buscar" name="searchBar" placeholder="Buscar por autor, título..." />
+                        <button type="submit" name="buscarbutton" class="buscarbutton"><img src="../assets/images/buttonbuscar.png" alt="lupa"></button>
                     </form>
                 </li>
-                <li>
-                    <a id="carrito" href="carrito.php"><img src="../assets/images/carro.png" alt="carrito"
-                            height="35px"></a>
-                </li>
+                <li><a id="carrito" href="carrito.php"><img src="../assets/images/carro.png" alt="carrito" height="35px"></a></li>
             </ul>
-            <li id="barra-buscar-hide">
-                <form action="" method="get" class="buscar-container">
-                    <input type="search" value="" class="buscar" name="barra-buscar"
-                        placeholder="Buscar por autor, título..." />
-                    <button type="submit" name="buscarbutton" class="buscarbutton">
-                        <img src="../assets/images/buttonbuscar.png" alt="lupa">
-                    </button>
+            <div id="barra-buscar-hide">
+                <form method="get" action="../index.php" class="buscar-container">
+                    <input type="search" value="<?= isset($_GET['searchBar']) ? $_GET['searchBar'] : '' ?>" class="buscar" name="searchBar" placeholder="Buscar por autor, título..." />
+                    <button type="submit" name="buscarbutton" class="buscarbutton"><img src="../assets/images/buttonbuscar.png" alt="lupa"></button>
                 </form>
-            </li>
+            </div>
         </nav>
 
         <div class="book-author-container">
