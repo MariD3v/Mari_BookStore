@@ -253,7 +253,6 @@ input[type="radio"] {
     display: none;
     position:absolute; 
     background-color: rgb(255, 255, 255);
-    width: 100%;
     box-shadow: 0px 2px 2px rgb(183, 183, 183);
     border-radius:2px;
     z-index: 1000; 
@@ -621,7 +620,7 @@ input[type="number"]:focus {
     background-color: var(--m-color);
 }
 
-.textnextpage{
+#textnextpage{
     margin: 5px;
     color: var(--ll-color);
     font-family: Verdana;
@@ -643,18 +642,24 @@ footer{
 
 footer p{
     padding-left: 148px;
+    align-content: center;
 }
 
 .links{
     display: flex;
     justify-content: space-around;
     margin-left: 30px;
+    
 }
 
 .links a{
-    margin: 11px 7px auto 7px;
+    margin: 0 7px 0 7px;
+    align-content: center;
+    
 }
-
+#enlaceCaca{
+    margin-top: 3px;
+}
 .links a:hover{
     transform: scale(1.06);
 }
@@ -1242,6 +1247,14 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     .links{
         justify-content: center;
         margin:0 60px;
+    }
+
+    .links a{
+        margin: 11px 7px auto 7px;
+    }
+
+    #enlaceCaca{
+        margin-top: 10px;
     }
 
     /*carrito.html*/

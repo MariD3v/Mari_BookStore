@@ -47,8 +47,6 @@ else if ($selectedOrder=='Z-A'){
     $sql .= " ORDER BY titulo DESC";
 }
 
-$sql .= " LIMIT ?";
-$stmt = $conn ->prepare($sql);
 
 $params = [];
 $types ="";
@@ -85,11 +83,20 @@ if ($valueSearchBar !== ''){
     $types .= 'ssssss';
 }
 
-$params[] = $selectedDisplay; // Agregar el limit
+$stmt = $conn ->prepare($sql);
+if ($types != ""){
+    $stmt->bind_param($types, ...$params);
+}
+$stmt->execute();
+$libros_totales = $stmt->get_result(); //Libros totales
+
+$sql .= " LIMIT ?"; 
+$stmt = $conn ->prepare($sql);
+$params[] = $selectedDisplay; 
 $types .= 'i'; 
 $stmt->bind_param($types, ...$params);
 $stmt->execute();
-$libros_consulta = $stmt->get_result();
+$libros_consulta = $stmt->get_result(); // Libros por pagina
 
 $stmt->close();
 $conn->close();
