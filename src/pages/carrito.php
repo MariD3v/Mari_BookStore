@@ -33,40 +33,35 @@
         </nav>
 
         <div class="carritocontainer">
-            <table class="tablacarrito">
-                <thead>
-                    <tr class="textocarrito">
-                        <th>Libro</th>
-                        <th>Precio</th>
-                        <th>Unidades</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="articulocarrito">
-                        <td>Una corte de rosas y espinas</td>
-                        <td class="precio€">22.01</td>
-                        <td>
-                            <input type="button" value="+" class="buttonunidades" onclick="sumar()" />
-                            <p>1</p>
-                            <input type="button" value="-" class="buttonunidades" onclick="restar()" />
-                        </td>
-                    </tr>
-                    <tr class="articulocarrito">
-                        <td>The master</td>
-                        <td class="precio€">20.01</td>
-                        <td>
-                            <input type="button" value="+" class="buttonunidades" onclick="sumar()" />
-                            <p>1</p>
-                            <input type="button" value="-" class="buttonunidades" onclick="restar()" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="totalcontainer">
-                <p>62.03</p>
+            <div id="articuloscarrito">            
+                <div class="articulocarrito">
+                    <a href="codigo_libro"><img class="portada" src="../assets/images/covers/1.png"></a>
+                    <p class="tituloCarro">Una corte de rosas y espinas</p>
+                    <p class="autorCarro">Sarah J. Mass</p>
+                    <div class="buttonunidadescont">
+                        <button class="buttonunidades" id='sumarbton' onclick="sumar()">+</button>
+                        <p class="unidadesCarro">2</p>
+                        <button class="buttonunidades" onclick="restar()">-</button>
+                        <button class="buttonunidades" id='eliminarbton' onclick="eliminar()"><svg x="0px" y="0px" width="28" height="28" viewBox="0,0,256,256"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(6.4,6.4)"><path d="M24.279,3l0.667,2h-9.892l0.667,-2h8.558M24.279,2h-8.558c-0.43,0 -0.813,0.275 -0.949,0.684l-0.772,2.316v1h12v-1l-0.772,-2.316c-0.136,-0.409 -0.518,-0.684 -0.949,-0.684z" fill="#bb4477"></path><path d="M8,37.5c-0.827,0 -1.5,-0.673 -1.5,-1.5v-27.5h27v27.5c0,0.827 -0.673,1.5 -1.5,1.5z" fill="#ffebf5"></path><path d="M33,9v27c0,0.551 -0.449,1 -1,1h-24c-0.551,0 -1,-0.449 -1,-1v-27h26M34,8h-28v28c0,1.105 0.895,2 2,2h24c1.105,0 2,-0.895 2,-2v-28z" fill="#bb4477"></path><path d="M4.5,8.5v-1.5c0,-0.827 0.673,-1.5 1.5,-1.5h28c0.827,0 1.5,0.673 1.5,1.5v1.5z" fill="#ffebf5"></path><path d="M34,6c0.551,0 1,0.449 1,1v1h-30v-1c0,-0.551 0.449,-1 1,-1h28M34,5h-28c-1.105,0 -2,0.895 -2,2v2h32v-2c0,-1.105 -0.895,-2 -2,-2zM24,11h1v24h-1zM15,11h1v24h-1zM10,11h1v24h-1zM29,11h1v24h-1z" fill="#bb4477"></path></g></g></svg></button>
+                    </div>
+                    <p class="precioCarro">22.01€</p>
+                </div>
+                <div class="articulocarrito">
+                    <a href="codigo_libro"><img class="portada" src="../assets/images/covers/13.png"></a>
+                    <p class="tituloCarro">Misery</p>
+                    <p class="autorCarro">Stephen King</p>
+                    <div class="buttonunidadescont">
+                        <button class="buttonunidades" id='sumarbton' onclick="sumar()">+</button>
+                        <p class="unidadesCarro">2</p>
+                        <button class="buttonunidades" onclick="restar()">-</button>
+                        <button class="buttonunidades" id='eliminarbton' onclick="eliminar()"><svg x="0px" y="0px" width="28" height="28" viewBox="0,0,256,256"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(6.4,6.4)"><path d="M24.279,3l0.667,2h-9.892l0.667,-2h8.558M24.279,2h-8.558c-0.43,0 -0.813,0.275 -0.949,0.684l-0.772,2.316v1h12v-1l-0.772,-2.316c-0.136,-0.409 -0.518,-0.684 -0.949,-0.684z" fill="#bb4477"></path><path d="M8,37.5c-0.827,0 -1.5,-0.673 -1.5,-1.5v-27.5h27v27.5c0,0.827 -0.673,1.5 -1.5,1.5z" fill="#ffebf5"></path><path d="M33,9v27c0,0.551 -0.449,1 -1,1h-24c-0.551,0 -1,-0.449 -1,-1v-27h26M34,8h-28v28c0,1.105 0.895,2 2,2h24c1.105,0 2,-0.895 2,-2v-28z" fill="#bb4477"></path><path d="M4.5,8.5v-1.5c0,-0.827 0.673,-1.5 1.5,-1.5h28c0.827,0 1.5,0.673 1.5,1.5v1.5z" fill="#ffebf5"></path><path d="M34,6c0.551,0 1,0.449 1,1v1h-30v-1c0,-0.551 0.449,-1 1,-1h28M34,5h-28c-1.105,0 -2,0.895 -2,2v2h32v-2c0,-1.105 -0.895,-2 -2,-2zM24,11h1v24h-1zM15,11h1v24h-1zM10,11h1v24h-1zM29,11h1v24h-1z" fill="#bb4477"></path></g></g></svg></button>
+                    </div>
+                    <p class="precioCarro">12.01€</p>
+                </div>
             </div>
             <div class="containerbuttonrealizarcompra">
-                <a href="compra-realizada.php">Realizar compra</a>
+                <p id="doCompraText">Total = <b><em>62.03€</em></b></p>
+                <a href="compra-realizada.php" id="doCompraBton">Realizar compra</a>
             </div>
         </div>
     </main>
