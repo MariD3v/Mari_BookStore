@@ -2,12 +2,13 @@
     --sbg-color:#141414;
     --bg-color: #333;
     --bgl-color:rgb(77, 77, 77);
-    --ll-color:rgb(255, 227, 237);
-    --l-color: #FFDDEE;
-    --lm-color: #EEBBCC;
-    --m-color: #EE99BB;
-    --md-color: #CC7799;
-    --d-color: #BB4477;
+    --lighter-color:rgb(238, 233, 237);
+    --ll-color:rgb(248, 230, 236);
+    --l-color: #e9cbda;
+    --lm-color: #f3cbd8;
+    --m-color: #ddbeca;
+    --md-color: #bf92a6;
+    --d-color: #8f5e72;
 }
 
 body {
@@ -604,7 +605,7 @@ input[type="number"]:focus {
 
 .buttonnextpage{
     border:none;
-    background-color: var(--l-color); 
+    background-color: var(--ll-color); 
     padding: 3px;
     font-size: 17px;
     color: var(--d-color);
@@ -629,7 +630,7 @@ input[type="number"]:focus {
 }
 
 footer{
-    background-color: var(--md-color);
+    background-color: var(--d-color);
     width: 100%;
     min-height: 6.8vh;
     display: flex;
@@ -755,7 +756,7 @@ footer p{
 .buttonunidades{
     font-size: 30px;
     color: white;
-    background-color: var(--lm-color);
+    background-color: var(--m-color);
     border-radius: 50px;
     border: none;
     cursor: pointer;
@@ -814,8 +815,8 @@ footer p{
 #doCompraBton{
     margin: 4%;
     text-align: center;
-    background-color: var(--m-color);
-    font-size: 23px;
+    background-color: var(--d-color);
+    font-size: 21px;
     font-weight: 600;
     padding: 12px;
     color: white;
@@ -829,6 +830,49 @@ footer p{
 #doCompraBton:active {
     background-color: var(--md-color); 
 }
+
+/*formulario.html*/
+
+#tituloFormulario{
+    color: rgb(238, 233, 237);
+    text-align: center;
+}
+
+#formulariocontainer{
+    background-color:var(--lighter-color);
+    height: 400px;
+    border-radius: 10px;
+    margin:30px 11% 0 11%;
+    padding:20px;
+    display: grid;
+    grid-template-columns: 48% 48%;
+    grid-template-rows: 70px 70px 70px 70px 70px;
+    grid-gap: 3%;
+    box-shadow: 2px 2px 3px black;
+}
+
+#formulariocontainer div *{
+    display: block;
+    width: 100%;
+}
+
+#formulariocontainer label{
+    color:var(--bgl-color);
+    margin: 5px;
+    font-weight: 600;
+}
+
+#formulariocontainer input{
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid white;
+}
+
+#buttoncontainer{
+    display: flex;
+    justify-content: center;
+}
+
 
 /*compra-realizada.html*/
 .comprarealizadacontainer {
@@ -1407,7 +1451,22 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     #doCompraBton{
-        font-size: 4.5vw;
+        font-size: 4.1vw;
+    }
+
+    /*formulario.html*/
+
+    #tituloFormulario{
+        font-size: 26px;
+    }
+
+    #formulariocontainer{
+        height: 980px;
+        margin:30px 4% 10px 4%;
+        padding:20px;
+        grid-template-columns: 98%;
+        grid-template-rows: 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px;
+        grid-gap: 3%;
     }
 
     /*compra-realizada.html*/
@@ -1642,7 +1701,6 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         font-weight: 600;
     }
     .containerbuttonrealizarcompra{
-        
         background-color: var(--bgl-color);
         top: 0;
         left: 0;
@@ -1661,7 +1719,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     #doCompraBton{
-        font-size: 3vw;
+        font-size: 2.5vw;
     }
 
     /*compra-realizada.html*/

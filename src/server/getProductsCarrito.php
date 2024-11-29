@@ -15,7 +15,7 @@ if (isset($_POST['add_product'])){ //comprobamos si hemos pulsado el boton de aÃ
             $_SESSION['cart'][$product_id] = $product_array; //metemos el producto en nuestra sesion cart. $product_id] = $product_array significa = (1 => '1','Trono de cristal',20.00,1)
 
         } else { //Si el producto ya estaba en el carro
-
+            //no hacemos nada
         }
 
     } else { //si es el primer producto en nuestra sesion
