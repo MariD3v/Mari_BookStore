@@ -30,7 +30,4 @@ if (isset($_POST['addButton'])){ //comprobamos si hemos pulsado el boton
 
         $_SESSION['cart'][$product_id] = $product_array; //metemos el producto en nuestra sesion cart. $product_id] = $product_array significa = (1 => '1','Trono de cristal',20.00,1)
     }
-
-} else {
-    header('location: ../index.php');
 }

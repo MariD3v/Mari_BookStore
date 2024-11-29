@@ -515,7 +515,7 @@ input[type="number"]:focus {
 .book:hover {
     transform: scale(1.02);
     .buttoncarro{
-        display: block;
+        display: flex;
     }
 }
 
@@ -549,6 +549,7 @@ input[type="number"]:focus {
 }
 
 .buttoncarro{
+    justify-content: center;
     padding-top: 5px;
     display:none;
     background-color: var(--l-color);

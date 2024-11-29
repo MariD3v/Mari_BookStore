@@ -110,7 +110,7 @@
                     <a class="book" href=<?php echo "pages/libro.php?codigo_libro=".$libro["codigo_libro"];?>>        
                         <img class="portada" src="assets/images/covers/<?php echo $libro["codigo_libro"]?>.png">
                         <p class="titulo"><?php echo mb_strtoupper($libro["titulo"])?></p>
-                        <button class="buttoncarro" ><img src="assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></button>
+                        <div class="buttoncarro" ><img src="assets/images/buttoncarro.png" alt="añadir a la cesta" height="35px"></div>
                         <p class="precio"><?php echo $libro["precio"]?></p>
                     </a>
                     <?php }} ?>
