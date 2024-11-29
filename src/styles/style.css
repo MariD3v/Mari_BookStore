@@ -2,7 +2,7 @@
     --sbg-color:#141414;
     --bg-color: #333;
     --bgl-color:rgb(77, 77, 77);
-    --lighter-color:rgb(238, 233, 237);
+    --lighter-color:#eee9ed;
     --ll-color:rgb(248, 230, 236);
     --l-color: #e9cbda;
     --lm-color: #f3cbd8;
@@ -841,6 +841,7 @@ footer p{
 #formulariocontainer{
     background-color:var(--lighter-color);
     height: 400px;
+    font-size: 18px;
     border-radius: 10px;
     margin:30px 11% 0 11%;
     padding:20px;
