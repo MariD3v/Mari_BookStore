@@ -1,7 +1,0 @@
-Producto: 1, Nombre: Trono de cristal, Precio: 18.15, Cantidad: 10
-Producto: 1, Nombre: Trono de cristal, Precio: 18.15, Cantidad: 12
-Producto: 1, Nombre: Trono de cristal, Precio: 18.15, Cantidad: 13
-Producto: 1, Nombre: Trono de cristal, Precio: 18.15, Cantidad: 14
-Producto: 1, Nombre: Trono de cristal, Precio: 18.15, Cantidad: 15
-Producto: 1, Nombre: Trono de cristal, Precio: 18.15, Cantidad: 16
-Producto: 1, Nombre: Trono de cristal, Precio: 18.15, Cantidad: 17
