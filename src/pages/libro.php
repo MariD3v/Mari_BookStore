@@ -35,7 +35,6 @@ include("../server/getProductsLibro.php");
         </nav>
 
         <div class="book-author-container">
-
             <div class="firstline">
                 <img class="imagen-book" src="../assets/images/covers/<?php echo $libro["codigo_libro"] ?>.png" />
                 <div class="atributos-book-author">
@@ -49,7 +48,14 @@ include("../server/getProductsLibro.php");
                     </p>
                 </div>
             </div>
-            <button class="añadircestabutton">Añadir a la cesta</button>
+            <form method="POST" action="carrito.php">
+                <input type="hidden" name="product_id" value="<?php echo $libro["codigo_libro"] ?>"/>
+                <input type="hidden" name="product_name" value="<?php echo mb_strtoupper($libro["titulo"]) ?>"/>
+                <input type="hidden" name="product_price" value="<?php echo ($libro["precio"]) ?>"/>
+                <input type="hidden" name="product_author" value="<?php echo mb_strtoupper($autor["nombre"]) ?>"/>
+                <input type="hidden" name="product_quantity" value="1"/>
+                <button class="añadircestabutton" type="submit" name="addButton">Añadir a la cesta</button>
+            </form>
             <fieldset class="fichatecnica">
                 <legend>Ficha técnica</legend>
                 <p>Nº de paginas</p>
@@ -139,6 +145,7 @@ include("../server/getProductsLibro.php");
         </div>
     </footer>
     <script src="../scripts/sliderBooks.js"></script>
+    <script src="../scripts/addProduct.js"></script>
 </body>
 
 </html>

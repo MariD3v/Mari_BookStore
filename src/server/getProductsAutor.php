@@ -1,5 +1,5 @@
 <?php
-include("../server/getConnection.php");
+include("getConnection.php");
 
 if(isset($_GET["codigo_autor"])){
 
