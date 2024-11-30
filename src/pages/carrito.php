@@ -36,7 +36,9 @@ include("../server/getProductsCarrito.php");
 
         <div class="carritocontainer">
             <div id="articuloscarrito">         
-                <?php if (count($_SESSION['cart']) == 0) {echo "<div style=\"text-align:center; margin:10%\"><h1 style=\"color:white; font-size:30px\">Tu cesta está vacía</h1><p style=\"color:white\">Explora multitud de libros a buen precio desde nuestra página principal</p></div>";
+                <?php if (!isset($_SESSION['cart'])) {echo "<div style=\"text-align:center; margin:10%\"><h1 style=\"color:white; font-size:30px\">Tu cesta está vacía</h1><p style=\"color:white\">Explora multitud de libros a buen precio desde nuestra página principal</p></div>";
+                } else if (count($_SESSION['cart']) == 0) {
+                    echo "<div style=\"text-align:center; margin:10%\"><h1 style=\"color:white; font-size:30px\">Tu cesta está vacía</h1><p style=\"color:white\">Explora multitud de libros a buen precio desde nuestra página principal</p></div>";
                 } else {foreach($_SESSION['cart'] as $key => $value){ ?> 
                         <div class="articulocarrito">
                             <a href="codigo_libro"><img class="portada" src="../assets/images/covers/<?php echo $key?>.png"></a>
@@ -57,7 +59,7 @@ include("../server/getProductsCarrito.php");
                     <?php }} ?>
                 </div>
                 <div class="containerbuttonrealizarcompra">
-                    <p id="doCompraText">Total = <b><em><?php echo $_SESSION['total'].'€';?></em></b></p>
+                    <p id="doCompraText">Total = <b><em><?php if (isset($_SESSION['cart'])) {echo $_SESSION['total'].'€';} else {echo 0;}?></em></b></p>
                     <form method="POST" action="formulario.php">
                         <div style="display:flex; justify-content:center;">
                             <button name="do_compra"  id="doCompraBton">Realizar compra</button>
