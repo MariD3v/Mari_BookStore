@@ -4,8 +4,8 @@ include("getConnection.php");
 session_start();
 
 if (isset($_POST['docompradefinitiva'])){
-    /*
-    // obtenemos los datos enviados en el form
+    
+    // obtenemos los datos enviados en el form del cliente y meterlo en db
     $client_nombre = $_POST['client_nombre']; 
     $client_apellidos = $_POST['client_apellidos'];
     $client_email = $_POST['client_email'];
@@ -17,6 +17,17 @@ if (isset($_POST['docompradefinitiva'])){
     $client_poblacion = $_POST['client_poblacion'];
     $client_provincia = $_POST['client_provincia'];
 
-    $sql = "INSERT INTO cliente VALUES ($client_nombre,$client_apellidos,$client_email,$client_telefono,$client_dni,$client_direccion)";
+    $conn ->prepare("INSERT INTO cliente (nombre,apellidos,email,telefono,dni,direccion,direccion_adicional,codigo_postal,poblacion,provincia) VALUES ();");
+
+    /*
+ 
     */
+
+    //obtener compra y meterla en db
+
+    //obtener datos de compra y meterla en db
+
+    //vaciar el carrito
+
+    //Informar que la compra ha sido realizada con exito o ha habido un error
 }

@@ -48,6 +48,7 @@ create table cliente(
 
 create table compra(
   codigo_compra int auto_increment,
+  fecha datetime not null,
   codigo_cliente int not null,
   primary key (codigo_compra),
   foreign key (codigo_cliente) references cliente(codigo_cliente) ON UPDATE CASCADE ON DELETE CASCADE
@@ -161,8 +162,8 @@ INSERT INTO libro VALUES (70, 'The annihilator', 'Romance', 'B', 324, 'Español'
 
 INSERT INTO cliente VALUES (1, 'Mari', 'Salar Garcia', 'mari.d3v@gmail.com', 654790769, '49248478X', 'C/ Jose Luis 5', 'Piso 1A', 30629, 'Murcia', 'Murcia');
 
-INSERT INTO compra VALUES (1,1);
-INSERT INTO compra VALUES (2,1);
+INSERT INTO compra VALUES (1,'2024-11-15 20:34:12', 1);
+INSERT INTO compra VALUES (2,'2024-08-30 14:23:45', 1);
 
 INSERT INTO detalle_compra VALUES (1, 43, 3);
 INSERT INTO detalle_compra VALUES (1, 3, 1);
