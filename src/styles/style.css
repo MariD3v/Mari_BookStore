@@ -3,9 +3,9 @@
     --bg-color: #333;
     --bgl-color:rgb(77, 77, 77);
     --lighter-color:#eee9ed;
-    --ll-color:rgb(248, 230, 236);
-    --l-color: #e9cbda;
-    --lm-color: #f3cbd8;
+    --ll-color:rgb(248, 236, 240);
+    --l-color: #eee1e8;
+    --lm-color: #f1d6df;
     --m-color: #ddbeca;
     --md-color: #bf92a6;
     --d-color: #8f5e72;
@@ -666,7 +666,7 @@ footer p{
     transform: scale(1.06);
 }
 
-/* carrito.html */
+/* carrito.php */
 
 .carritocontainer {
     
@@ -837,7 +837,7 @@ footer p{
 }
 
 
-/*formulario.html*/
+/*formulario.php*/
 
 #tituloFormulario{
     color: rgb(238, 233, 237);
@@ -882,7 +882,7 @@ footer p{
 }
 
 
-/*compra-realizada.html*/
+/*compra-realizada.php*/
 .comprarealizadacontainer {
     margin-left: 35%;
     margin-right: 35%;
@@ -921,7 +921,7 @@ footer p{
 }
 
 
-/*libro.html*/
+/*libro.php*/
 
 .book-author-container{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -1188,7 +1188,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     box-shadow: 2px 2px 3px var(--sbg-color);
 }
 
-/* autor.html */
+/* autor.php */
 
 .imagen-author{
     background-position: center;
@@ -1227,6 +1227,45 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     padding: 4px;
     text-align: center;
     
+}
+
+/* iniciar-sesion.php */
+
+#logoRegisterContainer{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+#logoRegisterContainer a {
+    display: flex;
+    width: 260px;
+    background-color: var(--ll-color);
+    border-radius: 4px;
+    padding: 8px;
+    transition: background-color 0.3s; 
+    box-shadow: 2px 2px 3px var(--sbg-color);
+}
+
+#logoRegisterContainer a img{
+    height: 40px;
+}
+
+#logoRegisterContainer a:hover {
+    background-color: var(--l-color);
+}
+
+#loginregisContainer{
+    background-color: var(--bgl-color);
+    border-radius: 5px;
+    margin: 10px 35%;
+    padding: 10px 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 20px 20px 20px 20px 20px 20px 20px;
+    gap: 20px;
+    justify-content: center;
+    box-shadow: 1px 1px 3px var(--sbg-color);
 }
 
 @media all and (max-width: 700px){
@@ -1387,7 +1426,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         margin-top: 10px;
     }
 
-    /* carrito.html */
+    /* carrito.php */
 
     .carritocontainer {
         width: 98%;
@@ -1479,7 +1518,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         font-size:18px;
     }
 
-    /*formulario.html*/
+    /*formulario.php*/
 
     #tituloFormulario{
         font-size: 26px;
@@ -1499,13 +1538,13 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         grid-gap: 3%;
     }
 
-    /*compra-realizada.html*/
+    /*compra-realizada.php*/
     .comprarealizadacontainer {
         margin-left: 10px;
         margin-right: 10px;
     }
 
-    /*libro.html*/
+    /*libro.php*/
     .book-author-container{
         margin-left: 1%;
         margin-right: 1%;
@@ -1627,7 +1666,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         height: 99%;
     }
 
-    /*autor.html*/
+    /*autor.php*/
 
     .imagen-author{
         width: 60%;
@@ -1686,7 +1725,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     .book{
         margin: 2%;
     }
-    /* carrito.html */
+    /* carrito.php */
 
     .carritocontainer {
         width: 94%;
@@ -1748,13 +1787,13 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         text-align: end;
     }
 
-    /*compra-realizada.html*/
+    /*compra-realizada.php*/
     .comprarealizadacontainer {
         margin-left: 10%;
         margin-right: 10%;
     }
 
-    /*libro.html*/
+    /*libro.php*/
     .book-author-container{
         margin-left: 3%;
         margin-right: 3%;
@@ -1829,7 +1868,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         margin: 0 5px; 
     }
 
-    /*autor.html*/
+    /*autor.php*/
 
     .imagen-author{
         margin-bottom: 10px;

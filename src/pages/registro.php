@@ -1,7 +1,3 @@
-<?php
-include("../server/registerLogin.php");
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,27 +8,24 @@ include("../server/registerLogin.php");
 </head>
 <body>
     <main>
-        <nav>
-            <ul class="nav">
-                <li><a id="inicio" href="../index.php"><img src="../assets/images/logo3.png" alt="logo"></a></li>
-                <li id="barra-buscar">
-                    <form method="get" action="../index.php" class="buscar-container">
-                        <input type="search" value="<?= isset($_GET['searchBar']) ? $_GET['searchBar'] : '' ?>" class="buscar" name="searchBar" placeholder="Buscar por autor, título..." />
-                        <button type="submit" name="buscarbutton" class="buscarbutton"><img src="../assets/images/buttonbuscar.png" alt="lupa"></button>
-                    </form>
-                </li>
-                <li style="display:flex; gap:10px">
-                    <a id="navButton" href="iniciar-sesion.php"><img src="../assets/images/user.png" alt="Perfil" height="35px"></a>
-                    <a id="navButton" href="carrito.php"><img src="../assets/images/carro.png" alt="Cesta" height="35px"></a>
-                </li>
-            </ul>
-            <div id="barra-buscar-hide">
-                <form method="get" action="../index.php" class="buscar-container">
-                    <input type="search" value="<?= isset($_GET['searchBar']) ? $_GET['searchBar'] : '' ?>" class="buscar" name="searchBar" placeholder="Buscar por autor, título..." />
-                    <button type="submit" name="buscarbutton" class="buscarbutton"><img src="../assets/images/buttonbuscar.png" alt="lupa"></button>
-                </form>
+        <div id="logoRegisterContainer"><a href="../index.php"><img src="../assets/images/logo3.png" alt="logo"></a></div>
+        <form method="POST" action="perfil.php">  
+            <div id="loginregisContainer">
+                <h1 id="tituloFormulario">Crear cuenta</h1>
+                <label>Nombre</label>
+                <input type="text" value="" name="nombre" placeholder="Nombre"/>
+                <label>Apellidos</label>
+                <input type="text" value="" name="apellidos" placeholder="Apellidos"/>
+                <label>Email</label>
+                <input type="text" value="" name="email_tel" placeholder="Email"/>
+                <label>Contraseña</label>
+                <input type="password" value="" name="password" placeholder="Contraseña"/>
+                <label>Confirma tu contraseña</label>
+                <input type="password" value="" name="password_conf" placeholder="Confirma tu contraseña"/>
+                <input type="submit" value="Crear cuenta" name="registrase"/>
+                <p>¿Ya tiene una cuenta?</p> <a href="iniciar-sesion.php">Iniciar sesión</a>
             </div>
-        </nav>
+        </form> 
     </main>
     <footer>
         <p>Página web realizada por Maria Salar Garcia</p> 
