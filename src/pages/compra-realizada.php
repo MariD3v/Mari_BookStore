@@ -1,3 +1,6 @@
+<?php
+include("../server/orderPlaced.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 
