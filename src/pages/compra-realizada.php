@@ -33,8 +33,8 @@ include("../server/orderPlaced.php");
             </div>
         </nav>
         <div class="comprarealizadacontainer">
-            <p>Compra realizada con exito</p>
-            <p>ID de compra: 1234214</p>
+            <p><?php echo $_GET['order_status'];?></p>
+            <p>Pago total: <?php echo $_SESSION['total'];?>€</p>
         </div>
         <div class="volveriniciobutton">
             <a href="../index.php">Volver a la página de inicio</a>
