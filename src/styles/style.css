@@ -112,7 +112,7 @@ input[type=search]:focus {
     justify-content: space-between;
 }
 
-.carrito img {
+.navButton img {
     width: auto;
     height: auto;
 }
@@ -1230,6 +1230,11 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 @media all and (max-width: 700px){
+    
+    #inicio{
+        height: 25px;
+        width: 162px;
+    }
 
     #barra-buscar{
         display: none;

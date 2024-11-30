@@ -15,7 +15,7 @@ include("../server/getProductsLibro.php");
 
 <body>
     <main>
-        <nav>
+    <nav>
             <ul class="nav">
                 <li><a id="inicio" href="../index.php"><img src="../assets/images/logo3.png" alt="logo"></a></li>
                 <li id="barra-buscar">
@@ -24,7 +24,10 @@ include("../server/getProductsLibro.php");
                         <button type="submit" name="buscarbutton" class="buscarbutton"><img src="../assets/images/buttonbuscar.png" alt="lupa"></button>
                     </form>
                 </li>
-                <li><a id="carrito" href="carrito.php"><img src="../assets/images/carro.png" alt="carrito" height="35px"></a></li>
+                <li style="display:flex; gap:10px">
+                    <a id="navButton" href="perfil.php"><img src="../assets/images/user.png" alt="Perfil" height="35px"></a>
+                    <a id="navButton" href="carrito.php"><img src="../assets/images/carro.png" alt="Cesta" height="35px"></a>
+                </li>
             </ul>
             <div id="barra-buscar-hide">
                 <form method="get" action="../index.php" class="buscar-container">
