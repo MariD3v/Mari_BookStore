@@ -10,20 +10,40 @@
     <main>
         <div id="logoRegisterContainer"><a href="../index.php"><img src="../assets/images/logo3.png" alt="logo"></a></div>
         <form method="POST" action="perfil.php">  
-            <div id="loginregisContainer">
+            <div id="regisContainer">
                 <h1 id="tituloFormulario">Crear cuenta</h1>
-                <label>Nombre</label>
-                <input type="text" value="" name="nombre" placeholder="Nombre"/>
-                <label>Apellidos</label>
-                <input type="text" value="" name="apellidos" placeholder="Apellidos"/>
-                <label>Email</label>
-                <input type="text" value="" name="email_tel" placeholder="Email"/>
-                <label>Contraseña</label>
-                <input type="password" value="" name="password" placeholder="Contraseña"/>
-                <label>Confirma tu contraseña</label>
-                <input type="password" value="" name="password_conf" placeholder="Confirma tu contraseña"/>
-                <input type="submit" value="Crear cuenta" name="registrase"/>
-                <p>¿Ya tiene una cuenta?</p> <a href="iniciar-sesion.php">Iniciar sesión</a>
+                <div>
+                    <label>Nombre</label>
+                    <input type="text" value="" name="nombre" placeholder="Nombre"/>
+                    <p id="parrafoError"><?php if(isset($_GET['error_nombre'])){echo $_GET['error_nombre'];}?></p>
+                </div>
+                <div>
+                    <label>Apellidos</label>
+                    <input type="text" value="" name="apellidos" placeholder="Apellidos"/>
+                    <p id="parrafoError"><?php if(isset($_GET['error_apellidos'])){echo $_GET['error_apellidos'];}?></p>
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input type="text" value="" name="email" placeholder="Email"/>
+                    <p id="parrafoError"><?php if(isset($_GET['error_email'])){echo $_GET['error_email'];}?></p>
+                </div>
+                <div>
+                    <label>Contraseña</label>
+                    <input type="password" value="" name="password" placeholder="Contraseña"/>
+                    <p id="parrafoError"><?php if(isset($_GET['error_pass'])){echo $_GET['error_pass'];}?></p>
+                </div>
+                <div>
+                    <label>Confirma tu contraseña</label>
+                    <input type="password" value="" name="password_conf" placeholder="Confirma tu contraseña"/>
+                    <p id="parrafoError"><?php if(isset($_GET['error_pass_conf'])){echo $_GET['error_pass_conf'];}?></p>
+                </div>
+                <div>
+                    <input type="submit" value="Crear cuenta" name="registrarse"/>
+                </div>
+                <div>
+                    <p>¿Ya tiene una cuenta?</p> 
+                    <a href="iniciar-sesion.php">Iniciar sesión</a>
+                </div>
             </div>
         </form> 
     </main>

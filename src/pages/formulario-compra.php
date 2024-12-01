@@ -40,43 +40,39 @@ include("../server/formCarrito.php");
             <div id="formulariocontainer">
                 <div>
                     <label>Nombre</label>
-                    <input type="text" name="client_nombre" placeholder=" Nombre" value="" required>
+                    <input type="text" name="order_name" placeholder=" Nombre" value="" required>
                 </div>
                 <div>
                     <label>Apellidos</label>
-                    <input type="text" name="client_apellidos"  placeholder=" Apellidos" value="" required>
+                    <input type="text" name="order_surname"  placeholder=" Apellidos" value="" required>
                 </div>
                 <div>
                     <label>Correo electrónico</label>
-                    <input text="email" name="client_email" placeholder=" Correo electrónico" value="" required>
+                    <input text="email" name="order_email" placeholder=" Correo electrónico" value="" required>
                 </div>
                 <div>
                     <label>Teléfono</label>
-                    <input type="tel" name="client_telefono" placeholder=" Teléfono" value="" required>
-                </div>
-                <div>
-                    <label>DNI</label>
-                    <input type="text" name="client_dni" placeholder=" DNI" value="" required/>
+                    <input type="tel" name="order_phone" placeholder=" Teléfono" value="" required>
                 </div>
                 <div>
                     <label>Dirección</label>
-                    <input type="text" name="client_direccion" placeholder=" Dirección" value="" required/>
+                    <input type="text" name="order_direction" placeholder=" Dirección" value="" required/>
                 </div>
                 <div>
                     <label>Datos adicionales</label>
-                    <input type="text" name="client_direccion_adicional" placeholder=" Datos adicionales (piso,puerta,barrio...)" value="" required/>
+                    <input type="text" name="order_direction_adicional" placeholder=" Datos adicionales (piso,puerta,barrio...)" value="" required/>
                 </div>
                 <div>
                     <label>Código postal</label>
-                    <input type="text" name="client_codigo_postal" placeholder=" Código postal" value="" required/>
+                    <input type="text" name="order_postal_code" placeholder=" Código postal" value="" required/>
                 </div>
                 <div>
                     <label>Población</label>
-                    <input type="text" name="client_poblacion" placeholder=" Población" value="" required/>
+                    <input type="text" name="order_town" placeholder=" Población" value="" required/>
                 </div>
                 <div>
                     <label>Provincia</label>
-                    <input type="text" name="client_provincia" placeholder=" Provincia" value="" required/>
+                    <input type="text" name="order_city" placeholder=" Provincia" value="" required/>
                 </div>
                 <div style="display:flex;">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0,0,256,256"><g fill="#575757" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M12,2c-5.511,0 -10,4.489 -10,10c0,5.511 4.489,10 10,10c5.511,0 10,-4.489 10,-10c0,-5.511 -4.489,-10 -10,-10zM12,4c4.43012,0 8,3.56988 8,8c0,4.43012 -3.56988,8 -8,8c-4.43012,0 -8,-3.56988 -8,-8c0,-4.43012 3.56988,-8 8,-8zM11,7v2h2v-2zM11,11v6h2v-6z"></path></g></g></svg>

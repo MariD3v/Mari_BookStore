@@ -10,15 +10,26 @@
     <main>
         <div id="logoRegisterContainer"><a href="../index.php"><img src="../assets/images/logo3.png" alt="logo"></a></div>
         <form method="POST" action="perfil.php">
-            <div id="loginregisContainer">
+            <div id="loginContainer">
                 <h1 id="tituloFormulario">Iniciar sesión</h1>
-                <label>Email</label>
-                <input type="text" value="" name="email_tel" placeholder="Email"/>
-                <label>Contraseña</label>
-                <input type="password" value="" name="password" placeholder="Contraseña"/>
-                <input type="submit" value="Iniciar sesión" name="iniciar_sesion"/>
-                <p>¿Eres nuevo?</p> 
-                <a href="registro.php">Crear cuenta</a>
+                <div>
+                    <label>Email</label>
+                    <input type="email" value="" name="email" placeholder="Email" required/>
+                    <p id="parrafoError">Introduce un email</p>
+                </div>
+                <div>
+                    <label>Contraseña</label>
+                    <input type="password" value="" name="password" placeholder="Contraseña" required/>
+                    <p id="parrafoError">Introduce una contraseña</p>
+                </div>
+                <div>
+                    <p id="parrafoError">El email o contraseña introducido no es válido</p>
+                    <input type="submit" value="Iniciar sesión" name="iniciar_sesion"/>
+                </div>
+                <div>
+                    <p>¿Eres nuevo?</p> 
+                    <a href="registro.php">Crear cuenta</a>
+                </div>
             </div>
         </form> 
     </main>

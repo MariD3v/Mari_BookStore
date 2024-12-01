@@ -63,7 +63,7 @@ include("../server/getProductsCarrito.php");
             </div>
             <div class="containerbuttonrealizarcompra">
                 <p id="doCompraText">Total = <b><em><?php if (isset($_SESSION['cart'])) {echo $_SESSION['total'].'€';} else {echo 0;}?></em></b></p>
-                <form method="POST" action="formulario.php">
+                <form method="POST" action="formulario-compra.php">
                     <div style="display:flex; justify-content:center;">
                         <button name="do_compra"  id="doCompraBton">Realizar compra</button>
                     </div>

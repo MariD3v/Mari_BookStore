@@ -5,30 +5,24 @@ session_start();
 
 if (isset($_POST['docompradefinitiva'])){
     
-    // obtener los datos enviados en el form del cliente y meterlo en db
-    $client_nombre = $_POST['client_nombre']; 
-    $client_apellidos = $_POST['client_apellidos'];
-    $client_email = $_POST['client_email'];
-    $client_telefono = $_POST['client_telefono'];
-    $client_dni = $_POST['client_dni'];
-    $client_direccion= $_POST['client_direccion'];
-    $client_direccion_adicional = $_POST['client_direccion_adicional'];
-    $client_codigo_postal = $_POST['client_codigo_postal'];
-    $client_poblacion = $_POST['client_poblacion'];
-    $client_provincia = $_POST['client_provincia'];
-
-    $stmt = $conn ->prepare("INSERT INTO cliente (nombre,apellidos,email,telefono,dni,direccion,direccion_adicional,codigo_postal,poblacion,provincia) VALUES (?,?,?,?,?,?,?,?,?,?);");
-    $stmt->bind_param('sssisssiss',$client_nombre,$client_apellidos,$client_email,$client_telefono,$client_dni,$client_direccion,$client_direccion_adicional,$client_codigo_postal,$client_poblacion,$client_provincia);
-    $stmt->execute();
-
-    //obtener datos de compra y meterla en db
+    // obtener datos de compra y meterla en db
     $order_date = date('Y-m-d H:i:s');
-    $client_id = $stmt->insert_id;
+    $order_name = $_POST['order_name']; 
+    $order_surname = $_POST['order_surname'];
+    $order_phone = $_POST['order_phone'];
+    $order_direction= $_POST['order_direction'];
+    $order_direction_adicional = $_POST['order_direction_adicional'];
+    $order_postal_code = $_POST['order_postal_code'];
+    $order_town = $_POST['order_town'];
+    $order_city = $_POST['order_city'];
 
-    $stmt = $conn ->prepare("INSERT INTO compra (fecha,codigo_cliente) VALUES (?,?);");
-    $stmt->bind_param('si',$order_date,$client_id);
+    $order_email = $_POST['order_email'];
+    $client_id = 1;
+
+    $stmt = $conn ->prepare("INSERT INTO compra (fecha,nombre,apellidos,telefono,direccion,direccion_adicional,codigo_postal,poblacion,provincia,codigo_cliente) VALUES (?,?,?,?,?,?,?,?,?,?);");
+    $stmt->bind_param('sssississi',$order_date,$order_name,$order_surname,$order_phone,$order_direction,$order_direction_adicional,$order_postal_code,$order_town,$order_city,$client_id);
     $stmt->execute();
-
+  
     //obtener detalles de la compra y meterla en db
     $order_id = $stmt->insert_id;
     foreach($_SESSION['cart'] as $key => $value){

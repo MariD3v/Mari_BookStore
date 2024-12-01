@@ -846,7 +846,7 @@ footer p{
 
 #formulariocontainer{
     background-color:var(--lighter-color);
-    height: 450px;
+    height: 410px;
     font-size: 18px;
     border-radius: 10px;
     margin:30px 11% 0 11%;
@@ -1255,17 +1255,48 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     background-color: var(--l-color);
 }
 
-#loginregisContainer{
+#regisContainer{
     background-color: var(--bgl-color);
     border-radius: 5px;
     margin: 10px 35%;
     padding: 10px 50px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 60px 20px 20px 20px 20px 20px 20px 20px;
-    gap: 20px;
+    grid-template-rows: 70px 60px 60px 60px 60px 60px 60px 60px;
+    gap: 10px;
     justify-content: center;
     box-shadow: 1px 1px 3px var(--sbg-color);
+}
+
+#loginContainer{
+    background-color: var(--bgl-color);
+    border-radius: 5px;
+    margin: 10px 35%;
+    padding: 10px 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 60px 60px 60px 60px;
+    gap: 10px;
+    justify-content: center;
+    box-shadow: 1px 1px 3px var(--sbg-color);
+}
+
+#regisContainer *,#loginContainer *{
+    display: block;
+    width: 100%;
+}
+
+#regisContainer #tituloFormulario, #loginContainer #tituloFormulario{
+    margin:0;
+}
+
+#regisContainer p, #loginContainer p{
+    margin:0;
+}
+
+#regisContainer #parrafoError, #loginContainer #parrafoError{
+    font-size: 14px;
+    color:rgb(255, 118, 118);
 }
 
 @media all and (max-width: 700px){
@@ -1530,11 +1561,11 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     #formulariocontainer{
-        height: 890px;
+        height: 780px;
         margin:30px 4% 10px 4%;
         padding:20px;
         grid-template-columns: 98%;
-        grid-template-rows: 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 20px;
+        grid-template-rows: 60px 60px 60px 60px 60px 60px 60px 60px 60px 20px;
         grid-gap: 3%;
     }
 
