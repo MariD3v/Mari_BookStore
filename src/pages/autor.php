@@ -24,7 +24,7 @@ include("../server/getProductsAutor.php");
                     </form>
                 </li>
                 <li style="display:flex; gap:10px">
-                    <a id="navButton" href="iniciar-sesion.php"><img src="../assets/images/user.png" alt="Perfil" height="35px"></a>
+                    <a id="navButton" href="registro.php"><img src="../assets/images/user.png" alt="Perfil" height="35px"></a>
                     <a id="navButton" href="carrito.php"><img src="../assets/images/carro.png" alt="Cesta" height="35px"></a>
                 </li>
             </ul>

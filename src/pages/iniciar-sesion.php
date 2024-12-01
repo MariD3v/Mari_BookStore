@@ -1,3 +1,7 @@
+<?php
+include("../server/loggin.php");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +13,7 @@
 <body>
     <main>
         <div id="logoRegisterContainer"><a href="../index.php"><img src="../assets/images/logo3.png" alt="logo"></a></div>
-        <form method="POST" action="perfil.php">
+        <form method="POST" action="iniciar-sesion.php">
             <div id="loginContainer">
                 <h1 id="tituloFormulario">Iniciar sesión</h1>
                 <div>

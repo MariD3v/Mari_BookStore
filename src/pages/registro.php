@@ -1,3 +1,7 @@
+<?php
+include("../server/register.php");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +13,7 @@
 <body>
     <main>
         <div id="logoRegisterContainer"><a href="../index.php"><img src="../assets/images/logo3.png" alt="logo"></a></div>
-        <form method="POST" action="perfil.php">  
+        <form method="POST" action="registro.php">  
             <div id="regisContainer">
                 <h1 id="tituloFormulario">Crear cuenta</h1>
                 <div>
@@ -38,6 +42,7 @@
                     <p id="parrafoError"><?php if(isset($_GET['error_pass_conf'])){echo $_GET['error_pass_conf'];}?></p>
                 </div>
                 <div>
+                <p id="parrafoError"><?php if(isset($_GET['error'])){echo $_GET['error'];}?></p>
                     <input type="submit" value="Crear cuenta" name="registrarse"/>
                 </div>
                 <div>
