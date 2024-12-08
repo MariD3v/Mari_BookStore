@@ -119,6 +119,6 @@ include("../server/formCarrito.php");
             </a>
         </div>
     </footer>
-    <script src="../scripts/formBuyValidation.js"></script>
+    <script src="../scripts/orderFormValidation.js"></script>
 </body>
 </html>
