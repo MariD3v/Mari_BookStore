@@ -1,5 +1,5 @@
 <?php
-include("../server/loggin.php");
+include("../server/login.php");
 ?>
 
 <!DOCTYPE html>
@@ -18,16 +18,16 @@ include("../server/loggin.php");
                 <h1 id="tituloFormularioRL">Iniciar sesión</h1>
                 <div>
                     <label>Email</label>
-                    <input type="text" value="" name="email" placeholder="Email" required/>
-                    <p id="parrafoError">Introduce un email</p>
+                    <input type="text" value="" name="email" placeholder="Email"/>
+                    <p id="parrafoError"><?php if(isset($_GET['errorEma'])){echo $_GET['errorEma'];}?></p>
                 </div>
                 <div>
                     <label>Contraseña</label>
-                    <input type="password" value="" name="password" placeholder="Contraseña" required/>
-                    <p id="parrafoError">Introduce una contraseña</p>
+                    <input type="password" value="" name="password" placeholder="Contraseña"/>
+                    <p id="parrafoError"><?php if(isset($_GET['errorPass'])){echo $_GET['errorPass'];}?></p>
                 </div>
                 <div>
-                    <p id="parrafoError">El email o contraseña introducido no es válido</p>
+                    <p id="parrafoError"><?php if(isset($_GET['error'])){echo $_GET['error'];}?></p>
                     <input id="login" type="submit" value="Iniciar sesión" name="iniciar_sesion"/>
                 </div>
                 <div>

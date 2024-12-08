@@ -4,6 +4,11 @@ include("getConnection.php");
 
 session_start();
 
+if(isset($_SESSION['logged_in'])){ //Si ya estamos logeados en nuestra sesion
+    header('location: perfil.php');
+    exit();
+}
+
 if(isset($_POST['registrarse'])){ //Si pulsamos el boton registrarse
 
     // obtener los datos enviados en el form del registro
@@ -50,6 +55,7 @@ if(isset($_POST['registrarse'])){ //Si pulsamos el boton registrarse
             if($stmt->execute()){ //Si se ha registrado correctamente, metemos en la sesion al usuario
                 $_SESSION['user_email'] = $client_email;
                 $_SESSION['user_name'] = $client_nombre;
+                $_SESSION['user_surname'] = $client_apellidos;
                 $_SESSION['logged_in'] = true;
             } else { //Si no se ha registrado correctamente
                 header('Location: registro.php?error=No se ha podido crear tu cuenta en este momento');
@@ -58,7 +64,4 @@ if(isset($_POST['registrarse'])){ //Si pulsamos el boton registrarse
         }
     }
 
-} else if(isset($_SESSION['logged_in'])){ //Si ya estamos logeados en nuestra sesion
-    header('location: perfil.php');
-    exit();
 }
