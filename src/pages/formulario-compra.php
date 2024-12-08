@@ -36,45 +36,54 @@ include("../server/formCarrito.php");
             </div>
         </nav>
         <h1 id="tituloFormulario">Datos de Compra</h1>
-        <form method="POST" action="compra-realizada.php">
+        <form method="POST" name="formulario" action="compra-realizada.php">
             <div id="formulariocontainer">
                 <div>
                     <label>Nombre</label>
-                    <input type="text" name="order_name" placeholder=" Nombre" value="" required>
+                    <input type="text" name="order_name" placeholder=" Nombre" value="">
+                    <p class="pError"></p>
                 </div>
                 <div>
                     <label>Apellidos</label>
-                    <input type="text" name="order_surname"  placeholder=" Apellidos" value="" required>
+                    <input type="text" name="order_surname"  placeholder=" Apellidos" value="">
+                    <p class="pError"></p>
                 </div>
                 <div>
                     <label>Correo electrónico</label>
-                    <input text="email" name="order_email" placeholder=" Correo electrónico" value="" required>
+                    <input type="text" name="order_email" placeholder=" Correo electrónico" value="">
+                    <p class="pError"></p>
                 </div>
                 <div>
                     <label>Teléfono</label>
-                    <input type="tel" name="order_phone" placeholder=" Teléfono" value="" required>
+                    <input type="text" name="order_phone" placeholder=" Teléfono" value="">
+                    <p class="pError"></p>
                 </div>
                 <div>
                     <label>Dirección</label>
-                    <input type="text" name="order_direction" placeholder=" Dirección" value="" required/>
+                    <input type="text" name="order_direction" placeholder=" Dirección" value=""/>
+                    <p class="pError"></p>
                 </div>
                 <div>
                     <label>Datos adicionales</label>
-                    <input type="text" name="order_direction_adicional" placeholder=" Datos adicionales (piso,puerta,barrio...)" value="" required/>
+                    <input type="text" name="order_direction_adicional" placeholder=" Datos adicionales (piso,puerta,barrio...)" value=""/>
+                    <p class="pError"></p>
                 </div>
                 <div>
                     <label>Código postal</label>
-                    <input type="text" name="order_postal_code" placeholder=" Código postal" value="" required/>
+                    <input type="text" name="order_postal_code" placeholder=" Código postal" value=""/>
+                    <p class="pError"></p>
                 </div>
                 <div>
                     <label>Población</label>
-                    <input type="text" name="order_town" placeholder=" Población" value="" required/>
+                    <input type="text" name="order_town" placeholder=" Población" value=""/>
+                    <p class="pError"></p>
                 </div>
                 <div>
                     <label>Provincia</label>
-                    <input type="text" name="order_city" placeholder=" Provincia" value="" required/>
+                    <input type="text" name="order_city" placeholder=" Provincia" value=""/>
+                    <p class="pError"></p>
                 </div>
-                <div style="display:flex;">
+                <div style="display:flex; margin:5px">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0,0,256,256"><g fill="#575757" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M12,2c-5.511,0 -10,4.489 -10,10c0,5.511 4.489,10 10,10c5.511,0 10,-4.489 10,-10c0,-5.511 -4.489,-10 -10,-10zM12,4c4.43012,0 8,3.56988 8,8c0,4.43012 -3.56988,8 -8,8c-4.43012,0 -8,-3.56988 -8,-8c0,-4.43012 3.56988,-8 8,-8zM11,7v2h2v-2zM11,11v6h2v-6z"></path></g></g></svg>
                     <p style="font-size:12px; margin:0 4px">No se admiten cambios ni devoluciones.</p>
                 </div>
@@ -110,5 +119,6 @@ include("../server/formCarrito.php");
             </a>
         </div>
     </footer>
+    <script src="../scripts/formBuyValidation.js"></script>
 </body>
 </html>
