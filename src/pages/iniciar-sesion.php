@@ -15,10 +15,10 @@ include("../server/loggin.php");
         <div id="logoRegisterContainer"><a href="../index.php"><img src="../assets/images/logo3.png" alt="logo"></a></div>
         <form method="POST" action="iniciar-sesion.php">
             <div id="loginContainer">
-                <h1 id="tituloFormulario">Iniciar sesión</h1>
+                <h1 id="tituloFormularioRL">Iniciar sesión</h1>
                 <div>
                     <label>Email</label>
-                    <input type="email" value="" name="email" placeholder="Email" required/>
+                    <input type="text" value="" name="email" placeholder="Email" required/>
                     <p id="parrafoError">Introduce un email</p>
                 </div>
                 <div>
@@ -28,7 +28,7 @@ include("../server/loggin.php");
                 </div>
                 <div>
                     <p id="parrafoError">El email o contraseña introducido no es válido</p>
-                    <input type="submit" value="Iniciar sesión" name="iniciar_sesion"/>
+                    <input id="login" type="submit" value="Iniciar sesión" name="iniciar_sesion"/>
                 </div>
                 <div>
                     <p>¿Eres nuevo?</p> 

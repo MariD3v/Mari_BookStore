@@ -15,16 +15,14 @@ include("../server/register.php");
         <div id="logoRegisterContainer"><a href="../index.php"><img src="../assets/images/logo3.png" alt="logo"></a></div>
         <form method="POST" action="registro.php">  
             <div id="regisContainer">
-                <h1 id="tituloFormulario">Crear cuenta</h1>
+                <h1 id="tituloFormularioRL">Crear cuenta</h1>
                 <div>
                     <label>Nombre</label>
                     <input type="text" value="" name="nombre" placeholder="Nombre"/>
-                    <p id="parrafoError"><?php if(isset($_GET['error_nombre'])){echo $_GET['error_nombre'];}?></p>
                 </div>
                 <div>
                     <label>Apellidos</label>
                     <input type="text" value="" name="apellidos" placeholder="Apellidos"/>
-                    <p id="parrafoError"><?php if(isset($_GET['error_apellidos'])){echo $_GET['error_apellidos'];}?></p>
                 </div>
                 <div>
                     <label>Email</label>
@@ -43,7 +41,7 @@ include("../server/register.php");
                 </div>
                 <div>
                 <p id="parrafoError"><?php if(isset($_GET['error'])){echo $_GET['error'];}?></p>
-                    <input type="submit" value="Crear cuenta" name="registrarse"/>
+                    <input id="registrarse" type="submit" value="Crear cuenta" name="registrarse"/>
                 </div>
                 <div>
                     <p>¿Ya tiene una cuenta?</p> 

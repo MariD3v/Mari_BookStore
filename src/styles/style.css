@@ -4,10 +4,10 @@
     --bgl-color:rgb(77, 77, 77);
     --lighter-color:#eee9ed;
     --ll-color:rgb(248, 236, 240);
-    --l-color: #eee1e8;
-    --lm-color: #f1d6df;
-    --m-color: #ddbeca;
-    --md-color: #bf92a6;
+    --l-color: #e9d7e1;
+    --lm-color: #d1a7b6;
+    --m-color: #c195a5;
+    --md-color: #a3788c;
     --d-color: #8f5e72;
 }
 
@@ -1262,47 +1262,87 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #regisContainer{
-    background-color: var(--bgl-color);
+    background-color: var(--lighter-color);
     border-radius: 5px;
-    margin: 10px 35%;
+    margin: 10px 30%;
     padding: 10px 50px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 70px 60px 60px 60px 60px 60px 60px 60px;
+    grid-template-rows: 70px 70px 70px 70px 70px 70px 70px 60px;
     gap: 10px;
     justify-content: center;
     box-shadow: 1px 1px 3px var(--sbg-color);
 }
 
 #loginContainer{
-    background-color: var(--bgl-color);
+    background-color: var(--lighter-color);
     border-radius: 5px;
-    margin: 10px 35%;
+    margin: 10px 30%;
     padding: 10px 50px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 70px 60px 60px 60px 60px;
+    grid-template-rows: 70px 70px 70px 70px 60px;
     gap: 10px;
     justify-content: center;
     box-shadow: 1px 1px 3px var(--sbg-color);
 }
+
+
 
 #regisContainer *,#loginContainer *{
     display: block;
     width: 100%;
 }
 
-#regisContainer #tituloFormulario, #loginContainer #tituloFormulario{
-    margin:0;
+#tituloFormularioRL{
+    color: var(--bg-color);
+    font-size:33px;
+    margin:10px 0;
+    text-align: center;
+}
+
+#regisContainer input[type=text],#regisContainer input[type=password],#loginContainer input[type=text],#loginContainer input[type=password]{
+   height: 30px;
+   border: none;
+   border-radius: 5px;
 }
 
 #regisContainer p, #loginContainer p{
-    margin:0;
+    margin:0px;
+}
+
+#regisContainer label, #loginContainer label{
+    margin: 2px;
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--bgl-color);
 }
 
 #regisContainer #parrafoError, #loginContainer #parrafoError{
-    font-size: 14px;
-    color:rgb(255, 118, 118);
+    margin: 2px;
+    font-size: 13px;
+    color:rgb(255, 0, 0);
+}
+
+#registrarse, #login{
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 17px;
+    height: 40px;
+    color: white;
+    background-color: var(--d-color);
+    box-shadow: 1px 1px 2px var(--bg-color);
+    transition: background-color 0.4s; 
+}
+
+#registrarse:hover, #login:hover{
+    background-color: var(--md-color);
+    cursor: pointer;
+}
+
+#registrarse:active, #login:active{
+    background-color: var(--m-color);
 }
 
 @media all and (max-width: 700px){
@@ -1725,6 +1765,21 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         margin: 2px 7px;
     }
 
+    /*register.php*/
+    #regisContainer{
+        margin: 10px 2%;
+        padding: 10px 20px;
+        grid-template-rows: 70px 70px 70px 70px 70px 70px 60px 50px;
+    }
+        
+    #loginContainer{
+        margin: 10px 2%;
+        padding: 10px 20px;
+    }
+
+    #regisContainer #parrafoError, #loginContainer #parrafoError{
+        margin: 1px;
+    }
 }
 
 
@@ -1925,5 +1980,14 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
     .epc legend{
         font-size: 2.6vw; 
+    }
+
+    /*register.php*/
+    #regisContainer{
+        margin: 10px 13%;
+    }
+    
+    #loginContainer{
+        margin: 10px 13%;
     }
 }

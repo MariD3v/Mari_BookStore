@@ -59,7 +59,7 @@ window.onload = function(){
         }
     })
 
-    let expresionTel = /^\+?\d{1,4}[-.\s]?\d{1,4}(\s?\d{2,4}){2,7}$/
+    let expresionTel = /^\+?\d{1,4}[-.\s]?\d{1,4}(\s?\d{2,4}){2,4}$/
     
     telefono.addEventListener("change", function(){
 
