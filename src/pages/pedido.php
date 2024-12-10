@@ -29,43 +29,60 @@
                 </form>
             </div>
         </nav>
-        <section id="perfil-container">
-            <aside>
-                <p>Maria Salar Garcia</p>
-                <p>mari.d3v@gmail.com</p>
-                <input type="button" value="Cerrar sesión"/>
-                <div id="cambiarContra">
-                    <h1 style="color:var(--bg-color)">Cambiar contraseña</h1>
-                    <form method="POST">
-                    <label>Contraseña nueva</label>
-                    <input type="password" placeholder="Contraseña nueva"/>
-                    <label>Confirma contraseña</label>
-                    <input type="password" placeholder="Confirma contraseña"/>
-                    <input type="submit" value="Cambiar"/>
-                    </form>
-                </div>
-                
-            </aside>
-            <div id="pedidos-container">
-                <h1 style="color:var(--bg-color)">Pedidos</h1>
-                <div>
-                    <div class="pedido">
-                        <img src="../assets/images/covers/1.png" class="portadaPedido">
-                        <h2 class="idPedido">ID compra: 23454A</h2>
-                        <h2 class="totalPedido">Total: 50€</h2>
-                        <h2 class="fechaPedido">Fecha: 24-12-2025</h2>
-                        <h2 class="artiPedido">4 artículos</h2>
-                        <a href="pedido.php">Ver más detalles</a>
-                    </div>
-                    <div class="pedido">
-                        <img src="../assets/images/covers/2.png" class="portadaPedido">
-                        <h2 class="idPedido">ID compra: 23455B</h2>
-                        <h2 class="totalPedido">Total: 34€</h2>
-                        <h2 class="fechaPedido">Fecha: 26-11-2024</h2>
-                        <h2 class="artiPedido">1 artículos</h2>
-                        <a href="pedido.php">Ver más detalles</a>
-                    </div>
-                </div>
+        <section id="pedido-container">
+
+            <div id="producto-container">
+            <div style="display: flex; flex-direction: row; justify-content: space-between; color:var(--bg-color);">
+                <h3 style="margin:0 0 10px 0;">Pedido 2342A</h3>
+                <h3 style="margin:0 0 10px 0;">Fecha de compra: 25-12-2024</h3>
+            </div>
+                <table class="tablaProducto" border="0">
+                    <tr>
+                        <th>Código</th>
+                        <th>Producto</th>
+                        <th>Titulo</th>
+                        <th>Autor</th>
+                        <th>Precio/Unidad</th>
+                        <th>Cantidad</th>
+                        <th>Importe total</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="../assets/images/covers/1.png" class="portadaProducto"></td>
+                        <td>Trono de cristal</td>
+                        <td>Sarah J. Mass</td>
+                        <td>25€</td>
+                        <td>2</td>
+                        <td>50€</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="../assets/images/covers/2.png" class="portadaProducto"></td>
+                        <td>Trono de cristal</td>
+                        <td>Sarah J. Mass</td>
+                        <td>22€</td>
+                        <td>1</td>
+                        <td>22€</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="../assets/images/covers/3.png" class="portadaProducto"></td>
+                        <td>Trono de cristal</td>
+                        <td>Sarah J. Mass</td>
+                        <td>22€</td>
+                        <td>1</td>
+                        <td>22€</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><img src="../assets/images/covers/4.png" class="portadaProducto"></td>
+                        <td>Trono de cristal</td>
+                        <td>Sarah J. Mass</td>
+                        <td>22€</td>
+                        <td>1</td>
+                        <td>22€</td>
+                    </tr>
+                </table>
             </div>
         </section>
     </main>

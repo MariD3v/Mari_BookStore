@@ -1345,6 +1345,146 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     background-color: var(--m-color);
 }
 
+/*perfil.php*/
+
+#perfil-container{
+    margin: 40px 11%;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    grid-template-rows: 1fr;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px var(--sbg-color);
+   
+}
+
+#cambiarContra{
+    margin: 70px 0;
+}
+
+#cambiarContra form{
+    display:flex; 
+    flex-direction:column;
+    gap: 10px;
+}
+
+#perfil-container aside{
+    text-align: center;
+    background-color: white;
+    padding: 50px 20px;
+    border-radius: 5px 0 0 5px;
+}
+
+#pedidos-container{
+    background-color: var(--lighter-color);
+    padding: 20px;
+    border-radius: 0 5px 5px 0;
+}
+
+.pedido{
+    margin: 5px;
+    border-radius: 4px;
+    padding: 20px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+
+}
+
+.portadaPedido{
+    justify-self: center;
+    height: 150px;
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    box-shadow: 1px 1px 3px var(--sbg-color);
+}
+
+.idPedido{
+    color: var(--bg-color);
+    font-size: 20px;
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+}
+
+.totalPedido{
+    justify-self: end;
+    color: var(--bg-color);
+    font-size: 25px;
+    grid-column: 3;
+    grid-row: 1;
+    margin: 0;
+}
+
+.fechaPedido{
+    color: var(--bg-color);
+    font-size: 20px;
+    grid-column: 2 / span 3;
+    grid-row: 2;
+    margin: 0;
+}
+
+.artiPedido{
+    color: var(--bg-color);
+    font-size: 20px;
+    grid-column: 2;
+    grid-row: 3;
+    margin: 0;
+}
+
+.pedido a{
+    justify-self: end;
+    grid-column: 3;
+    grid-row: 3;
+}
+
+/*pedido.php*/
+
+#pedido-container{
+    margin: 40px 11%;
+}
+
+#producto-container{
+    padding: 10px;
+    background-color: var(--lighter-color);
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px var(--sbg-color);
+}
+
+.tablaProducto{
+    width: 100%;
+    border-collapse:collapse;
+    text-align: center;
+    background-color: white;
+}
+
+.tablaProducto th{
+    background-color: var(--bgl-color);
+    color:white;
+    padding: 5px;
+}
+
+.tablaProducto tr:nth-child(odd){
+    background-color: rgb(240, 240, 240);
+}
+
+.portadaProducto{
+    margin: 5px;
+    height: 130px;
+    box-shadow: 1px 1px 3px var(--sbg-color);
+}
+
+.tituloProducto{
+    font-size: 18px;
+    margin: 0;
+}
+
+.autorProducto{
+    font-size:18px;
+    margin: 0;
+}
+
 @media all and (max-width: 700px){
     
     #inicio{

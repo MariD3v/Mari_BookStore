@@ -57,6 +57,8 @@ if(isset($_POST['registrarse'])){ //Si pulsamos el boton registrarse
                 $_SESSION['user_name'] = $client_nombre;
                 $_SESSION['user_surname'] = $client_apellidos;
                 $_SESSION['logged_in'] = true;
+
+                header('location:perfil.php');
             } else { //Si no se ha registrado correctamente
                 header('Location: registro.php?error=No se ha podido crear tu cuenta en este momento');
                 exit();
