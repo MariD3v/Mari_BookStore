@@ -7,4 +7,5 @@ if (isset($_POST['do_compra']) && !empty($_SESSION['cart'])){ //Si el carro no e
 
 } else {
     header('location: ../index.php'); //Si el carro esta vacio, nos devuelve a index.php
+    exit();
 }

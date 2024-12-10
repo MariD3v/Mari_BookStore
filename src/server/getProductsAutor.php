@@ -31,6 +31,7 @@ if(isset($_GET["codigo_autor"])){
 
 } else {
     header("location: ../index.php");
+    exit();
 }
 
 $stmt->close();

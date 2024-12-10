@@ -53,12 +53,16 @@ if(isset($_POST['registrarse'])){ //Si pulsamos el boton registrarse
             $stmt->bind_param('ssss',$client_nombre,$client_apellidos,$client_email,$client_pass);
             
             if($stmt->execute()){ //Si se ha registrado correctamente, metemos en la sesion al usuario
+                $user_id = $stmt->insert_id;
+
+                $_SESSION['user_id'] = $client_id;
                 $_SESSION['user_email'] = $client_email;
                 $_SESSION['user_name'] = $client_nombre;
                 $_SESSION['user_surname'] = $client_apellidos;
                 $_SESSION['logged_in'] = true;
 
                 header('location:perfil.php');
+                exit();
             } else { //Si no se ha registrado correctamente
                 header('Location: registro.php?error=No se ha podido crear tu cuenta en este momento');
                 exit();

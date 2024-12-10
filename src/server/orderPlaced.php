@@ -17,7 +17,7 @@ if (isset($_POST['docompradefinitiva'])){
     $order_city = $_POST['order_city'];
 
     $order_email = $_POST['order_email'];
-    $client_id = 1;
+    $client_id = $_SESSION['user_id'];
 
     $stmt = $conn ->prepare("INSERT INTO compra (fecha,nombre,apellidos,telefono,direccion,direccion_adicional,codigo_postal,poblacion,provincia,codigo_cliente) VALUES (?,?,?,?,?,?,?,?,?,?);");
     $stmt->bind_param('sssississi',$order_date,$order_name,$order_surname,$order_phone,$order_direction,$order_direction_adicional,$order_postal_code,$order_town,$order_city,$client_id);
@@ -36,7 +36,7 @@ if (isset($_POST['docompradefinitiva'])){
     }
     //Informar que la compra ha sido realizada con exito o ha habido un error
     header('location: compra-realizada.php?order_status=Compra realizada con exito');
-
+    exit();
     //vaciar el carrito
     unset($_SESSION['cart']);   
 }

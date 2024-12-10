@@ -1,3 +1,7 @@
+<?php
+include("../server/profile.php");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,20 +35,21 @@
         </nav>
         <section id="perfil-container">
             <aside>
-                <p>Maria Salar Garcia</p>
-                <p>mari.d3v@gmail.com</p>
-                <input type="button" value="Cerrar sesión"/>
+                <p><?php if(isset($_SESSION['user_name'])){echo $_SESSION['user_name'].' '.$_SESSION['user_surname'];}?></p>
+                <p><?php if(isset($_SESSION['user_email'])){echo $_SESSION['user_email'];}?></p>
+                <a href="perfil.php?cerrarsesion=1">Cerrar sesión</a>
                 <div id="cambiarContra">
                     <h1 style="color:var(--bg-color)">Cambiar contraseña</h1>
-                    <form method="POST">
+                    <form method="POST" action="perfil.php">
                     <label>Contraseña nueva</label>
-                    <input type="password" placeholder="Contraseña nueva"/>
+                    <input type="password" placeholder="Contraseña nueva" name="password"/>
                     <label>Confirma contraseña</label>
-                    <input type="password" placeholder="Confirma contraseña"/>
-                    <input type="submit" value="Cambiar"/>
+                    <input type="password" placeholder="Confirma contraseña" name="password_conf"/>
+                    <input type="submit" value="Cambiar" name="change_password"/>
                     </form>
+                    <p style="color: red;"><?php if(isset($_GET['error'])){echo $_GET['error'];}?><p>
+                    <p style="color: green;"><?php if(isset($_GET['mensaje'])){echo $_GET['mensaje'];}?><p>
                 </div>
-                
             </aside>
             <div id="pedidos-container">
                 <h1 style="color:var(--bg-color)">Pedidos</h1>

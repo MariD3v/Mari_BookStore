@@ -38,12 +38,15 @@ if (isset($_POST['iniciar_sesion'])){ //Si pulsamos el boton iniciar sesion
                 $_SESSION['logged_in'] = true;
     
                 header('location:perfil.php');
+                exit();
             } else {
                 header('location: iniciar-sesion.php?error=El email o contraseña introducido no es correcto');
+                exit();
             }
     
         } else {
             header('location: iniciar-sesion.php?error=Algo ha ido mal');
+            exit();
         }
     }
 }
