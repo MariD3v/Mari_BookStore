@@ -55,7 +55,7 @@ include("../server/profile.php");
                 <h1 style="color:var(--bg-color)">Pedidos</h1>
                 <div>
                     <?php 
-                    if ($compra_consulta->num_rows == 0) {echo "<h1>No has realizado ningún pedido todavía</h1>";} 
+                    if ($compra_consulta->num_rows == 0) {echo "<hr><h3 style=\"color:var(--bg-color); text-align:center\">No has realizado ningún pedido todavía</h3>";} 
                     else {while ($compra = $compra_consulta -> fetch_assoc()){ ?>
                     <div class="pedido">
                         <img src="../assets/images/covers/<?php echo $compra["primer_producto"]?>.png" class="portadaPedido">
