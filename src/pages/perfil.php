@@ -54,22 +54,18 @@ include("../server/profile.php");
             <div id="pedidos-container">
                 <h1 style="color:var(--bg-color)">Pedidos</h1>
                 <div>
+                    <?php 
+                    if ($compra_consulta->num_rows == 0) {echo "<h1>No has realizado ningún pedido todavía</h1>";} 
+                    else {while ($compra = $compra_consulta -> fetch_assoc()){ ?>
                     <div class="pedido">
-                        <img src="../assets/images/covers/1.png" class="portadaPedido">
-                        <h2 class="idPedido">ID compra: 23454A</h2>
-                        <h2 class="totalPedido">Total: 50€</h2>
-                        <h2 class="fechaPedido">Fecha: 24-12-2025</h2>
-                        <h2 class="artiPedido">4 artículos</h2>
-                        <a href="pedido.php">Ver más detalles</a>
+                        <img src="../assets/images/covers/<?php echo $compra["primer_producto"]?>.png" class="portadaPedido">
+                        <h2 class="idPedido">ID compra: <?php echo $compra["codigo_compra"]?></h2>
+                        <h2 class="totalPedido">Total: <?php echo $compra['total_compra']?>€</h2>
+                        <h2 class="fechaPedido">Fecha: <?php echo $compra["fecha"]?></h2>
+                        <h2 class="artiPedido"><?php echo $compra['total_articulos']?> artículos</h2>
+                        <a href=<?php echo "pedido.php?codigo_compra=".$compra["codigo_compra"];?>>Ver más detalles</a>
                     </div>
-                    <div class="pedido">
-                        <img src="../assets/images/covers/2.png" class="portadaPedido">
-                        <h2 class="idPedido">ID compra: 23455B</h2>
-                        <h2 class="totalPedido">Total: 34€</h2>
-                        <h2 class="fechaPedido">Fecha: 26-11-2024</h2>
-                        <h2 class="artiPedido">1 artículos</h2>
-                        <a href="pedido.php">Ver más detalles</a>
-                    </div>
+                    <?php }} ?>
                 </div>
             </div>
         </section>

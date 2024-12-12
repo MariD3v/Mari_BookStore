@@ -3,7 +3,7 @@ include("getConnection.php");
 
 session_start();
 
-if (isset($_POST['docompradefinitiva'])){
+if (isset($_POST['docompradefinitiva']) && isset($_SESSION['user_id'])){
     
     // obtener datos de compra y meterla en db
     $order_date = date('Y-m-d H:i:s');
@@ -34,9 +34,10 @@ if (isset($_POST['docompradefinitiva'])){
         $stmt->bind_param('iii',$order_id,$product_id,$product_quantity);
         $stmt->execute();
     }
+    //vaciar el carrito
+    unset($_SESSION['cart']);  
+
     //Informar que la compra ha sido realizada con exito o ha habido un error
     header('location: compra-realizada.php?order_status=Compra realizada con exito');
     exit();
-    //vaciar el carrito
-    unset($_SESSION['cart']);   
 }
