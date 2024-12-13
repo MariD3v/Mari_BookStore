@@ -3,7 +3,7 @@ include("getConnection.php");
 
 session_start();
 
-if (isset($_POST['docompradefinitiva']) && isset($_SESSION['user_id'])){
+if (isset($_POST['docompradefinitiva']) && isset($_SESSION['logged_in'])){
     
     // obtener datos de compra y meterla en db
     $order_date = date('Y-m-d H:i:s');

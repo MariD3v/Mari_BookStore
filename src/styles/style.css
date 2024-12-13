@@ -1354,7 +1354,31 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     grid-template-rows: 1fr;
     border-radius: 10px;
     box-shadow: 1px 1px 3px var(--sbg-color);
-   
+    color: var(--bg-color);
+}
+
+#perfilinput{
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid var(--lighter-color);
+}
+
+#perfilbutton{
+    margin-top:10px;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--d-color);
+    background-color: var(--l-color);
+    transition: background-color 0.1s;
+    box-shadow: 1px 1px 3px var(--l-color);
+    border: none;
+}
+
+#perfilbutton:hover{
+    background-color: var(--lighter-color);
+    box-shadow: 1px 1px 3px var(--lighter-color);
 }
 
 #cambiarContra{
@@ -1362,8 +1386,10 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #cambiarContra form{
+    margin: 10px;
     display:flex; 
     flex-direction:column;
+    align-items: center;
     gap: 10px;
 }
 
@@ -1389,7 +1415,6 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     grid-template-columns: 0.5fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 10px;
-
 }
 
 .portadaPedido{
@@ -1419,10 +1444,11 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
 .fechaPedido{
     color: var(--bg-color);
-    font-size: 20px;
+    font-size: 18px;
     grid-column: 2 / span 3;
     grid-row: 2;
     margin: 0;
+    font-weight: 500;
 }
 
 .artiPedido{
@@ -1437,6 +1463,12 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     justify-self: end;
     grid-column: 3;
     grid-row: 3;
+}
+
+#detallesPerfil{
+    color: var(--d-color);
+    text-shadow: white;
+    font-size: 17px;
 }
 
 /*pedido.php*/
@@ -1920,6 +1952,59 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     #regisContainer #parrafoError, #loginContainer #parrafoError{
         margin: 1px;
     }
+
+    /*perfil.php*/
+
+    #perfil-container{
+        margin: 10px 1%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #perfil-container aside{
+        border-radius: 0;
+        padding: 0;
+        border-radius: 5px 5px 0 0;
+    }
+
+    #pedidos-container{
+        padding: 10px;
+        border-radius: 0 0 5px 5px ;
+    }
+
+    .pedido{
+        padding: 10px;
+        margin: 5px 0;
+    }
+    
+    .idPedido{
+        font-size: 14px;
+    }
+        
+    .totalPedido{
+        font-size: 15px;
+    }
+        
+    .fechaPedido{
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .portadaPedido{
+        height: 100px;
+    }
+        
+    .artiPedido{
+        font-size: 14px;
+    }
+    
+    #detallesPerfil{
+        font-size: 13px;
+    }
+
+    #cambiarContra{
+        margin: 30px 0;
+    }
 }
 
 
@@ -2129,5 +2214,35 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     
     #loginContainer{
         margin: 10px 13%;
+    }
+
+    /*perfil.php*/
+
+    #perfil-container{
+        margin: 40px 2%;
+    }
+
+    .pedido{
+        padding: 10px;
+    }
+
+    .idPedido{
+        font-size: 17px;
+    }
+    
+    .totalPedido{
+        font-size: 18px;
+    }
+    
+    .fechaPedido{
+        font-size: 15px;
+        font-weight: 600;
+    }
+    
+    .artiPedido{
+        font-size: 17px;
+    }
+    #detallesPerfil{
+        font-size: 15px;
     }
 }

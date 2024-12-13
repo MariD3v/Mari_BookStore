@@ -55,7 +55,7 @@ if(isset($_POST['registrarse'])){ //Si pulsamos el boton registrarse
             if($stmt->execute()){ //Si se ha registrado correctamente, metemos en la sesion al usuario
                 $user_id = $stmt->insert_id;
 
-                $_SESSION['user_id'] = $client_id;
+                $_SESSION['user_id'] = $user_id;
                 $_SESSION['user_email'] = $client_email;
                 $_SESSION['user_name'] = $client_nombre;
                 $_SESSION['user_surname'] = $client_apellidos;

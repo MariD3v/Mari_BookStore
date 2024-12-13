@@ -35,17 +35,18 @@ include("../server/profile.php");
         </nav>
         <section id="perfil-container">
             <aside>
+                <h1 style="color:var(--bg-color); margin-bottom:30px">Información de cuenta</h1>
                 <p><?php if(isset($_SESSION['user_name'])){echo $_SESSION['user_name'].' '.$_SESSION['user_surname'];}?></p>
-                <p><?php if(isset($_SESSION['user_email'])){echo $_SESSION['user_email'];}?></p>
-                <a href="perfil.php?cerrarsesion=1">Cerrar sesión</a>
+                <p style="margin-bottom:30px"><?php if(isset($_SESSION['user_email'])){echo $_SESSION['user_email'];}?></p>
+                <a id="perfilbutton" href="perfil.php?cerrarsesion=1">Cerrar sesión</a>
                 <div id="cambiarContra">
-                    <h1 style="color:var(--bg-color)">Cambiar contraseña</h1>
+                    <h1 style="color:var(--bg-color); margin-bottom:30px">Cambiar contraseña</h1>
                     <form method="POST" action="perfil.php">
                     <label>Contraseña nueva</label>
-                    <input type="password" placeholder="Contraseña nueva" name="password"/>
+                    <input id="perfilinput" type="password" placeholder="Contraseña nueva" name="password"/>
                     <label>Confirma contraseña</label>
-                    <input type="password" placeholder="Confirma contraseña" name="password_conf"/>
-                    <input type="submit" value="Cambiar" name="change_password"/>
+                    <input id="perfilinput" type="password" placeholder="Confirma contraseña" name="password_conf"/>
+                    <input id="perfilbutton" type="submit" value="Cambiar" name="change_password"/>
                     </form>
                     <p style="color: red;"><?php if(isset($_GET['error'])){echo $_GET['error'];}?><p>
                     <p style="color: green;"><?php if(isset($_GET['mensaje'])){echo $_GET['mensaje'];}?><p>
@@ -63,7 +64,7 @@ include("../server/profile.php");
                         <h2 class="totalPedido">Total: <?php echo $compra['total_compra']?>€</h2>
                         <h2 class="fechaPedido">Fecha: <?php echo $compra["fecha"]?></h2>
                         <h2 class="artiPedido"><?php echo $compra['total_articulos']?> artículos</h2>
-                        <a href=<?php echo "pedido.php?codigo_compra=".$compra["codigo_compra"];?>>Ver más detalles</a>
+                        <a id="detallesPerfil" href=<?php echo "pedido.php?codigo_compra=".$compra["codigo_compra"];?>>Ver más detalles</a>
                     </div>
                     <?php }} ?>
                 </div>
