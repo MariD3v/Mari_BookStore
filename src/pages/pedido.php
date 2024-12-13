@@ -1,3 +1,7 @@
+<?php
+include("../server/order.php");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -32,10 +36,10 @@
         <section id="pedido-container">
 
             <div id="producto-container">
-            <div style="display: flex; flex-direction: row; justify-content: space-between; color:var(--bg-color);">
-                <h3 style="margin:0 0 10px 0;">Pedido 2342A</h3>
-                <h3 style="margin:0 0 10px 0;">Fecha de compra: 25-12-2024</h3>
-            </div>
+                <div style="display: flex; flex-direction: row; justify-content: space-between; color:var(--bg-color);">
+                    <h3 style="margin:0 0 10px 0;">Pedido <?php echo $codigo_compra;?></h3>
+                    <h3 style="margin:0 0 10px 0;">Fecha de compra: <?php echo htmlspecialchars($fecha_compra);?></h3>
+                </div>
                 <table class="tablaProducto" border="0">
                     <tr>
                         <th>Código</th>
@@ -46,43 +50,19 @@
                         <th>Cantidad</th>
                         <th>Importe total</th>
                     </tr>
+                    <?php if ($pedido_detalles->num_rows != 0) { while ($detalle = $pedido_detalles->fetch_assoc()) { ?>
                     <tr>
-                        <td>1</td>
-                        <td><img src="../assets/images/covers/1.png" class="portadaProducto"></td>
-                        <td>Trono de cristal</td>
-                        <td>Sarah J. Mass</td>
-                        <td>25€</td>
-                        <td>2</td>
-                        <td>50€</td>
+                        <td><?php echo $detalle["codigo_libro"] ?></td>
+                        <td><a href=<?php echo "libro.php?codigo_libro=".$detalle["codigo_libro"];?>><img src="../assets/images/covers/<?php echo $detalle["codigo_libro"] ?>.png" class="portadaProducto"></a></td>
+                        <td><?php echo $detalle["titulo"] ?></td>
+                        <td><?php echo $detalle["nombre"] ?></td>
+                        <td><?php echo $detalle["precio"] ?>€</td>
+                        <td><?php echo $detalle["unidades"] ?></td>
+                        <td><?php echo $detalle["precio"] * $detalle["unidades"] ?>€</td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td><img src="../assets/images/covers/2.png" class="portadaProducto"></td>
-                        <td>Trono de cristal</td>
-                        <td>Sarah J. Mass</td>
-                        <td>22€</td>
-                        <td>1</td>
-                        <td>22€</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td><img src="../assets/images/covers/3.png" class="portadaProducto"></td>
-                        <td>Trono de cristal</td>
-                        <td>Sarah J. Mass</td>
-                        <td>22€</td>
-                        <td>1</td>
-                        <td>22€</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td><img src="../assets/images/covers/4.png" class="portadaProducto"></td>
-                        <td>Trono de cristal</td>
-                        <td>Sarah J. Mass</td>
-                        <td>22€</td>
-                        <td>1</td>
-                        <td>22€</td>
-                    </tr>
+                    <?php }} ?>
                 </table>
+                <h3 style="text-align:end;margin:20px 10px;color:var(--bg-color);font-size:22px">Total: <?php echo $_GET["total"];?>€</h3>
             </div>
         </section>
     </main>

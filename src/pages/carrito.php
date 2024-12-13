@@ -44,7 +44,7 @@ include("../server/getProductsCarrito.php");
                     echo "<div style=\"text-align:center; margin:10%\"><h1 style=\"color:white; font-size:30px\">Tu cesta está vacía</h1><p style=\"color:white\">Explora multitud de libros a buen precio desde nuestra página principal</p></div>";
                 } else {foreach($_SESSION['cart'] as $key => $value){ ?> 
                     <div class="articulocarrito">
-                        <a href="codigo_libro"><img class="portada" src="../assets/images/covers/<?php echo $key?>.png"></a>
+                        <a href=<?php echo "libro.php?codigo_libro=".$value['product_id'];?>><img class="portada" src="../assets/images/covers/<?php echo $key?>.png"></a>
                         <p class="tituloCarro"><?php echo $value['product_name']?></p>
                         <p class="autorCarro"><?php echo $value['product_author']?></p>
                         <form method="POST" action="carrito.php">
