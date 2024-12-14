@@ -37,32 +37,32 @@ include("../server/order.php");
 
             <div id="producto-container">
                 <div style="display: flex; flex-direction: row; justify-content: space-between; color:var(--bg-color);">
-                    <h3 style="margin:0 0 10px 0;">Pedido <?php echo $codigo_compra;?></h3>
-                    <h3 style="margin:0 0 10px 0;">Fecha de compra: <?php echo htmlspecialchars($fecha_compra);?></h3>
+                    <h3 class="h3Pedido" style="margin:0 0 10px 0;">Pedido <?php echo $codigo_compra;?></h3>
+                    <h4 class="h4Pedido" style="margin:0 0 10px 0;">Fecha de compra: <?php echo htmlspecialchars($fecha_compra);?></h4>
                 </div>
                 <table class="tablaProducto" border="0">
                     <tr>
-                        <th>Código</th>
+                        <th style="padding:0 5px">ID</th>
                         <th>Producto</th>
                         <th>Titulo</th>
                         <th>Autor</th>
-                        <th>Precio/Unidad</th>
-                        <th>Cantidad</th>
+                        <th>Precio/U</th>
+                        <th style="padding:0 5px">U</th>
                         <th>Importe total</th>
                     </tr>
                     <?php if ($pedido_detalles->num_rows != 0) { while ($detalle = $pedido_detalles->fetch_assoc()) { ?>
                     <tr>
-                        <td><?php echo $detalle["codigo_libro"] ?></td>
+                        <td class="detalleProducto"><?php echo $detalle["codigo_libro"] ?></td>
                         <td><a href=<?php echo "libro.php?codigo_libro=".$detalle["codigo_libro"];?>><img src="../assets/images/covers/<?php echo $detalle["codigo_libro"] ?>.png" class="portadaProducto"></a></td>
-                        <td><?php echo $detalle["titulo"] ?></td>
-                        <td><?php echo $detalle["nombre"] ?></td>
-                        <td><?php echo $detalle["precio"] ?>€</td>
-                        <td><?php echo $detalle["unidades"] ?></td>
-                        <td><?php echo $detalle["precio"] * $detalle["unidades"] ?>€</td>
+                        <td class="detalleProducto"><?php echo $detalle["titulo"] ?></td>
+                        <td class="detalleProducto"><?php echo $detalle["nombre"] ?></td>
+                        <td class="detalleProducto"><?php echo $detalle["precio"] ?>€</td>
+                        <td class="detalleProducto"><?php echo $detalle["unidades"] ?></td>
+                        <td class="detalleProducto"><?php echo $detalle["precio"] * $detalle["unidades"] ?>€</td>
                     </tr>
                     <?php }} ?>
                 </table>
-                <h3 style="text-align:end;margin:20px 10px;color:var(--bg-color);font-size:22px">Total: <?php echo $_GET["total"];?>€</h3>
+                <h2 class="h2Pedido" style="text-align:end;margin:20px 10px;color:var(--bg-color);">Total: <?php echo $_GET["total"];?>€</h2>
             </div>
         </section>
     </main>

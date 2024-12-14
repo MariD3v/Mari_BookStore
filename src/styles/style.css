@@ -1507,13 +1507,8 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     box-shadow: 1px 1px 3px var(--sbg-color);
 }
 
-.tituloProducto{
+.detalleProducto{
     font-size: 18px;
-    margin: 0;
-}
-
-.autorProducto{
-    font-size:18px;
     margin: 0;
 }
 
@@ -2005,6 +2000,43 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     #cambiarContra{
         margin: 30px 0;
     }
+    /*pedido.php*/
+
+    #pedido-container{
+        margin: 0px 1%;
+    }
+
+    #producto-container{
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .tablaProducto th{
+        font-size: 11px;
+        padding:2px;
+    }
+
+    .portadaProducto{
+        margin: 2px;
+        height: 100px;
+    }
+
+    .detalleProducto{
+        font-size: 13px;
+    }
+
+    .h4Pedido{
+        font-size: 12px;
+    }
+
+    .h3Pedido{
+        font-size: 14px;
+    }
+
+    .h2Pedido{
+        font-size: 18px;
+    }
+
 }
 
 
@@ -2244,5 +2276,11 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
     #detallesPerfil{
         font-size: 15px;
+    }
+
+    /*pedido.php*/
+
+    #pedido-container{
+        margin: 10px 2%;
     }
 }
