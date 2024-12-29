@@ -2,7 +2,7 @@
 
 ## Descripción
 
-**Mari's BookStore** es una plataforma web diseñada para los amantes de los libros. Ofrecemos una experiencia moderna e intuitiva para explorar y adquirir libros de todo tipo. Desde la búsqueda y el filtrado de productos hasta la gestión de pedidos, Mari's BookStore está pensado para cubrir todas las necesidades de los usuarios.
+**Mari's BookStore** es una plataforma web diseñada para los amantes de los libros. Ofrecemos una experiencia moderna e intuitiva para explorar y adquirir libros de todo tipo. Desde la búsqueda y el filtrado de productos hasta la gestión de pedidos, Mari's BookStore está pensado para cubrir todas las necesidades de los usuarios. Permite tanto el registro de nuevos usuarios, como la autenticación de los mismos mediante un inicio de sesión.
 
 ## Funcionalidades
 
