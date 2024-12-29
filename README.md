@@ -6,6 +6,8 @@
 
 ## Funcionalidades
 
+https://github.com/user-attachments/assets/c2d39243-adcb-4da6-8da5-3136f9009d36
+
 ### Navegación de productos
 - Explora una amplia variedad de libros disponibles en la tienda.
 - Filtra los productos por diferentes criterios, como género, precio o idioma.
