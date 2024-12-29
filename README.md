@@ -1,4 +1,4 @@
-![logo](https://github.com/MariD3v/Mari_BookStore/blob/main/public/images/logo.png?raw=true)
+![logo](https://github.com/user-attachments/assets/d94380b5-db87-427b-a184-3cb8b4016044)
 
 ## Descripción
 
