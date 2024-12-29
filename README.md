@@ -1,4 +1,4 @@
-![logo](https://github.com/MariD3v/Mari_BookStore/blob/main/public/images/logo.png?raw=true)
+
 
 ## Descripción
 
